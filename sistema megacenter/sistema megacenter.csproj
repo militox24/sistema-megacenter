@@ -66,6 +66,12 @@
     <Compile Include="Mantenedor_Cambio_Clave.Designer.cs">
       <DependentUpon>Mantenedor_Cambio_Clave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenedor_Envio_Correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Envio_Correo.Designer.cs">
+      <DependentUpon>Mantenedor_Envio_Correo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenedor_Pregunta_Secreta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Cambio_Clave.resx">
       <DependentUpon>Mantenedor_Cambio_Clave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Envio_Correo.resx">
+      <DependentUpon>Mantenedor_Envio_Correo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Pregunta_Secreta.resx">
       <DependentUpon>Mantenedor_Pregunta_Secreta.cs</DependentUpon>

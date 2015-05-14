@@ -70,6 +70,8 @@ namespace sistema_megacenter
                     MessageBox.Show("Modificación realizada con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtnuevaclave.Clear();
                     txtrepetirclave.Clear();
+                    Ingreso_Sistema inicio = new Ingreso_Sistema(usuariologueo);
+                    inicio.Show();
                     
                 }
             }

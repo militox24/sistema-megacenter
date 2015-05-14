@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace sistema_megacenter
 {
-    public partial class Form1 : Form
+    public partial class Menu_Principal : Form
     {
-        public Form1()
+        public Menu_Principal(string nombres, string apellidos,string url,string rutcompleto)
         {
             InitializeComponent();
         }

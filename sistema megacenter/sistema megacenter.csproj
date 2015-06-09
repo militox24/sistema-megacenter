@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Gestion_Categoria.cs" />
+    <Compile Include="Gestion_Giro.cs" />
     <Compile Include="Gestion_Ingreso.cs" />
+    <Compile Include="Gestion_Proveedor.cs" />
+    <Compile Include="Gestión_Ciudad.cs" />
     <Compile Include="Interfaz_Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,17 +70,47 @@
     <Compile Include="Mantenedor_Cambio_Clave.Designer.cs">
       <DependentUpon>Mantenedor_Cambio_Clave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenedor_Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Categoria.Designer.cs">
+      <DependentUpon>Mantenedor_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Ciudad.Designer.cs">
+      <DependentUpon>Mantenedor_Ciudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenedor_Envio_Correo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenedor_Envio_Correo.Designer.cs">
       <DependentUpon>Mantenedor_Envio_Correo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenedor_Giro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Giro.Designer.cs">
+      <DependentUpon>Mantenedor_Giro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Historial_Multas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Historial_Multas.Designer.cs">
+      <DependentUpon>Mantenedor_Historial_Multas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenedor_Pregunta_Secreta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenedor_Pregunta_Secreta.Designer.cs">
       <DependentUpon>Mantenedor_Pregunta_Secreta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Proveedor.Designer.cs">
+      <DependentUpon>Mantenedor_Proveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu_Principal.cs">
       <SubType>Form</SubType>
@@ -114,11 +148,26 @@
     <EmbeddedResource Include="Mantenedor_Cambio_Clave.resx">
       <DependentUpon>Mantenedor_Cambio_Clave.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Categoria.resx">
+      <DependentUpon>Mantenedor_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Ciudad.resx">
+      <DependentUpon>Mantenedor_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Envio_Correo.resx">
       <DependentUpon>Mantenedor_Envio_Correo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Giro.resx">
+      <DependentUpon>Mantenedor_Giro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Historial_Multas.resx">
+      <DependentUpon>Mantenedor_Historial_Multas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Pregunta_Secreta.resx">
       <DependentUpon>Mantenedor_Pregunta_Secreta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Proveedor.resx">
+      <DependentUpon>Mantenedor_Proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Principal.resx">
       <DependentUpon>Menu_Principal.cs</DependentUpon>

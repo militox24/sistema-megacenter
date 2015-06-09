@@ -9,7 +9,7 @@ namespace sistema_megacenter
 {
     class Conexion
     {
-        private string cadena = "Data Source=KMILO-PC; Initial Catalog=Tienda; Integrated Security=true";
+        private string cadena = "Data Source=kmilo-PC\\SQLEXPRESS; Initial Catalog=Tienda; Integrated Security=true";
         private SqlConnection conn;
         public void conectar()
         {

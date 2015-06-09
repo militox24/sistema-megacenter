@@ -61,7 +61,7 @@ namespace sistema_megacenter
                     {
                         nombres = ds.Tables["" + usuariologueado + ""].Rows[0][1].ToString();
                         apellidos = ds.Tables["" + usuariologueado + ""].Rows[0][2].ToString();
-                        url = ds.Tables["" + usuariologueado + ""].Rows[0][9].ToString();
+                        url = ds.Tables["" + usuariologueado + ""].Rows[0][11].ToString();
                         this.Hide();
                         Menu_Principal menu = new Menu_Principal(nombres, apellidos, url, txtrutingreso.Text);
                         menu.Show();

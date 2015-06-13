@@ -30,24 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mantenedor_Giro));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btcargaagregagiro = new System.Windows.Forms.Button();
             this.btcargaeliminagiro = new System.Windows.Forms.Button();
+            this.btcargaagregagiro = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gbagregagiro = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtgiroagrega = new System.Windows.Forms.TextBox();
-            this.txtdescripciongiro = new System.Windows.Forms.TextBox();
-            this.gbeliminagiro = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtgiroeliminar = new System.Windows.Forms.TextBox();
-            this.grillagiros = new System.Windows.Forms.DataGridView();
-            this.btbuscargiroelim = new System.Windows.Forms.Button();
-            this.btelimgiro = new System.Windows.Forms.Button();
-            this.btagregargiro = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btagregargiro = new System.Windows.Forms.Button();
+            this.txtdescripciongiro = new System.Windows.Forms.TextBox();
+            this.txtgiroagrega = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.gbeliminagiro = new System.Windows.Forms.GroupBox();
+            this.btelimgiro = new System.Windows.Forms.Button();
+            this.btbuscargiroelim = new System.Windows.Forms.Button();
+            this.grillagiros = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txtgiroeliminar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btvolvermenuprincipal2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbagregagiro.SuspendLayout();
@@ -65,15 +66,18 @@
             this.panel1.Size = new System.Drawing.Size(141, 343);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // btcargaeliminagiro
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.gbagregagiro);
-            this.panel2.Controls.Add(this.gbeliminagiro);
-            this.panel2.Location = new System.Drawing.Point(170, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(578, 343);
-            this.panel2.TabIndex = 1;
+            this.btcargaeliminagiro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btcargaeliminagiro.BackgroundImage")));
+            this.btcargaeliminagiro.ForeColor = System.Drawing.SystemColors.Control;
+            this.btcargaeliminagiro.Location = new System.Drawing.Point(13, 188);
+            this.btcargaeliminagiro.Name = "btcargaeliminagiro";
+            this.btcargaeliminagiro.Size = new System.Drawing.Size(97, 93);
+            this.btcargaeliminagiro.TabIndex = 4;
+            this.btcargaeliminagiro.Text = "Eliminar";
+            this.btcargaeliminagiro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btcargaeliminagiro.UseVisualStyleBackColor = true;
+            this.btcargaeliminagiro.Click += new System.EventHandler(this.btcargaeliminagiro_Click);
             // 
             // btcargaagregagiro
             // 
@@ -88,18 +92,15 @@
             this.btcargaagregagiro.UseVisualStyleBackColor = true;
             this.btcargaagregagiro.Click += new System.EventHandler(this.btcargaagregagiro_Click);
             // 
-            // btcargaeliminagiro
+            // panel2
             // 
-            this.btcargaeliminagiro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btcargaeliminagiro.BackgroundImage")));
-            this.btcargaeliminagiro.ForeColor = System.Drawing.SystemColors.Control;
-            this.btcargaeliminagiro.Location = new System.Drawing.Point(13, 188);
-            this.btcargaeliminagiro.Name = "btcargaeliminagiro";
-            this.btcargaeliminagiro.Size = new System.Drawing.Size(97, 93);
-            this.btcargaeliminagiro.TabIndex = 4;
-            this.btcargaeliminagiro.Text = "Eliminar";
-            this.btcargaeliminagiro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btcargaeliminagiro.UseVisualStyleBackColor = true;
-            this.btcargaeliminagiro.Click += new System.EventHandler(this.btcargaeliminagiro_Click);
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.gbagregagiro);
+            this.panel2.Controls.Add(this.gbeliminagiro);
+            this.panel2.Location = new System.Drawing.Point(170, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(578, 343);
+            this.panel2.TabIndex = 1;
             // 
             // gbagregagiro
             // 
@@ -119,128 +120,27 @@
             this.gbagregagiro.TabStop = false;
             this.gbagregagiro.Text = "Agregar Giro";
             // 
-            // label7
+            // label4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(17, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Giro:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label4.Location = new System.Drawing.Point(199, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Letras";
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(17, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Descripción:";
-            // 
-            // txtgiroagrega
-            // 
-            this.txtgiroagrega.Location = new System.Drawing.Point(71, 59);
-            this.txtgiroagrega.Name = "txtgiroagrega";
-            this.txtgiroagrega.Size = new System.Drawing.Size(281, 26);
-            this.txtgiroagrega.TabIndex = 11;
-            this.txtgiroagrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtgiroagrega_KeyPress);
-            // 
-            // txtdescripciongiro
-            // 
-            this.txtdescripciongiro.Location = new System.Drawing.Point(131, 104);
-            this.txtdescripciongiro.Multiline = true;
-            this.txtdescripciongiro.Name = "txtdescripciongiro";
-            this.txtdescripciongiro.Size = new System.Drawing.Size(251, 100);
-            this.txtdescripciongiro.TabIndex = 12;
-            this.txtdescripciongiro.TextChanged += new System.EventHandler(this.txtdescripciongiro_TextChanged);
-            this.txtdescripciongiro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescripciongiro_KeyPress);
-            // 
-            // gbeliminagiro
-            // 
-            this.gbeliminagiro.Controls.Add(this.btelimgiro);
-            this.gbeliminagiro.Controls.Add(this.btbuscargiroelim);
-            this.gbeliminagiro.Controls.Add(this.grillagiros);
-            this.gbeliminagiro.Controls.Add(this.txtgiroeliminar);
-            this.gbeliminagiro.Controls.Add(this.label2);
-            this.gbeliminagiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbeliminagiro.ForeColor = System.Drawing.Color.Gold;
-            this.gbeliminagiro.Location = new System.Drawing.Point(23, 38);
-            this.gbeliminagiro.Name = "gbeliminagiro";
-            this.gbeliminagiro.Size = new System.Drawing.Size(474, 276);
-            this.gbeliminagiro.TabIndex = 13;
-            this.gbeliminagiro.TabStop = false;
-            this.gbeliminagiro.Text = "Eliminar Giro";
-            this.gbeliminagiro.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Giro:";
-            // 
-            // txtgiroeliminar
-            // 
-            this.txtgiroeliminar.Location = new System.Drawing.Point(60, 32);
-            this.txtgiroeliminar.Name = "txtgiroeliminar";
-            this.txtgiroeliminar.Size = new System.Drawing.Size(245, 26);
-            this.txtgiroeliminar.TabIndex = 11;
-            // 
-            // grillagiros
-            // 
-            this.grillagiros.AllowUserToAddRows = false;
-            this.grillagiros.AllowUserToDeleteRows = false;
-            this.grillagiros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillagiros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.grillagiros.Location = new System.Drawing.Point(10, 64);
-            this.grillagiros.Name = "grillagiros";
-            this.grillagiros.Size = new System.Drawing.Size(458, 150);
-            this.grillagiros.TabIndex = 12;
-            // 
-            // btbuscargiroelim
-            // 
-            this.btbuscargiroelim.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btbuscargiroelim.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btbuscargiroelim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btbuscargiroelim.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbuscargiroelim.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btbuscargiroelim.Image = ((System.Drawing.Image)(resources.GetObject("btbuscargiroelim.Image")));
-            this.btbuscargiroelim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btbuscargiroelim.Location = new System.Drawing.Point(311, 31);
-            this.btbuscargiroelim.Name = "btbuscargiroelim";
-            this.btbuscargiroelim.Size = new System.Drawing.Size(107, 28);
-            this.btbuscargiroelim.TabIndex = 23;
-            this.btbuscargiroelim.Text = "Buscar";
-            this.btbuscargiroelim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btbuscargiroelim.UseVisualStyleBackColor = false;
-            this.btbuscargiroelim.Click += new System.EventHandler(this.btbuscargiroelim_Click);
-            // 
-            // btelimgiro
-            // 
-            this.btelimgiro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btelimgiro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btelimgiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btelimgiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btelimgiro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btelimgiro.Image = ((System.Drawing.Image)(resources.GetObject("btelimgiro.Image")));
-            this.btelimgiro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btelimgiro.Location = new System.Drawing.Point(274, 220);
-            this.btelimgiro.Name = "btelimgiro";
-            this.btelimgiro.Size = new System.Drawing.Size(124, 36);
-            this.btelimgiro.TabIndex = 27;
-            this.btelimgiro.Text = "Eliminar";
-            this.btelimgiro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btelimgiro.UseVisualStyleBackColor = false;
-            this.btelimgiro.Click += new System.EventHandler(this.btelimgiro_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(138, 207);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "N° Letras:";
             // 
             // btagregargiro
             // 
@@ -260,27 +160,110 @@
             this.btagregargiro.UseVisualStyleBackColor = false;
             this.btagregargiro.Click += new System.EventHandler(this.btagregargiro_Click);
             // 
-            // label3
+            // txtdescripciongiro
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(138, 207);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "N° Letras:";
+            this.txtdescripciongiro.Location = new System.Drawing.Point(131, 104);
+            this.txtdescripciongiro.Multiline = true;
+            this.txtdescripciongiro.Name = "txtdescripciongiro";
+            this.txtdescripciongiro.Size = new System.Drawing.Size(251, 100);
+            this.txtdescripciongiro.TabIndex = 12;
+            this.txtdescripciongiro.TextChanged += new System.EventHandler(this.txtdescripciongiro_TextChanged);
+            this.txtdescripciongiro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescripciongiro_KeyPress);
             // 
-            // label4
+            // txtgiroagrega
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(199, 207);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "Letras";
+            this.txtgiroagrega.Location = new System.Drawing.Point(71, 59);
+            this.txtgiroagrega.Name = "txtgiroagrega";
+            this.txtgiroagrega.Size = new System.Drawing.Size(281, 26);
+            this.txtgiroagrega.TabIndex = 11;
+            this.txtgiroagrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtgiroagrega_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(17, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Descripción:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(17, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Giro:";
+            // 
+            // gbeliminagiro
+            // 
+            this.gbeliminagiro.Controls.Add(this.btelimgiro);
+            this.gbeliminagiro.Controls.Add(this.btbuscargiroelim);
+            this.gbeliminagiro.Controls.Add(this.grillagiros);
+            this.gbeliminagiro.Controls.Add(this.txtgiroeliminar);
+            this.gbeliminagiro.Controls.Add(this.label2);
+            this.gbeliminagiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbeliminagiro.ForeColor = System.Drawing.Color.Gold;
+            this.gbeliminagiro.Location = new System.Drawing.Point(23, 38);
+            this.gbeliminagiro.Name = "gbeliminagiro";
+            this.gbeliminagiro.Size = new System.Drawing.Size(474, 276);
+            this.gbeliminagiro.TabIndex = 13;
+            this.gbeliminagiro.TabStop = false;
+            this.gbeliminagiro.Text = "Eliminar Giro";
+            this.gbeliminagiro.Visible = false;
+            // 
+            // btelimgiro
+            // 
+            this.btelimgiro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btelimgiro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btelimgiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btelimgiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btelimgiro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btelimgiro.Image = ((System.Drawing.Image)(resources.GetObject("btelimgiro.Image")));
+            this.btelimgiro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btelimgiro.Location = new System.Drawing.Point(274, 220);
+            this.btelimgiro.Name = "btelimgiro";
+            this.btelimgiro.Size = new System.Drawing.Size(124, 36);
+            this.btelimgiro.TabIndex = 27;
+            this.btelimgiro.Text = "Eliminar";
+            this.btelimgiro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btelimgiro.UseVisualStyleBackColor = false;
+            this.btelimgiro.Click += new System.EventHandler(this.btelimgiro_Click);
+            // 
+            // btbuscargiroelim
+            // 
+            this.btbuscargiroelim.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btbuscargiroelim.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btbuscargiroelim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbuscargiroelim.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbuscargiroelim.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btbuscargiroelim.Image = ((System.Drawing.Image)(resources.GetObject("btbuscargiroelim.Image")));
+            this.btbuscargiroelim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btbuscargiroelim.Location = new System.Drawing.Point(311, 31);
+            this.btbuscargiroelim.Name = "btbuscargiroelim";
+            this.btbuscargiroelim.Size = new System.Drawing.Size(107, 28);
+            this.btbuscargiroelim.TabIndex = 23;
+            this.btbuscargiroelim.Text = "Buscar";
+            this.btbuscargiroelim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btbuscargiroelim.UseVisualStyleBackColor = false;
+            this.btbuscargiroelim.Click += new System.EventHandler(this.btbuscargiroelim_Click);
+            // 
+            // grillagiros
+            // 
+            this.grillagiros.AllowUserToAddRows = false;
+            this.grillagiros.AllowUserToDeleteRows = false;
+            this.grillagiros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillagiros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.grillagiros.Location = new System.Drawing.Point(10, 64);
+            this.grillagiros.Name = "grillagiros";
+            this.grillagiros.Size = new System.Drawing.Size(458, 150);
+            this.grillagiros.TabIndex = 12;
             // 
             // Column1
             // 
@@ -289,12 +272,49 @@
             this.Column1.Name = "Column1";
             this.Column1.TrueValue = "true";
             // 
+            // txtgiroeliminar
+            // 
+            this.txtgiroeliminar.Location = new System.Drawing.Point(60, 32);
+            this.txtgiroeliminar.Name = "txtgiroeliminar";
+            this.txtgiroeliminar.Size = new System.Drawing.Size(245, 26);
+            this.txtgiroeliminar.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(6, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Giro:";
+            // 
+            // btvolvermenuprincipal2
+            // 
+            this.btvolvermenuprincipal2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolvermenuprincipal2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolvermenuprincipal2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolvermenuprincipal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolvermenuprincipal2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolvermenuprincipal2.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipal2.Image")));
+            this.btvolvermenuprincipal2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolvermenuprincipal2.Location = new System.Drawing.Point(326, 368);
+            this.btvolvermenuprincipal2.Name = "btvolvermenuprincipal2";
+            this.btvolvermenuprincipal2.Size = new System.Drawing.Size(223, 36);
+            this.btvolvermenuprincipal2.TabIndex = 89;
+            this.btvolvermenuprincipal2.Text = "Volver Menu Principal";
+            this.btvolvermenuprincipal2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolvermenuprincipal2.UseVisualStyleBackColor = false;
+            this.btvolvermenuprincipal2.Click += new System.EventHandler(this.btvolvermenuprincipal2_Click);
+            // 
             // Mantenedor_Giro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(789, 396);
+            this.ClientSize = new System.Drawing.Size(789, 416);
+            this.Controls.Add(this.btvolvermenuprincipal2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Mantenedor_Giro";
@@ -331,5 +351,6 @@
         private System.Windows.Forms.TextBox txtgiroeliminar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
+        private System.Windows.Forms.Button btvolvermenuprincipal2;
     }
 }

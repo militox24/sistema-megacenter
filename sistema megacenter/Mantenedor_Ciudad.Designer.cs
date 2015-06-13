@@ -34,15 +34,11 @@
             this.bteliminaciudad = new System.Windows.Forms.Button();
             this.btagregaciudad = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btvolvermenuprincipalvendedor = new System.Windows.Forms.Button();
             this.btvolvermenu = new System.Windows.Forms.Button();
-            this.gbeliminaciudad = new System.Windows.Forms.GroupBox();
-            this.beliminarciudad = new System.Windows.Forms.Button();
-            this.grilla = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btbuscarelimciudad = new System.Windows.Forms.Button();
-            this.txtciudadeliminar = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.gbmodificaciudad = new System.Windows.Forms.GroupBox();
+            this.txtnuevonombreciudad = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btbuscarciudad = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,12 +55,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtnombreciudad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.gbeliminaciudad = new System.Windows.Forms.GroupBox();
+            this.beliminarciudad = new System.Windows.Forms.Button();
+            this.grilla = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btbuscarelimciudad = new System.Windows.Forms.Button();
+            this.txtciudadeliminar = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.gbeliminaciudad.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grilla)).BeginInit();
             this.gbmodificaciudad.SuspendLayout();
             this.gbagregaciudad.SuspendLayout();
+            this.gbeliminaciudad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grilla)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -120,16 +123,36 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel2.Controls.Add(this.btvolvermenuprincipalvendedor);
             this.panel2.Controls.Add(this.btvolvermenu);
+            this.panel2.Controls.Add(this.gbmodificaciudad);
             this.panel2.Controls.Add(this.gbagregaciudad);
             this.panel2.Controls.Add(this.gbeliminaciudad);
-            this.panel2.Controls.Add(this.gbmodificaciudad);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.panel2.ForeColor = System.Drawing.Color.Gold;
             this.panel2.Location = new System.Drawing.Point(168, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(602, 481);
             this.panel2.TabIndex = 1;
+            // 
+            // btvolvermenuprincipalvendedor
+            // 
+            this.btvolvermenuprincipalvendedor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolvermenuprincipalvendedor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolvermenuprincipalvendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolvermenuprincipalvendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolvermenuprincipalvendedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolvermenuprincipalvendedor.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipalvendedor.Image")));
+            this.btvolvermenuprincipalvendedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolvermenuprincipalvendedor.Location = new System.Drawing.Point(176, 388);
+            this.btvolvermenuprincipalvendedor.Name = "btvolvermenuprincipalvendedor";
+            this.btvolvermenuprincipalvendedor.Size = new System.Drawing.Size(215, 36);
+            this.btvolvermenuprincipalvendedor.TabIndex = 30;
+            this.btvolvermenuprincipalvendedor.Text = "Volver Menú Principal";
+            this.btvolvermenuprincipalvendedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolvermenuprincipalvendedor.UseVisualStyleBackColor = false;
+            this.btvolvermenuprincipalvendedor.Visible = false;
+            this.btvolvermenuprincipalvendedor.Click += new System.EventHandler(this.btvolvermenuprincipalvendedor_Click);
             // 
             // btvolvermenu
             // 
@@ -147,97 +170,13 @@
             this.btvolvermenu.Text = "Volver Menú Principal";
             this.btvolvermenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btvolvermenu.UseVisualStyleBackColor = false;
+            this.btvolvermenu.Visible = false;
             this.btvolvermenu.Click += new System.EventHandler(this.btvolvermenu_Click);
-            // 
-            // gbeliminaciudad
-            // 
-            this.gbeliminaciudad.Controls.Add(this.beliminarciudad);
-            this.gbeliminaciudad.Controls.Add(this.grilla);
-            this.gbeliminaciudad.Controls.Add(this.btbuscarelimciudad);
-            this.gbeliminaciudad.Controls.Add(this.txtciudadeliminar);
-            this.gbeliminaciudad.Controls.Add(this.label5);
-            this.gbeliminaciudad.ForeColor = System.Drawing.Color.Gold;
-            this.gbeliminaciudad.Location = new System.Drawing.Point(24, 37);
-            this.gbeliminaciudad.Name = "gbeliminaciudad";
-            this.gbeliminaciudad.Size = new System.Drawing.Size(483, 306);
-            this.gbeliminaciudad.TabIndex = 7;
-            this.gbeliminaciudad.TabStop = false;
-            this.gbeliminaciudad.Text = "Eliminar Ciudad";
-            this.gbeliminaciudad.Visible = false;
-            // 
-            // beliminarciudad
-            // 
-            this.beliminarciudad.BackColor = System.Drawing.Color.Black;
-            this.beliminarciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.beliminarciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.beliminarciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.beliminarciudad.Image = ((System.Drawing.Image)(resources.GetObject("beliminarciudad.Image")));
-            this.beliminarciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.beliminarciudad.Location = new System.Drawing.Point(317, 227);
-            this.beliminarciudad.Name = "beliminarciudad";
-            this.beliminarciudad.Size = new System.Drawing.Size(115, 31);
-            this.beliminarciudad.TabIndex = 9;
-            this.beliminarciudad.Text = "Eliminar";
-            this.beliminarciudad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.beliminarciudad.UseVisualStyleBackColor = false;
-            this.beliminarciudad.Click += new System.EventHandler(this.beliminarciudad_Click);
-            // 
-            // grilla
-            // 
-            this.grilla.AllowUserToAddRows = false;
-            this.grilla.AllowUserToDeleteRows = false;
-            this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.grilla.Location = new System.Drawing.Point(20, 64);
-            this.grilla.Name = "grilla";
-            this.grilla.Size = new System.Drawing.Size(446, 150);
-            this.grilla.TabIndex = 8;
-            // 
-            // Column1
-            // 
-            this.Column1.FalseValue = "false";
-            this.Column1.HeaderText = "Seleccione";
-            this.Column1.Name = "Column1";
-            this.Column1.TrueValue = "true";
-            // 
-            // btbuscarelimciudad
-            // 
-            this.btbuscarelimciudad.BackColor = System.Drawing.Color.Black;
-            this.btbuscarelimciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btbuscarelimciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btbuscarelimciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btbuscarelimciudad.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarelimciudad.Image")));
-            this.btbuscarelimciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btbuscarelimciudad.Location = new System.Drawing.Point(351, 30);
-            this.btbuscarelimciudad.Name = "btbuscarelimciudad";
-            this.btbuscarelimciudad.Size = new System.Drawing.Size(115, 31);
-            this.btbuscarelimciudad.TabIndex = 7;
-            this.btbuscarelimciudad.Text = "Buscar";
-            this.btbuscarelimciudad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btbuscarelimciudad.UseVisualStyleBackColor = false;
-            this.btbuscarelimciudad.Click += new System.EventHandler(this.btbuscarelimciudad_Click);
-            // 
-            // txtciudadeliminar
-            // 
-            this.txtciudadeliminar.Location = new System.Drawing.Point(159, 32);
-            this.txtciudadeliminar.Name = "txtciudadeliminar";
-            this.txtciudadeliminar.Size = new System.Drawing.Size(186, 26);
-            this.txtciudadeliminar.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(16, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Nombre Ciudad:";
             // 
             // gbmodificaciudad
             // 
+            this.gbmodificaciudad.Controls.Add(this.txtnuevonombreciudad);
+            this.gbmodificaciudad.Controls.Add(this.label10);
             this.gbmodificaciudad.Controls.Add(this.btbuscarciudad);
             this.gbmodificaciudad.Controls.Add(this.label9);
             this.gbmodificaciudad.Controls.Add(this.label8);
@@ -249,11 +188,32 @@
             this.gbmodificaciudad.ForeColor = System.Drawing.Color.Gold;
             this.gbmodificaciudad.Location = new System.Drawing.Point(24, 25);
             this.gbmodificaciudad.Name = "gbmodificaciudad";
-            this.gbmodificaciudad.Size = new System.Drawing.Size(507, 301);
+            this.gbmodificaciudad.Size = new System.Drawing.Size(507, 357);
             this.gbmodificaciudad.TabIndex = 10;
             this.gbmodificaciudad.TabStop = false;
             this.gbmodificaciudad.Text = "Modificar Ciudad";
             this.gbmodificaciudad.Visible = false;
+            // 
+            // txtnuevonombreciudad
+            // 
+            this.txtnuevonombreciudad.Location = new System.Drawing.Point(214, 84);
+            this.txtnuevonombreciudad.MaxLength = 30;
+            this.txtnuevonombreciudad.Name = "txtnuevonombreciudad";
+            this.txtnuevonombreciudad.Size = new System.Drawing.Size(208, 26);
+            this.txtnuevonombreciudad.TabIndex = 12;
+            this.txtnuevonombreciudad.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(16, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(192, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Nuevo Nombre Ciudad:";
+            this.label10.Visible = false;
             // 
             // btbuscarciudad
             // 
@@ -276,7 +236,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Silver;
-            this.label9.Location = new System.Drawing.Point(233, 244);
+            this.label9.Location = new System.Drawing.Point(249, 273);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 20);
             this.label9.TabIndex = 9;
@@ -287,7 +247,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(155, 244);
+            this.label8.Location = new System.Drawing.Point(165, 273);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 20);
             this.label8.TabIndex = 8;
@@ -301,7 +261,7 @@
             this.btmodificarciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btmodificarciudad.Image = ((System.Drawing.Image)(resources.GetObject("btmodificarciudad.Image")));
             this.btmodificarciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btmodificarciudad.Location = new System.Drawing.Point(335, 258);
+            this.btmodificarciudad.Location = new System.Drawing.Point(346, 304);
             this.btmodificarciudad.Name = "btmodificarciudad";
             this.btmodificarciudad.Size = new System.Drawing.Size(131, 36);
             this.btmodificarciudad.TabIndex = 7;
@@ -314,7 +274,7 @@
             // txtdescripcionciudadmodifica
             // 
             this.txtdescripcionciudadmodifica.Enabled = false;
-            this.txtdescripcionciudadmodifica.Location = new System.Drawing.Point(159, 90);
+            this.txtdescripcionciudadmodifica.Location = new System.Drawing.Point(159, 121);
             this.txtdescripcionciudadmodifica.MaxLength = 150;
             this.txtdescripcionciudadmodifica.Multiline = true;
             this.txtdescripcionciudadmodifica.Name = "txtdescripcionciudadmodifica";
@@ -335,7 +295,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(16, 90);
+            this.label7.Location = new System.Drawing.Point(16, 124);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 20);
             this.label7.TabIndex = 2;
@@ -450,6 +410,93 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre Ciudad:";
             // 
+            // gbeliminaciudad
+            // 
+            this.gbeliminaciudad.Controls.Add(this.beliminarciudad);
+            this.gbeliminaciudad.Controls.Add(this.grilla);
+            this.gbeliminaciudad.Controls.Add(this.btbuscarelimciudad);
+            this.gbeliminaciudad.Controls.Add(this.txtciudadeliminar);
+            this.gbeliminaciudad.Controls.Add(this.label5);
+            this.gbeliminaciudad.ForeColor = System.Drawing.Color.Gold;
+            this.gbeliminaciudad.Location = new System.Drawing.Point(24, 37);
+            this.gbeliminaciudad.Name = "gbeliminaciudad";
+            this.gbeliminaciudad.Size = new System.Drawing.Size(483, 306);
+            this.gbeliminaciudad.TabIndex = 7;
+            this.gbeliminaciudad.TabStop = false;
+            this.gbeliminaciudad.Text = "Eliminar Ciudad";
+            this.gbeliminaciudad.Visible = false;
+            // 
+            // beliminarciudad
+            // 
+            this.beliminarciudad.BackColor = System.Drawing.Color.Black;
+            this.beliminarciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.beliminarciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.beliminarciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.beliminarciudad.Image = ((System.Drawing.Image)(resources.GetObject("beliminarciudad.Image")));
+            this.beliminarciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.beliminarciudad.Location = new System.Drawing.Point(317, 227);
+            this.beliminarciudad.Name = "beliminarciudad";
+            this.beliminarciudad.Size = new System.Drawing.Size(115, 31);
+            this.beliminarciudad.TabIndex = 9;
+            this.beliminarciudad.Text = "Eliminar";
+            this.beliminarciudad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.beliminarciudad.UseVisualStyleBackColor = false;
+            this.beliminarciudad.Click += new System.EventHandler(this.beliminarciudad_Click);
+            // 
+            // grilla
+            // 
+            this.grilla.AllowUserToAddRows = false;
+            this.grilla.AllowUserToDeleteRows = false;
+            this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.grilla.Location = new System.Drawing.Point(20, 64);
+            this.grilla.Name = "grilla";
+            this.grilla.Size = new System.Drawing.Size(446, 150);
+            this.grilla.TabIndex = 8;
+            // 
+            // Column1
+            // 
+            this.Column1.FalseValue = "false";
+            this.Column1.HeaderText = "Seleccione";
+            this.Column1.Name = "Column1";
+            this.Column1.TrueValue = "true";
+            // 
+            // btbuscarelimciudad
+            // 
+            this.btbuscarelimciudad.BackColor = System.Drawing.Color.Black;
+            this.btbuscarelimciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbuscarelimciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btbuscarelimciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btbuscarelimciudad.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarelimciudad.Image")));
+            this.btbuscarelimciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btbuscarelimciudad.Location = new System.Drawing.Point(351, 30);
+            this.btbuscarelimciudad.Name = "btbuscarelimciudad";
+            this.btbuscarelimciudad.Size = new System.Drawing.Size(115, 31);
+            this.btbuscarelimciudad.TabIndex = 7;
+            this.btbuscarelimciudad.Text = "Buscar";
+            this.btbuscarelimciudad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btbuscarelimciudad.UseVisualStyleBackColor = false;
+            this.btbuscarelimciudad.Click += new System.EventHandler(this.btbuscarelimciudad_Click);
+            // 
+            // txtciudadeliminar
+            // 
+            this.txtciudadeliminar.Location = new System.Drawing.Point(159, 32);
+            this.txtciudadeliminar.Name = "txtciudadeliminar";
+            this.txtciudadeliminar.Size = new System.Drawing.Size(186, 26);
+            this.txtciudadeliminar.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(16, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nombre Ciudad:";
+            // 
             // Mantenedor_Ciudad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,13 +510,13 @@
             this.Text = "Mantenedor_Ciudad";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.gbeliminaciudad.ResumeLayout(false);
-            this.gbeliminaciudad.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grilla)).EndInit();
             this.gbmodificaciudad.ResumeLayout(false);
             this.gbmodificaciudad.PerformLayout();
             this.gbagregaciudad.ResumeLayout(false);
             this.gbagregaciudad.PerformLayout();
+            this.gbeliminaciudad.ResumeLayout(false);
+            this.gbeliminaciudad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grilla)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,5 +553,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
         private System.Windows.Forms.Button btbuscarciudad;
         private System.Windows.Forms.Button btvolvermenu;
+        private System.Windows.Forms.TextBox txtnuevonombreciudad;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btvolvermenuprincipalvendedor;
     }
 }

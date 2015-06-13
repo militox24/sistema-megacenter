@@ -16,14 +16,24 @@ namespace sistema_megacenter
         string apellidousuario;
         string urlimagen;
         string rutusuario;
+        string usuariologueado;
         Gestión_Ciudad gestion = new Gestión_Ciudad();
-        public Mantenedor_Ciudad(string nombre, string apellido,string rut,string ruta_foto)
+        public Mantenedor_Ciudad(string nombre, string apellido,string ruta_foto,string rut,string usuario)
         {
             InitializeComponent();
             nombreusuario = nombre;
             apellidousuario = apellido;
             rutusuario = rut;
             urlimagen = ruta_foto;
+            usuariologueado = usuario;
+            if (usuariologueado == "Administrador")
+            {
+                btvolvermenu.Visible = true;
+            }
+            else
+            {
+                btvolvermenuprincipalvendedor.Visible = true;
+            }
         }
         private void inicializarCheckbox()
         {
@@ -132,12 +142,21 @@ namespace sistema_megacenter
             }
             else
             {
-                grilla.DataSource = gestion.Buscar_Ciudad(txtciudadeliminar.Text);
-                grilla.DataMember = "Ciudad";
-                grilla.Columns["Nombre_Ciudad"].SortMode = DataGridViewColumnSortMode.NotSortable;
-                grilla.Columns["Descripción"].SortMode = DataGridViewColumnSortMode.NotSortable;
-                grilla.Columns["Nombre_Ciudad"].Width = 150;
-                grilla.Columns["Descripción"].Width = 200;
+                DataSet ds = gestion.Buscar_Ciudad(txtciudadeliminar.Text);
+                if (ds.Tables["Ciudad"].Rows.Count > 0)
+                {
+                    grilla.DataSource = gestion.Buscar_Ciudad(txtciudadeliminar.Text);
+                    grilla.DataMember = "Ciudad";
+                    grilla.Columns["Nombre_Ciudad"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    grilla.Columns["Descripción"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    grilla.Columns["Nombre_Ciudad"].Width = 150;
+                    grilla.Columns["Descripción"].Width = 200;
+                }
+                else
+                {
+                    MessageBox.Show("No existe una ciudad con ese nombre registrado en el sistema","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+               
             }
         }
 
@@ -175,19 +194,30 @@ namespace sistema_megacenter
 
         private void btmodificarciudad_Click(object sender, EventArgs e)
         {
-            if (txtciudadmodifica.Text == "" || txtdescripcionciudadmodifica.Text == "")
+            if (txtciudadmodifica.Text == "" || txtdescripcionciudadmodifica.Text == ""||txtnuevonombreciudad.Text=="")
             {
                 MessageBox.Show("Debes Ingresar todos los campos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                    gestion.modificadatosciudad(txtciudadmodifica.Text,txtdescripcionciudadmodifica.Text);
+                DataSet ds=gestion.Buscar_Ciudad(txtnuevonombreciudad.Text);
+                if (ds.Tables["Ciudad"].Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe una ciudad registrada en el sistema con ese nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    gestion.modificadatosciudad(txtciudadmodifica.Text, txtdescripcionciudadmodifica.Text, txtnuevonombreciudad.Text);
                     MessageBox.Show("Modificación realizada con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtciudadmodifica.Clear();
                     txtdescripcionciudadmodifica.Clear();
                     txtdescripcionciudadmodifica.Enabled = false;
+                    txtnuevonombreciudad.Visible = false;
+                    label10.Visible = false;
+
                     txtciudadmodifica.Enabled = true;
                     btmodificarciudad.Visible = false;
+                }
             }
         }
 
@@ -204,6 +234,9 @@ namespace sistema_megacenter
                 {
                     txtdescripcionciudadmodifica.Enabled = true;
                     btmodificarciudad.Visible = true;
+                    label10.Visible = true;
+                    txtciudadmodifica.Enabled = false;
+                    txtnuevonombreciudad.Visible = true;
                     txtdescripcionciudadmodifica.Text = ds1.Tables["Ciudad"].Rows[0][1].ToString();
                     txtciudadmodifica.Enabled = false;
                 }
@@ -217,7 +250,14 @@ namespace sistema_megacenter
 
         private void btvolvermenu_Click(object sender, EventArgs e)
         {
-            Menu_Principal menu = new Menu_Principal(nombreusuario, apellidousuario, urlimagen, rutusuario);
+            Menu_Principal menu = new Menu_Principal(nombreusuario, apellidousuario, urlimagen, rutusuario,usuariologueado);
+            this.Hide();
+            menu.Show();
+        }
+
+        private void btvolvermenuprincipalvendedor_Click(object sender, EventArgs e)
+        {
+            Menu_Vendedor menu = new Menu_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario,usuariologueado);
             this.Hide();
             menu.Show();
         }

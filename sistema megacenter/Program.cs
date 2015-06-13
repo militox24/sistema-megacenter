@@ -15,7 +15,7 @@ namespace sistema_megacenter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Mantenedor_Proveedor());
+            Application.Run(new Interfaz_Inicial());
         }
     }
 }

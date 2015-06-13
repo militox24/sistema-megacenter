@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GrillaHistorial = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaHistorial)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +58,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.GrillaHistorial);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Gold;
             this.groupBox1.Location = new System.Drawing.Point(12, 67);
@@ -68,13 +68,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mis Multas";
             // 
-            // dataGridView1
+            // GrillaHistorial
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(494, 251);
-            this.dataGridView1.TabIndex = 0;
+            this.GrillaHistorial.AllowUserToAddRows = false;
+            this.GrillaHistorial.AllowUserToDeleteRows = false;
+            this.GrillaHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaHistorial.Location = new System.Drawing.Point(6, 35);
+            this.GrillaHistorial.Name = "GrillaHistorial";
+            this.GrillaHistorial.Size = new System.Drawing.Size(494, 251);
+            this.GrillaHistorial.TabIndex = 0;
             // 
             // Mantenedor_Historial_Multas
             // 
@@ -88,7 +90,7 @@
             this.Name = "Mantenedor_Historial_Multas";
             this.Text = "Mantenedor_Historial_Multas";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaHistorial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,6 +101,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GrillaHistorial;
     }
 }

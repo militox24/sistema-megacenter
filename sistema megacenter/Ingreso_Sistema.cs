@@ -63,7 +63,7 @@ namespace sistema_megacenter
                         apellidos = ds.Tables["" + usuariologueado + ""].Rows[0][2].ToString();
                         url = ds.Tables["" + usuariologueado + ""].Rows[0][11].ToString();
                         this.Hide();
-                        Menu_Principal menu = new Menu_Principal(nombres, apellidos, url, txtrutingreso.Text);
+                        Menu_Principal menu = new Menu_Principal(nombres, apellidos, url, txtrutingreso.Text,usuariologueado);
                         menu.Show();
                     }
                     else
@@ -78,9 +78,9 @@ namespace sistema_megacenter
                     {
                         nombres = ds1.Tables["" + usuariologueado + ""].Rows[0][1].ToString();
                         apellidos = ds1.Tables["" + usuariologueado + ""].Rows[0][2].ToString();
-                        url = ds1.Tables["" + usuariologueado + ""].Rows[0][14].ToString();
+                        url = ds1.Tables["" + usuariologueado + ""].Rows[0][13].ToString();
                         this.Hide();
-                        Menu_Vendedor menu2 = new Menu_Vendedor(nombres, apellidos, url);
+                        Menu_Vendedor menu2 = new Menu_Vendedor(nombres, apellidos, url,txtrutingreso.Text,usuariologueado);
                         menu2.Show();
                     }
                     else

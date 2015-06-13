@@ -80,12 +80,13 @@ namespace sistema_megacenter
             conn.desconectar();
             return ds;
         }
-        public void modificadatosciudad(string nombre,string descripcion)
+        public void modificadatosciudad(string nombre,string descripcion,string nuevonombre)
         {
             conn.conectar();
             SqlDataAdapter da = new SqlDataAdapter();
-            da.UpdateCommand = new SqlCommand("UPDATE Ciudad SET Descripción=@descripcion where Nombre_Ciudad=@nombre", conn.conector);
+            da.UpdateCommand = new SqlCommand("UPDATE Ciudad SET Descripción=@descripcion,Nombre_Ciudad=@nuevo where Nombre_Ciudad=@nombre", conn.conector);
             da.UpdateCommand.Parameters.AddWithValue("@nombre", nombre);
+            da.UpdateCommand.Parameters.AddWithValue("@nuevo", nuevonombre);
             da.UpdateCommand.Parameters.AddWithValue("@descripcion", descripcion);
             da.UpdateCommand.ExecuteNonQuery();
             conn.desconectar();

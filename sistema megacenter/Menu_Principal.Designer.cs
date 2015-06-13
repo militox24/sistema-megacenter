@@ -35,6 +35,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btciudad = new System.Windows.Forms.Button();
             this.btcategoria = new System.Windows.Forms.Button();
+            this.btperfil = new System.Windows.Forms.Button();
+            this.btproveedor = new System.Windows.Forms.Button();
+            this.btgiro = new System.Windows.Forms.Button();
+            this.btcliente = new System.Windows.Forms.Button();
+            this.btmulta = new System.Windows.Forms.Button();
+            this.btproducto = new System.Windows.Forms.Button();
+            this.btvendedor = new System.Windows.Forms.Button();
+            this.btventa = new System.Windows.Forms.Button();
+            this.btcompra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoinicioadministrador)).BeginInit();
             this.SuspendLayout();
@@ -118,12 +127,201 @@
             this.btcategoria.UseVisualStyleBackColor = false;
             this.btcategoria.Click += new System.EventHandler(this.btcategoria_Click);
             // 
+            // btperfil
+            // 
+            this.btperfil.BackColor = System.Drawing.Color.Transparent;
+            this.btperfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btperfil.FlatAppearance.BorderSize = 0;
+            this.btperfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btperfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btperfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btperfil.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btperfil.ForeColor = System.Drawing.Color.White;
+            this.btperfil.Image = ((System.Drawing.Image)(resources.GetObject("btperfil.Image")));
+            this.btperfil.Location = new System.Drawing.Point(230, 158);
+            this.btperfil.Name = "btperfil";
+            this.btperfil.Size = new System.Drawing.Size(126, 131);
+            this.btperfil.TabIndex = 13;
+            this.btperfil.Text = "\r\n\rPERFIL";
+            this.btperfil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btperfil.UseVisualStyleBackColor = false;
+            this.btperfil.Click += new System.EventHandler(this.btperfil_Click);
+            // 
+            // btproveedor
+            // 
+            this.btproveedor.BackColor = System.Drawing.Color.Transparent;
+            this.btproveedor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btproveedor.FlatAppearance.BorderSize = 0;
+            this.btproveedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btproveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btproveedor.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btproveedor.ForeColor = System.Drawing.Color.White;
+            this.btproveedor.Image = ((System.Drawing.Image)(resources.GetObject("btproveedor.Image")));
+            this.btproveedor.Location = new System.Drawing.Point(230, 317);
+            this.btproveedor.Name = "btproveedor";
+            this.btproveedor.Size = new System.Drawing.Size(126, 131);
+            this.btproveedor.TabIndex = 14;
+            this.btproveedor.Text = "\rPROVEEDOR";
+            this.btproveedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btproveedor.UseVisualStyleBackColor = false;
+            this.btproveedor.Click += new System.EventHandler(this.btproveedor_Click);
+            // 
+            // btgiro
+            // 
+            this.btgiro.BackColor = System.Drawing.Color.Transparent;
+            this.btgiro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btgiro.FlatAppearance.BorderSize = 0;
+            this.btgiro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btgiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btgiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btgiro.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btgiro.ForeColor = System.Drawing.Color.White;
+            this.btgiro.Image = ((System.Drawing.Image)(resources.GetObject("btgiro.Image")));
+            this.btgiro.Location = new System.Drawing.Point(389, 158);
+            this.btgiro.Name = "btgiro";
+            this.btgiro.Size = new System.Drawing.Size(126, 131);
+            this.btgiro.TabIndex = 15;
+            this.btgiro.Text = "\r\nGIRO";
+            this.btgiro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btgiro.UseVisualStyleBackColor = false;
+            this.btgiro.Click += new System.EventHandler(this.btgiro_Click);
+            // 
+            // btcliente
+            // 
+            this.btcliente.BackColor = System.Drawing.Color.Transparent;
+            this.btcliente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btcliente.FlatAppearance.BorderSize = 0;
+            this.btcliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btcliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btcliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcliente.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btcliente.ForeColor = System.Drawing.Color.White;
+            this.btcliente.Image = ((System.Drawing.Image)(resources.GetObject("btcliente.Image")));
+            this.btcliente.Location = new System.Drawing.Point(389, 317);
+            this.btcliente.Name = "btcliente";
+            this.btcliente.Size = new System.Drawing.Size(126, 131);
+            this.btcliente.TabIndex = 16;
+            this.btcliente.Text = "CLIENTE";
+            this.btcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btcliente.UseVisualStyleBackColor = false;
+            this.btcliente.Click += new System.EventHandler(this.btcliente_Click);
+            // 
+            // btmulta
+            // 
+            this.btmulta.BackColor = System.Drawing.Color.Transparent;
+            this.btmulta.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btmulta.FlatAppearance.BorderSize = 0;
+            this.btmulta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btmulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btmulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmulta.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btmulta.ForeColor = System.Drawing.Color.White;
+            this.btmulta.Image = ((System.Drawing.Image)(resources.GetObject("btmulta.Image")));
+            this.btmulta.Location = new System.Drawing.Point(539, 158);
+            this.btmulta.Name = "btmulta";
+            this.btmulta.Size = new System.Drawing.Size(126, 131);
+            this.btmulta.TabIndex = 17;
+            this.btmulta.Text = "\rMULTA";
+            this.btmulta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btmulta.UseVisualStyleBackColor = false;
+            this.btmulta.Click += new System.EventHandler(this.btmulta_Click);
+            // 
+            // btproducto
+            // 
+            this.btproducto.BackColor = System.Drawing.Color.Transparent;
+            this.btproducto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btproducto.FlatAppearance.BorderSize = 0;
+            this.btproducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btproducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btproducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btproducto.ForeColor = System.Drawing.Color.White;
+            this.btproducto.Image = ((System.Drawing.Image)(resources.GetObject("btproducto.Image")));
+            this.btproducto.Location = new System.Drawing.Point(539, 317);
+            this.btproducto.Name = "btproducto";
+            this.btproducto.Size = new System.Drawing.Size(126, 131);
+            this.btproducto.TabIndex = 18;
+            this.btproducto.Text = "\rPRODUCTO";
+            this.btproducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btproducto.UseVisualStyleBackColor = false;
+            this.btproducto.Click += new System.EventHandler(this.btproducto_Click);
+            // 
+            // btvendedor
+            // 
+            this.btvendedor.BackColor = System.Drawing.Color.Transparent;
+            this.btvendedor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btvendedor.FlatAppearance.BorderSize = 0;
+            this.btvendedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btvendedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btvendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvendedor.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btvendedor.ForeColor = System.Drawing.Color.White;
+            this.btvendedor.Image = ((System.Drawing.Image)(resources.GetObject("btvendedor.Image")));
+            this.btvendedor.Location = new System.Drawing.Point(683, 158);
+            this.btvendedor.Name = "btvendedor";
+            this.btvendedor.Size = new System.Drawing.Size(126, 131);
+            this.btvendedor.TabIndex = 19;
+            this.btvendedor.Text = "VENDEDOR";
+            this.btvendedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btvendedor.UseVisualStyleBackColor = false;
+            this.btvendedor.Click += new System.EventHandler(this.btvendedor_Click);
+            // 
+            // btventa
+            // 
+            this.btventa.BackColor = System.Drawing.Color.Transparent;
+            this.btventa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btventa.FlatAppearance.BorderSize = 0;
+            this.btventa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btventa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btventa.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btventa.ForeColor = System.Drawing.Color.White;
+            this.btventa.Image = ((System.Drawing.Image)(resources.GetObject("btventa.Image")));
+            this.btventa.Location = new System.Drawing.Point(683, 317);
+            this.btventa.Name = "btventa";
+            this.btventa.Size = new System.Drawing.Size(126, 131);
+            this.btventa.TabIndex = 20;
+            this.btventa.Text = "VENTA";
+            this.btventa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btventa.UseVisualStyleBackColor = false;
+            this.btventa.Click += new System.EventHandler(this.btventa_Click);
+            // 
+            // btcompra
+            // 
+            this.btcompra.BackColor = System.Drawing.Color.Transparent;
+            this.btcompra.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btcompra.FlatAppearance.BorderSize = 0;
+            this.btcompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btcompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btcompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcompra.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btcompra.ForeColor = System.Drawing.Color.White;
+            this.btcompra.Image = ((System.Drawing.Image)(resources.GetObject("btcompra.Image")));
+            this.btcompra.Location = new System.Drawing.Point(843, 158);
+            this.btcompra.Name = "btcompra";
+            this.btcompra.Size = new System.Drawing.Size(126, 131);
+            this.btcompra.TabIndex = 21;
+            this.btcompra.Text = "COMPRA";
+            this.btcompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btcompra.UseVisualStyleBackColor = false;
+            this.btcompra.Click += new System.EventHandler(this.btcompra_Click);
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(1230, 559);
+            this.Controls.Add(this.btcompra);
+            this.Controls.Add(this.btventa);
+            this.Controls.Add(this.btvendedor);
+            this.Controls.Add(this.btproducto);
+            this.Controls.Add(this.btmulta);
+            this.Controls.Add(this.btcliente);
+            this.Controls.Add(this.btgiro);
+            this.Controls.Add(this.btproveedor);
+            this.Controls.Add(this.btperfil);
             this.Controls.Add(this.btcategoria);
             this.Controls.Add(this.btciudad);
             this.Controls.Add(this.label1);
@@ -147,5 +345,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btciudad;
         private System.Windows.Forms.Button btcategoria;
+        private System.Windows.Forms.Button btperfil;
+        private System.Windows.Forms.Button btproveedor;
+        private System.Windows.Forms.Button btgiro;
+        private System.Windows.Forms.Button btcliente;
+        private System.Windows.Forms.Button btmulta;
+        private System.Windows.Forms.Button btproducto;
+        private System.Windows.Forms.Button btvendedor;
+        private System.Windows.Forms.Button btventa;
+        private System.Windows.Forms.Button btcompra;
     }
 }

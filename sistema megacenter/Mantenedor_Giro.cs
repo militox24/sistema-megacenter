@@ -12,10 +12,16 @@ namespace sistema_megacenter
     public partial class Mantenedor_Giro : Form
     {
         Gestion_Giro gestion = new Gestion_Giro();
-        public Mantenedor_Giro()
+        string nombreusuario, apellidousuario, rutusuario, urlimagen,usuariologueado;
+        public Mantenedor_Giro(string nombre,string apellido,string rut,string url,string usuario)
         {
             InitializeComponent();
             label4.Text = "0";
+            nombreusuario = nombre;
+            apellidousuario = apellido;
+            rutusuario = rut;
+            usuariologueado = usuario;
+            urlimagen = url;
         }
         private void inicializarCheckbox()
         {
@@ -48,7 +54,7 @@ namespace sistema_megacenter
             inicializarCheckbox();
 
         }
-        private void omiitirCaracteres(object sender, KeyPressEventArgs e)
+        private void Omitir_Caracteres(object sender, KeyPressEventArgs e)
         {
             string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú, " + (char)8;
 
@@ -65,12 +71,12 @@ namespace sistema_megacenter
 
         private void txtgiroagrega_KeyPress(object sender, KeyPressEventArgs e)
         {
-            omiitirCaracteres(sender,e);
+            Omitir_Caracteres(sender,e);
         }
 
         private void txtdescripciongiro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            omiitirCaracteres(sender,e);
+            Omitir_Caracteres(sender,e);
         }
 
         private void btagregargiro_Click(object sender, EventArgs e)
@@ -152,6 +158,13 @@ namespace sistema_megacenter
             grillagiros.Columns["Nombre_Giro"].Width = 130;
             grillagiros.Columns["Descripcion"].Width = 250;
             
+        }
+
+        private void btvolvermenuprincipal2_Click(object sender, EventArgs e)
+        {
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            this.Hide();
+            principal.Show();
         }
     }
 }

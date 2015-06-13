@@ -34,6 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,9 +50,16 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="Gestion_Categoria.cs" />
+    <Compile Include="Gestion_Cliente.cs" />
+    <Compile Include="Gestion_Compra.cs" />
     <Compile Include="Gestion_Giro.cs" />
     <Compile Include="Gestion_Ingreso.cs" />
+    <Compile Include="Gestion_Multa.cs" />
+    <Compile Include="Gestion_perfil.cs" />
+    <Compile Include="Gestion_Producto.cs" />
     <Compile Include="Gestion_Proveedor.cs" />
+    <Compile Include="Gestion_Vendedor.cs" />
+    <Compile Include="Gestion_venta.cs" />
     <Compile Include="Gestión_Ciudad.cs" />
     <Compile Include="Interfaz_Inicial.cs">
       <SubType>Form</SubType>
@@ -82,6 +91,30 @@
     <Compile Include="Mantenedor_Ciudad.Designer.cs">
       <DependentUpon>Mantenedor_Ciudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenedor_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Cliente.Designer.cs">
+      <DependentUpon>Mantenedor_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Cliente_Vendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Cliente_Vendedor.Designer.cs">
+      <DependentUpon>Mantenedor_Cliente_Vendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Compra.Designer.cs">
+      <DependentUpon>Mantenedor_Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_correo.Designer.cs">
+      <DependentUpon>Mantenedor_correo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenedor_Envio_Correo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,17 +133,53 @@
     <Compile Include="Mantenedor_Historial_Multas.Designer.cs">
       <DependentUpon>Mantenedor_Historial_Multas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenedor_Multa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Multa.Designer.cs">
+      <DependentUpon>Mantenedor_Multa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Perfil.Designer.cs">
+      <DependentUpon>Mantenedor_Perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Perfil_Vendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Perfil_Vendedor.Designer.cs">
+      <DependentUpon>Mantenedor_Perfil_Vendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenedor_Pregunta_Secreta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenedor_Pregunta_Secreta.Designer.cs">
       <DependentUpon>Mantenedor_Pregunta_Secreta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenedor_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Producto.Designer.cs">
+      <DependentUpon>Mantenedor_Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenedor_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenedor_Proveedor.Designer.cs">
       <DependentUpon>Mantenedor_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Vendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Vendedor.Designer.cs">
+      <DependentUpon>Mantenedor_Vendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Venta.Designer.cs">
+      <DependentUpon>Mantenedor_Venta.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu_Principal.cs">
       <SubType>Form</SubType>
@@ -154,6 +223,18 @@
     <EmbeddedResource Include="Mantenedor_Ciudad.resx">
       <DependentUpon>Mantenedor_Ciudad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Cliente.resx">
+      <DependentUpon>Mantenedor_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Cliente_Vendedor.resx">
+      <DependentUpon>Mantenedor_Cliente_Vendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Compra.resx">
+      <DependentUpon>Mantenedor_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_correo.resx">
+      <DependentUpon>Mantenedor_correo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Envio_Correo.resx">
       <DependentUpon>Mantenedor_Envio_Correo.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,11 +244,29 @@
     <EmbeddedResource Include="Mantenedor_Historial_Multas.resx">
       <DependentUpon>Mantenedor_Historial_Multas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Multa.resx">
+      <DependentUpon>Mantenedor_Multa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Perfil.resx">
+      <DependentUpon>Mantenedor_Perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Perfil_Vendedor.resx">
+      <DependentUpon>Mantenedor_Perfil_Vendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Pregunta_Secreta.resx">
       <DependentUpon>Mantenedor_Pregunta_Secreta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Producto.resx">
+      <DependentUpon>Mantenedor_Producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Proveedor.resx">
       <DependentUpon>Mantenedor_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Vendedor.resx">
+      <DependentUpon>Mantenedor_Vendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Venta.resx">
+      <DependentUpon>Mantenedor_Venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Principal.resx">
       <DependentUpon>Menu_Principal.cs</DependentUpon>

@@ -64,6 +64,7 @@
             // 
             this.txtnuevaclave.Location = new System.Drawing.Point(154, 48);
             this.txtnuevaclave.Name = "txtnuevaclave";
+            this.txtnuevaclave.PasswordChar = '*';
             this.txtnuevaclave.Size = new System.Drawing.Size(203, 20);
             this.txtnuevaclave.TabIndex = 4;
             this.txtnuevaclave.TextChanged += new System.EventHandler(this.txtnuevaclave_TextChanged);
@@ -72,6 +73,7 @@
             // 
             this.txtrepetirclave.Location = new System.Drawing.Point(163, 102);
             this.txtrepetirclave.Name = "txtrepetirclave";
+            this.txtrepetirclave.PasswordChar = '*';
             this.txtrepetirclave.Size = new System.Drawing.Size(194, 20);
             this.txtrepetirclave.TabIndex = 5;
             // 

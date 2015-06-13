@@ -34,7 +34,16 @@
             this.btcargaelimproveedor = new System.Windows.Forms.Button();
             this.btcargaagregaproveedor = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gbeliminaproveedor = new System.Windows.Forms.GroupBox();
+            this.beliminarproveedor = new System.Windows.Forms.Button();
+            this.grillaeliminarproveedor = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btbuscarproveedoreliminar = new System.Windows.Forms.Button();
+            this.txtrutproveedoreliminar = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.gbagregaciudadproveedor = new System.Windows.Forms.GroupBox();
+            this.btvolverproveedormodifica = new System.Windows.Forms.Button();
+            this.btvolver2 = new System.Windows.Forms.Button();
             this.btagregarciudadproveedor = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -43,6 +52,8 @@
             this.txtnombreciudadproveedor = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.gbagregagiroproveedor = new System.Windows.Forms.GroupBox();
+            this.btvolverproveedormodifica2 = new System.Windows.Forms.Button();
+            this.Btvolver = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.btagregargiroproveedor = new System.Windows.Forms.Button();
@@ -77,21 +88,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.gbmodificaproveedor = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.btbuscarelimciudad = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txttelefonoproveedormodifica = new System.Windows.Forms.TextBox();
+            this.btcancelarmodificarproveedor = new System.Windows.Forms.Button();
+            this.btmodificarproveedor = new System.Windows.Forms.Button();
+            this.btexaminarproveedormodifica = new System.Windows.Forms.Button();
+            this.txturlproveedormodifica = new System.Windows.Forms.TextBox();
+            this.txtemailproveedormodifica = new System.Windows.Forms.TextBox();
+            this.cbgiroproveedormodifica = new System.Windows.Forms.ComboBox();
+            this.btciudadproveedormodifica = new System.Windows.Forms.Button();
+            this.btgiroproveedormodifica = new System.Windows.Forms.Button();
+            this.cbciudadproveedormodifica = new System.Windows.Forms.ComboBox();
+            this.txtdireccionproveedormodifica = new System.Windows.Forms.TextBox();
+            this.txtdescripcionproveedormodifica = new System.Windows.Forms.TextBox();
+            this.txtnombreproveedormodifica = new System.Windows.Forms.TextBox();
+            this.btbuscarproveedormodifica = new System.Windows.Forms.Button();
+            this.txtrutmodificaproveedor = new System.Windows.Forms.TextBox();
+            this.fotoproveedormodifica = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -101,24 +113,17 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.gbeliminaproveedor = new System.Windows.Forms.GroupBox();
-            this.beliminarciudad = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btbuscarciudad = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Btvolver = new System.Windows.Forms.Button();
-            this.btvolver2 = new System.Windows.Forms.Button();
+            this.btvolvermenuprincipal1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.gbeliminaproveedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaeliminarproveedor)).BeginInit();
             this.gbagregaciudadproveedor.SuspendLayout();
             this.gbagregagiroproveedor.SuspendLayout();
             this.gbagregaproveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fotoproveedoragrega)).BeginInit();
             this.gbmodificaproveedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.gbeliminaproveedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoproveedormodifica)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -174,18 +179,107 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.gbagregaproveedor);
             this.panel2.Controls.Add(this.gbmodificaproveedor);
             this.panel2.Controls.Add(this.gbeliminaproveedor);
             this.panel2.Controls.Add(this.gbagregaciudadproveedor);
             this.panel2.Controls.Add(this.gbagregagiroproveedor);
+            this.panel2.Controls.Add(this.gbagregaproveedor);
             this.panel2.Location = new System.Drawing.Point(218, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(591, 512);
             this.panel2.TabIndex = 1;
             // 
+            // gbeliminaproveedor
+            // 
+            this.gbeliminaproveedor.Controls.Add(this.beliminarproveedor);
+            this.gbeliminaproveedor.Controls.Add(this.grillaeliminarproveedor);
+            this.gbeliminaproveedor.Controls.Add(this.btbuscarproveedoreliminar);
+            this.gbeliminaproveedor.Controls.Add(this.txtrutproveedoreliminar);
+            this.gbeliminaproveedor.Controls.Add(this.label11);
+            this.gbeliminaproveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbeliminaproveedor.ForeColor = System.Drawing.Color.Gold;
+            this.gbeliminaproveedor.Location = new System.Drawing.Point(3, 21);
+            this.gbeliminaproveedor.Name = "gbeliminaproveedor";
+            this.gbeliminaproveedor.Size = new System.Drawing.Size(564, 351);
+            this.gbeliminaproveedor.TabIndex = 85;
+            this.gbeliminaproveedor.TabStop = false;
+            this.gbeliminaproveedor.Text = "Eliminar Proveedor";
+            this.gbeliminaproveedor.Visible = false;
+            // 
+            // beliminarproveedor
+            // 
+            this.beliminarproveedor.BackColor = System.Drawing.Color.Black;
+            this.beliminarproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.beliminarproveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.beliminarproveedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.beliminarproveedor.Image = ((System.Drawing.Image)(resources.GetObject("beliminarproveedor.Image")));
+            this.beliminarproveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.beliminarproveedor.Location = new System.Drawing.Point(357, 258);
+            this.beliminarproveedor.Name = "beliminarproveedor";
+            this.beliminarproveedor.Size = new System.Drawing.Size(115, 31);
+            this.beliminarproveedor.TabIndex = 13;
+            this.beliminarproveedor.Text = "Eliminar";
+            this.beliminarproveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.beliminarproveedor.UseVisualStyleBackColor = false;
+            this.beliminarproveedor.Click += new System.EventHandler(this.beliminarproveedor_Click);
+            // 
+            // grillaeliminarproveedor
+            // 
+            this.grillaeliminarproveedor.AllowUserToAddRows = false;
+            this.grillaeliminarproveedor.AllowUserToDeleteRows = false;
+            this.grillaeliminarproveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaeliminarproveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.grillaeliminarproveedor.Location = new System.Drawing.Point(22, 74);
+            this.grillaeliminarproveedor.Name = "grillaeliminarproveedor";
+            this.grillaeliminarproveedor.Size = new System.Drawing.Size(510, 165);
+            this.grillaeliminarproveedor.TabIndex = 12;
+            // 
+            // Column1
+            // 
+            this.Column1.FalseValue = "false";
+            this.Column1.HeaderText = "Seleccione";
+            this.Column1.Name = "Column1";
+            this.Column1.TrueValue = "true";
+            // 
+            // btbuscarproveedoreliminar
+            // 
+            this.btbuscarproveedoreliminar.BackColor = System.Drawing.Color.Black;
+            this.btbuscarproveedoreliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbuscarproveedoreliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btbuscarproveedoreliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btbuscarproveedoreliminar.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarproveedoreliminar.Image")));
+            this.btbuscarproveedoreliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btbuscarproveedoreliminar.Location = new System.Drawing.Point(315, 32);
+            this.btbuscarproveedoreliminar.Name = "btbuscarproveedoreliminar";
+            this.btbuscarproveedoreliminar.Size = new System.Drawing.Size(115, 31);
+            this.btbuscarproveedoreliminar.TabIndex = 11;
+            this.btbuscarproveedoreliminar.Text = "Buscar";
+            this.btbuscarproveedoreliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btbuscarproveedoreliminar.UseVisualStyleBackColor = false;
+            this.btbuscarproveedoreliminar.Click += new System.EventHandler(this.btbuscarproveedoreliminar_Click);
+            // 
+            // txtrutproveedoreliminar
+            // 
+            this.txtrutproveedoreliminar.Location = new System.Drawing.Point(63, 34);
+            this.txtrutproveedoreliminar.Name = "txtrutproveedoreliminar";
+            this.txtrutproveedoreliminar.Size = new System.Drawing.Size(233, 26);
+            this.txtrutproveedoreliminar.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(18, 38);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Rut:";
+            // 
             // gbagregaciudadproveedor
             // 
+            this.gbagregaciudadproveedor.Controls.Add(this.btvolverproveedormodifica);
             this.gbagregaciudadproveedor.Controls.Add(this.btvolver2);
             this.gbagregaciudadproveedor.Controls.Add(this.btagregarciudadproveedor);
             this.gbagregaciudadproveedor.Controls.Add(this.label25);
@@ -203,6 +297,44 @@
             this.gbagregaciudadproveedor.TabStop = false;
             this.gbagregaciudadproveedor.Text = "Agregar Ciudad";
             this.gbagregaciudadproveedor.Visible = false;
+            // 
+            // btvolverproveedormodifica
+            // 
+            this.btvolverproveedormodifica.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolverproveedormodifica.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolverproveedormodifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolverproveedormodifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolverproveedormodifica.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolverproveedormodifica.Image = ((System.Drawing.Image)(resources.GetObject("btvolverproveedormodifica.Image")));
+            this.btvolverproveedormodifica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolverproveedormodifica.Location = new System.Drawing.Point(25, 223);
+            this.btvolverproveedormodifica.Name = "btvolverproveedormodifica";
+            this.btvolverproveedormodifica.Size = new System.Drawing.Size(223, 36);
+            this.btvolverproveedormodifica.TabIndex = 32;
+            this.btvolverproveedormodifica.Text = "Volver Menu Principal";
+            this.btvolverproveedormodifica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolverproveedormodifica.UseVisualStyleBackColor = false;
+            this.btvolverproveedormodifica.Visible = false;
+            this.btvolverproveedormodifica.Click += new System.EventHandler(this.btvolverproveedormodifica_Click);
+            // 
+            // btvolver2
+            // 
+            this.btvolver2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolver2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolver2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolver2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolver2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolver2.Image = ((System.Drawing.Image)(resources.GetObject("btvolver2.Image")));
+            this.btvolver2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolver2.Location = new System.Drawing.Point(24, 223);
+            this.btvolver2.Name = "btvolver2";
+            this.btvolver2.Size = new System.Drawing.Size(223, 36);
+            this.btvolver2.TabIndex = 31;
+            this.btvolver2.Text = "Volver Menu Principal";
+            this.btvolver2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolver2.UseVisualStyleBackColor = false;
+            this.btvolver2.Visible = false;
+            this.btvolver2.Click += new System.EventHandler(this.btvolver2_Click);
             // 
             // btagregarciudadproveedor
             // 
@@ -284,6 +416,7 @@
             // 
             // gbagregagiroproveedor
             // 
+            this.gbagregagiroproveedor.Controls.Add(this.btvolverproveedormodifica2);
             this.gbagregagiroproveedor.Controls.Add(this.Btvolver);
             this.gbagregagiroproveedor.Controls.Add(this.label21);
             this.gbagregagiroproveedor.Controls.Add(this.label22);
@@ -302,6 +435,44 @@
             this.gbagregagiroproveedor.Text = "Agregar Giro";
             this.gbagregagiroproveedor.Visible = false;
             // 
+            // btvolverproveedormodifica2
+            // 
+            this.btvolverproveedormodifica2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolverproveedormodifica2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolverproveedormodifica2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolverproveedormodifica2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolverproveedormodifica2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolverproveedormodifica2.Image = ((System.Drawing.Image)(resources.GetObject("btvolverproveedormodifica2.Image")));
+            this.btvolverproveedormodifica2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolverproveedormodifica2.Location = new System.Drawing.Point(35, 230);
+            this.btvolverproveedormodifica2.Name = "btvolverproveedormodifica2";
+            this.btvolverproveedormodifica2.Size = new System.Drawing.Size(223, 36);
+            this.btvolverproveedormodifica2.TabIndex = 31;
+            this.btvolverproveedormodifica2.Text = "Volver Menu Principal";
+            this.btvolverproveedormodifica2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolverproveedormodifica2.UseVisualStyleBackColor = false;
+            this.btvolverproveedormodifica2.Visible = false;
+            this.btvolverproveedormodifica2.Click += new System.EventHandler(this.btvolverproveedormodifica2_Click);
+            // 
+            // Btvolver
+            // 
+            this.Btvolver.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Btvolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Btvolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btvolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btvolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Btvolver.Image = ((System.Drawing.Image)(resources.GetObject("Btvolver.Image")));
+            this.Btvolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btvolver.Location = new System.Drawing.Point(35, 232);
+            this.Btvolver.Name = "Btvolver";
+            this.Btvolver.Size = new System.Drawing.Size(223, 36);
+            this.Btvolver.TabIndex = 30;
+            this.Btvolver.Text = "Volver Menu Principal";
+            this.Btvolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btvolver.UseVisualStyleBackColor = false;
+            this.Btvolver.Visible = false;
+            this.Btvolver.Click += new System.EventHandler(this.Btvolver_Click);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -312,6 +483,7 @@
             this.label21.Size = new System.Drawing.Size(45, 16);
             this.label21.TabIndex = 29;
             this.label21.Text = "Letras";
+            this.label21.Visible = false;
             // 
             // label22
             // 
@@ -349,6 +521,7 @@
             this.txtdescripciongiroproveedor.Name = "txtdescripciongiroproveedor";
             this.txtdescripciongiroproveedor.Size = new System.Drawing.Size(251, 100);
             this.txtdescripciongiroproveedor.TabIndex = 12;
+            this.txtdescripciongiroproveedor.TextChanged += new System.EventHandler(this.txtdescripciongiroproveedor_TextChanged);
             // 
             // txtgiroagregaproveedor
             // 
@@ -472,7 +645,7 @@
             // txturlproveedoragrega
             // 
             this.txturlproveedoragrega.Location = new System.Drawing.Point(115, 396);
-            this.txturlproveedoragrega.MaxLength = 50;
+            this.txturlproveedoragrega.MaxLength = 70;
             this.txturlproveedoragrega.Name = "txturlproveedoragrega";
             this.txturlproveedoragrega.Size = new System.Drawing.Size(255, 26);
             this.txturlproveedoragrega.TabIndex = 82;
@@ -695,21 +868,22 @@
             // 
             // gbmodificaproveedor
             // 
-            this.gbmodificaproveedor.Controls.Add(this.button7);
-            this.gbmodificaproveedor.Controls.Add(this.button6);
-            this.gbmodificaproveedor.Controls.Add(this.textBox13);
-            this.gbmodificaproveedor.Controls.Add(this.textBox12);
-            this.gbmodificaproveedor.Controls.Add(this.dateTimePicker2);
-            this.gbmodificaproveedor.Controls.Add(this.comboBox4);
-            this.gbmodificaproveedor.Controls.Add(this.button5);
-            this.gbmodificaproveedor.Controls.Add(this.button4);
-            this.gbmodificaproveedor.Controls.Add(this.comboBox3);
-            this.gbmodificaproveedor.Controls.Add(this.textBox11);
-            this.gbmodificaproveedor.Controls.Add(this.textBox10);
-            this.gbmodificaproveedor.Controls.Add(this.textBox9);
-            this.gbmodificaproveedor.Controls.Add(this.btbuscarelimciudad);
-            this.gbmodificaproveedor.Controls.Add(this.textBox8);
-            this.gbmodificaproveedor.Controls.Add(this.pictureBox2);
+            this.gbmodificaproveedor.Controls.Add(this.txttelefonoproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.btcancelarmodificarproveedor);
+            this.gbmodificaproveedor.Controls.Add(this.btmodificarproveedor);
+            this.gbmodificaproveedor.Controls.Add(this.btexaminarproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.txturlproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.txtemailproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.cbgiroproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.btciudadproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.btgiroproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.cbciudadproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.txtdireccionproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.txtdescripcionproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.txtnombreproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.btbuscarproveedormodifica);
+            this.gbmodificaproveedor.Controls.Add(this.txtrutmodificaproveedor);
+            this.gbmodificaproveedor.Controls.Add(this.fotoproveedormodifica);
             this.gbmodificaproveedor.Controls.Add(this.label20);
             this.gbmodificaproveedor.Controls.Add(this.label19);
             this.gbmodificaproveedor.Controls.Add(this.label18);
@@ -729,157 +903,208 @@
             this.gbmodificaproveedor.Text = "Modificar Proveedor";
             this.gbmodificaproveedor.Visible = false;
             // 
-            // button7
+            // txttelefonoproveedormodifica
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(392, 422);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(132, 36);
-            this.button7.TabIndex = 85;
-            this.button7.Text = "Modificar";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
+            this.txttelefonoproveedormodifica.Enabled = false;
+            this.txttelefonoproveedormodifica.Location = new System.Drawing.Point(87, 304);
+            this.txttelefonoproveedormodifica.MaxLength = 8;
+            this.txttelefonoproveedormodifica.Name = "txttelefonoproveedormodifica";
+            this.txttelefonoproveedormodifica.Size = new System.Drawing.Size(235, 26);
+            this.txttelefonoproveedormodifica.TabIndex = 87;
+            this.txttelefonoproveedormodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefonoproveedormodifica_KeyPress);
             // 
-            // button6
+            // btcancelarmodificarproveedor
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(376, 379);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(117, 28);
-            this.button6.TabIndex = 76;
-            this.button6.Text = "Examinar";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btcancelarmodificarproveedor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btcancelarmodificarproveedor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btcancelarmodificarproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcancelarmodificarproveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcancelarmodificarproveedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btcancelarmodificarproveedor.Image = ((System.Drawing.Image)(resources.GetObject("btcancelarmodificarproveedor.Image")));
+            this.btcancelarmodificarproveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcancelarmodificarproveedor.Location = new System.Drawing.Point(115, 422);
+            this.btcancelarmodificarproveedor.Name = "btcancelarmodificarproveedor";
+            this.btcancelarmodificarproveedor.Size = new System.Drawing.Size(120, 36);
+            this.btcancelarmodificarproveedor.TabIndex = 86;
+            this.btcancelarmodificarproveedor.Text = "Cancelar";
+            this.btcancelarmodificarproveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btcancelarmodificarproveedor.UseVisualStyleBackColor = false;
+            this.btcancelarmodificarproveedor.Click += new System.EventHandler(this.btcancelarmodificarproveedor_Click);
             // 
-            // textBox13
+            // btmodificarproveedor
             // 
-            this.textBox13.Location = new System.Drawing.Point(93, 379);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(277, 26);
-            this.textBox13.TabIndex = 75;
+            this.btmodificarproveedor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btmodificarproveedor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btmodificarproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmodificarproveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmodificarproveedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btmodificarproveedor.Image = ((System.Drawing.Image)(resources.GetObject("btmodificarproveedor.Image")));
+            this.btmodificarproveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btmodificarproveedor.Location = new System.Drawing.Point(392, 422);
+            this.btmodificarproveedor.Name = "btmodificarproveedor";
+            this.btmodificarproveedor.Size = new System.Drawing.Size(132, 36);
+            this.btmodificarproveedor.TabIndex = 85;
+            this.btmodificarproveedor.Text = "Modificar";
+            this.btmodificarproveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btmodificarproveedor.UseVisualStyleBackColor = false;
+            this.btmodificarproveedor.Click += new System.EventHandler(this.btmodificarproveedor_Click);
             // 
-            // textBox12
+            // btexaminarproveedormodifica
             // 
-            this.textBox12.Location = new System.Drawing.Point(87, 341);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(283, 26);
-            this.textBox12.TabIndex = 74;
+            this.btexaminarproveedormodifica.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btexaminarproveedormodifica.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btexaminarproveedormodifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btexaminarproveedormodifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btexaminarproveedormodifica.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btexaminarproveedormodifica.Image = ((System.Drawing.Image)(resources.GetObject("btexaminarproveedormodifica.Image")));
+            this.btexaminarproveedormodifica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btexaminarproveedormodifica.Location = new System.Drawing.Point(376, 379);
+            this.btexaminarproveedormodifica.Name = "btexaminarproveedormodifica";
+            this.btexaminarproveedormodifica.Size = new System.Drawing.Size(129, 28);
+            this.btexaminarproveedormodifica.TabIndex = 76;
+            this.btexaminarproveedormodifica.Text = "Examinar";
+            this.btexaminarproveedormodifica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btexaminarproveedormodifica.UseVisualStyleBackColor = false;
+            this.btexaminarproveedormodifica.Visible = false;
+            this.btexaminarproveedormodifica.Click += new System.EventHandler(this.btexaminarproveedormodifica_Click);
             // 
-            // dateTimePicker2
+            // txturlproveedormodifica
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(122, 305);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(229, 26);
-            this.dateTimePicker2.TabIndex = 73;
+            this.txturlproveedormodifica.Enabled = false;
+            this.txturlproveedormodifica.Location = new System.Drawing.Point(93, 379);
+            this.txturlproveedormodifica.MaxLength = 70;
+            this.txturlproveedormodifica.Name = "txturlproveedormodifica";
+            this.txturlproveedormodifica.Size = new System.Drawing.Size(277, 26);
+            this.txturlproveedormodifica.TabIndex = 75;
+            this.txturlproveedormodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txturlproveedormodifica_KeyPress);
             // 
-            // comboBox4
+            // txtemailproveedormodifica
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(87, 266);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(235, 28);
-            this.comboBox4.TabIndex = 72;
+            this.txtemailproveedormodifica.Enabled = false;
+            this.txtemailproveedormodifica.Location = new System.Drawing.Point(87, 341);
+            this.txtemailproveedormodifica.MaxLength = 50;
+            this.txtemailproveedormodifica.Name = "txtemailproveedormodifica";
+            this.txtemailproveedormodifica.Size = new System.Drawing.Size(283, 26);
+            this.txtemailproveedormodifica.TabIndex = 74;
+            this.txtemailproveedormodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtemailproveedormodifica_KeyPress);
             // 
-            // button5
+            // cbgiroproveedormodifica
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(334, 220);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(36, 34);
-            this.button5.TabIndex = 71;
-            this.button5.Text = "+";
-            this.button5.UseVisualStyleBackColor = false;
+            this.cbgiroproveedormodifica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbgiroproveedormodifica.Enabled = false;
+            this.cbgiroproveedormodifica.FormattingEnabled = true;
+            this.cbgiroproveedormodifica.Items.AddRange(new object[] {
+            "Seleccione"});
+            this.cbgiroproveedormodifica.Location = new System.Drawing.Point(87, 266);
+            this.cbgiroproveedormodifica.Name = "cbgiroproveedormodifica";
+            this.cbgiroproveedormodifica.Size = new System.Drawing.Size(235, 28);
+            this.cbgiroproveedormodifica.TabIndex = 72;
             // 
-            // button4
+            // btciudadproveedormodifica
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(334, 266);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(36, 34);
-            this.button4.TabIndex = 70;
-            this.button4.Text = "+";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btciudadproveedormodifica.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btciudadproveedormodifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btciudadproveedormodifica.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btciudadproveedormodifica.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btciudadproveedormodifica.Location = new System.Drawing.Point(334, 220);
+            this.btciudadproveedormodifica.Name = "btciudadproveedormodifica";
+            this.btciudadproveedormodifica.Size = new System.Drawing.Size(36, 34);
+            this.btciudadproveedormodifica.TabIndex = 71;
+            this.btciudadproveedormodifica.Text = "+";
+            this.btciudadproveedormodifica.UseVisualStyleBackColor = false;
+            this.btciudadproveedormodifica.Click += new System.EventHandler(this.btciudadproveedormodifica_Click);
             // 
-            // comboBox3
+            // btgiroproveedormodifica
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(87, 225);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(235, 28);
-            this.comboBox3.TabIndex = 19;
+            this.btgiroproveedormodifica.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btgiroproveedormodifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btgiroproveedormodifica.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btgiroproveedormodifica.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btgiroproveedormodifica.Location = new System.Drawing.Point(334, 266);
+            this.btgiroproveedormodifica.Name = "btgiroproveedormodifica";
+            this.btgiroproveedormodifica.Size = new System.Drawing.Size(36, 34);
+            this.btgiroproveedormodifica.TabIndex = 70;
+            this.btgiroproveedormodifica.Text = "+";
+            this.btgiroproveedormodifica.UseVisualStyleBackColor = false;
+            this.btgiroproveedormodifica.Click += new System.EventHandler(this.btgiroproveedormodifica_Click);
             // 
-            // textBox11
+            // cbciudadproveedormodifica
             // 
-            this.textBox11.Location = new System.Drawing.Point(87, 183);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(283, 26);
-            this.textBox11.TabIndex = 18;
+            this.cbciudadproveedormodifica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbciudadproveedormodifica.Enabled = false;
+            this.cbciudadproveedormodifica.FormattingEnabled = true;
+            this.cbciudadproveedormodifica.Items.AddRange(new object[] {
+            "Seleccione"});
+            this.cbciudadproveedormodifica.Location = new System.Drawing.Point(87, 225);
+            this.cbciudadproveedormodifica.Name = "cbciudadproveedormodifica";
+            this.cbciudadproveedormodifica.Size = new System.Drawing.Size(235, 28);
+            this.cbciudadproveedormodifica.TabIndex = 19;
             // 
-            // textBox10
+            // txtdireccionproveedormodifica
             // 
-            this.textBox10.Location = new System.Drawing.Point(108, 115);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(262, 54);
-            this.textBox10.TabIndex = 17;
+            this.txtdireccionproveedormodifica.Enabled = false;
+            this.txtdireccionproveedormodifica.Location = new System.Drawing.Point(87, 183);
+            this.txtdireccionproveedormodifica.MaxLength = 50;
+            this.txtdireccionproveedormodifica.Name = "txtdireccionproveedormodifica";
+            this.txtdireccionproveedormodifica.Size = new System.Drawing.Size(283, 26);
+            this.txtdireccionproveedormodifica.TabIndex = 18;
+            this.txtdireccionproveedormodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdireccionproveedormodifica_KeyPress);
             // 
-            // textBox9
+            // txtdescripcionproveedormodifica
             // 
-            this.textBox9.Location = new System.Drawing.Point(76, 76);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(275, 26);
-            this.textBox9.TabIndex = 16;
+            this.txtdescripcionproveedormodifica.Enabled = false;
+            this.txtdescripcionproveedormodifica.Location = new System.Drawing.Point(108, 115);
+            this.txtdescripcionproveedormodifica.MaxLength = 300;
+            this.txtdescripcionproveedormodifica.Multiline = true;
+            this.txtdescripcionproveedormodifica.Name = "txtdescripcionproveedormodifica";
+            this.txtdescripcionproveedormodifica.Size = new System.Drawing.Size(262, 54);
+            this.txtdescripcionproveedormodifica.TabIndex = 17;
+            this.txtdescripcionproveedormodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescripcionproveedormodifica_KeyPress);
             // 
-            // btbuscarelimciudad
+            // txtnombreproveedormodifica
             // 
-            this.btbuscarelimciudad.BackColor = System.Drawing.Color.Black;
-            this.btbuscarelimciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btbuscarelimciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btbuscarelimciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btbuscarelimciudad.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarelimciudad.Image")));
-            this.btbuscarelimciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btbuscarelimciudad.Location = new System.Drawing.Point(267, 35);
-            this.btbuscarelimciudad.Name = "btbuscarelimciudad";
-            this.btbuscarelimciudad.Size = new System.Drawing.Size(115, 31);
-            this.btbuscarelimciudad.TabIndex = 15;
-            this.btbuscarelimciudad.Text = "Buscar";
-            this.btbuscarelimciudad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btbuscarelimciudad.UseVisualStyleBackColor = false;
+            this.txtnombreproveedormodifica.Enabled = false;
+            this.txtnombreproveedormodifica.Location = new System.Drawing.Point(76, 76);
+            this.txtnombreproveedormodifica.MaxLength = 40;
+            this.txtnombreproveedormodifica.Name = "txtnombreproveedormodifica";
+            this.txtnombreproveedormodifica.Size = new System.Drawing.Size(275, 26);
+            this.txtnombreproveedormodifica.TabIndex = 16;
+            this.txtnombreproveedormodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreproveedormodifica_KeyPress);
             // 
-            // textBox8
+            // btbuscarproveedormodifica
             // 
-            this.textBox8.Location = new System.Drawing.Point(52, 37);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(204, 26);
-            this.textBox8.TabIndex = 14;
+            this.btbuscarproveedormodifica.BackColor = System.Drawing.Color.Black;
+            this.btbuscarproveedormodifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbuscarproveedormodifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btbuscarproveedormodifica.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btbuscarproveedormodifica.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarproveedormodifica.Image")));
+            this.btbuscarproveedormodifica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btbuscarproveedormodifica.Location = new System.Drawing.Point(267, 35);
+            this.btbuscarproveedormodifica.Name = "btbuscarproveedormodifica";
+            this.btbuscarproveedormodifica.Size = new System.Drawing.Size(115, 31);
+            this.btbuscarproveedormodifica.TabIndex = 15;
+            this.btbuscarproveedormodifica.Text = "Buscar";
+            this.btbuscarproveedormodifica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btbuscarproveedormodifica.UseVisualStyleBackColor = false;
+            this.btbuscarproveedormodifica.Click += new System.EventHandler(this.btbuscarproveedormodifica_Click);
             // 
-            // pictureBox2
+            // txtrutmodificaproveedor
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(392, 40);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(132, 129);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.txtrutmodificaproveedor.Location = new System.Drawing.Point(52, 37);
+            this.txtrutmodificaproveedor.MaxLength = 10;
+            this.txtrutmodificaproveedor.Name = "txtrutmodificaproveedor";
+            this.txtrutmodificaproveedor.Size = new System.Drawing.Size(204, 26);
+            this.txtrutmodificaproveedor.TabIndex = 14;
+            this.txtrutmodificaproveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutmodificaproveedor_KeyPress);
+            // 
+            // fotoproveedormodifica
+            // 
+            this.fotoproveedormodifica.Image = ((System.Drawing.Image)(resources.GetObject("fotoproveedormodifica.Image")));
+            this.fotoproveedormodifica.Location = new System.Drawing.Point(392, 40);
+            this.fotoproveedormodifica.Name = "fotoproveedormodifica";
+            this.fotoproveedormodifica.Size = new System.Drawing.Size(132, 129);
+            this.fotoproveedormodifica.TabIndex = 13;
+            this.fotoproveedormodifica.TabStop = false;
             // 
             // label20
             // 
@@ -954,9 +1179,9 @@
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(6, 310);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(121, 20);
+            this.label14.Size = new System.Drawing.Size(75, 20);
             this.label14.TabIndex = 6;
-            this.label14.Text = "Fecha de Pago:";
+            this.label14.Text = "Telefono:";
             // 
             // label13
             // 
@@ -980,116 +1205,23 @@
             this.label12.TabIndex = 4;
             this.label12.Text = "Url imagen:";
             // 
-            // gbeliminaproveedor
+            // btvolvermenuprincipal1
             // 
-            this.gbeliminaproveedor.Controls.Add(this.beliminarciudad);
-            this.gbeliminaproveedor.Controls.Add(this.dataGridView1);
-            this.gbeliminaproveedor.Controls.Add(this.btbuscarciudad);
-            this.gbeliminaproveedor.Controls.Add(this.textBox7);
-            this.gbeliminaproveedor.Controls.Add(this.label11);
-            this.gbeliminaproveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbeliminaproveedor.ForeColor = System.Drawing.Color.Gold;
-            this.gbeliminaproveedor.Location = new System.Drawing.Point(3, 21);
-            this.gbeliminaproveedor.Name = "gbeliminaproveedor";
-            this.gbeliminaproveedor.Size = new System.Drawing.Size(564, 351);
-            this.gbeliminaproveedor.TabIndex = 85;
-            this.gbeliminaproveedor.TabStop = false;
-            this.gbeliminaproveedor.Text = "Eliminar Proveedor";
-            this.gbeliminaproveedor.Visible = false;
-            // 
-            // beliminarciudad
-            // 
-            this.beliminarciudad.BackColor = System.Drawing.Color.Black;
-            this.beliminarciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.beliminarciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.beliminarciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.beliminarciudad.Image = ((System.Drawing.Image)(resources.GetObject("beliminarciudad.Image")));
-            this.beliminarciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.beliminarciudad.Location = new System.Drawing.Point(357, 258);
-            this.beliminarciudad.Name = "beliminarciudad";
-            this.beliminarciudad.Size = new System.Drawing.Size(115, 31);
-            this.beliminarciudad.TabIndex = 13;
-            this.beliminarciudad.Text = "Eliminar";
-            this.beliminarciudad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.beliminarciudad.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(510, 165);
-            this.dataGridView1.TabIndex = 12;
-            // 
-            // btbuscarciudad
-            // 
-            this.btbuscarciudad.BackColor = System.Drawing.Color.Black;
-            this.btbuscarciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btbuscarciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btbuscarciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btbuscarciudad.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarciudad.Image")));
-            this.btbuscarciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btbuscarciudad.Location = new System.Drawing.Point(315, 32);
-            this.btbuscarciudad.Name = "btbuscarciudad";
-            this.btbuscarciudad.Size = new System.Drawing.Size(115, 31);
-            this.btbuscarciudad.TabIndex = 11;
-            this.btbuscarciudad.Text = "Buscar";
-            this.btbuscarciudad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btbuscarciudad.UseVisualStyleBackColor = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(63, 34);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(233, 26);
-            this.textBox7.TabIndex = 4;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(18, 38);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 20);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Rut:";
-            // 
-            // Btvolver
-            // 
-            this.Btvolver.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btvolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Btvolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btvolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btvolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btvolver.Image = ((System.Drawing.Image)(resources.GetObject("Btvolver.Image")));
-            this.Btvolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btvolver.Location = new System.Drawing.Point(35, 232);
-            this.Btvolver.Name = "Btvolver";
-            this.Btvolver.Size = new System.Drawing.Size(223, 36);
-            this.Btvolver.TabIndex = 30;
-            this.Btvolver.Text = "Volver Menu Principal";
-            this.Btvolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Btvolver.UseVisualStyleBackColor = false;
-            this.Btvolver.Click += new System.EventHandler(this.Btvolver_Click);
-            // 
-            // btvolver2
-            // 
-            this.btvolver2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btvolver2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btvolver2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btvolver2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btvolver2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btvolver2.Image = ((System.Drawing.Image)(resources.GetObject("btvolver2.Image")));
-            this.btvolver2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btvolver2.Location = new System.Drawing.Point(24, 223);
-            this.btvolver2.Name = "btvolver2";
-            this.btvolver2.Size = new System.Drawing.Size(223, 36);
-            this.btvolver2.TabIndex = 31;
-            this.btvolver2.Text = "Volver Menu Principal";
-            this.btvolver2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btvolver2.UseVisualStyleBackColor = false;
-            this.btvolver2.Click += new System.EventHandler(this.btvolver2_Click);
+            this.btvolvermenuprincipal1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolvermenuprincipal1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolvermenuprincipal1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolvermenuprincipal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolvermenuprincipal1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolvermenuprincipal1.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipal1.Image")));
+            this.btvolvermenuprincipal1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolvermenuprincipal1.Location = new System.Drawing.Point(331, 534);
+            this.btvolvermenuprincipal1.Name = "btvolvermenuprincipal1";
+            this.btvolvermenuprincipal1.Size = new System.Drawing.Size(223, 36);
+            this.btvolvermenuprincipal1.TabIndex = 88;
+            this.btvolvermenuprincipal1.Text = "Volver Menu Principal";
+            this.btvolvermenuprincipal1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolvermenuprincipal1.UseVisualStyleBackColor = false;
+            this.btvolvermenuprincipal1.Click += new System.EventHandler(this.btvolvermenuprincipal1_Click);
             // 
             // Mantenedor_Proveedor
             // 
@@ -1097,12 +1229,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(861, 582);
+            this.Controls.Add(this.btvolvermenuprincipal1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Mantenedor_Proveedor";
             this.Text = "Mantenedor_Proveedor";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.gbeliminaproveedor.ResumeLayout(false);
+            this.gbeliminaproveedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaeliminarproveedor)).EndInit();
             this.gbagregaciudadproveedor.ResumeLayout(false);
             this.gbagregaciudadproveedor.PerformLayout();
             this.gbagregagiroproveedor.ResumeLayout(false);
@@ -1112,10 +1248,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fotoproveedoragrega)).EndInit();
             this.gbmodificaproveedor.ResumeLayout(false);
             this.gbmodificaproveedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.gbeliminaproveedor.ResumeLayout(false);
-            this.gbeliminaproveedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoproveedormodifica)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1129,7 +1262,7 @@
         private System.Windows.Forms.Button btcargaagregaproveedor;
         private System.Windows.Forms.GroupBox gbagregaproveedor;
         private System.Windows.Forms.GroupBox gbeliminaproveedor;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtrutproveedoreliminar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btagregarproveedor;
         private System.Windows.Forms.Button btexaminaragregarproveedor;
@@ -1154,11 +1287,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btbuscarciudad;
+        private System.Windows.Forms.DataGridView grillaeliminarproveedor;
+        private System.Windows.Forms.Button btbuscarproveedoreliminar;
         private System.Windows.Forms.GroupBox gbmodificaproveedor;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txtrutmodificaproveedor;
+        private System.Windows.Forms.PictureBox fotoproveedormodifica;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -1168,20 +1301,19 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button beliminarciudad;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button btbuscarelimciudad;
+        private System.Windows.Forms.Button beliminarproveedor;
+        private System.Windows.Forms.Button btmodificarproveedor;
+        private System.Windows.Forms.Button btexaminarproveedormodifica;
+        private System.Windows.Forms.TextBox txturlproveedormodifica;
+        private System.Windows.Forms.TextBox txtemailproveedormodifica;
+        private System.Windows.Forms.ComboBox cbgiroproveedormodifica;
+        private System.Windows.Forms.Button btciudadproveedormodifica;
+        private System.Windows.Forms.Button btgiroproveedormodifica;
+        private System.Windows.Forms.ComboBox cbciudadproveedormodifica;
+        private System.Windows.Forms.TextBox txtdireccionproveedormodifica;
+        private System.Windows.Forms.TextBox txtdescripcionproveedormodifica;
+        private System.Windows.Forms.TextBox txtnombreproveedormodifica;
+        private System.Windows.Forms.Button btbuscarproveedormodifica;
         private System.Windows.Forms.TextBox txtdireccionagrega;
         private System.Windows.Forms.TextBox txttelefonoproveedoragrega;
         private System.Windows.Forms.GroupBox gbagregagiroproveedor;
@@ -1202,5 +1334,11 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button Btvolver;
         private System.Windows.Forms.Button btvolver2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
+        private System.Windows.Forms.Button btcancelarmodificarproveedor;
+        private System.Windows.Forms.TextBox txttelefonoproveedormodifica;
+        private System.Windows.Forms.Button btvolverproveedormodifica;
+        private System.Windows.Forms.Button btvolverproveedormodifica2;
+        private System.Windows.Forms.Button btvolvermenuprincipal1;
     }
 }

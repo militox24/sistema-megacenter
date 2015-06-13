@@ -35,16 +35,17 @@
             this.cargaagrecategoria = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gbelimcategoria = new System.Windows.Forms.GroupBox();
-            this.btelimciudad = new System.Windows.Forms.Button();
+            this.btelimcategoria = new System.Windows.Forms.Button();
             this.grillaelimcategoria = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btbuscarcategoriaelim = new System.Windows.Forms.Button();
             this.txtbuscarcategoria = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gbmodificacategoria = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btbuscarcategoriamodifica = new System.Windows.Forms.Button();
+            this.btmodificarcategoria = new System.Windows.Forms.Button();
+            this.txtdescripcionmodifica = new System.Windows.Forms.TextBox();
+            this.txtcategoriamodifica = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gbagrecategoria = new System.Windows.Forms.GroupBox();
@@ -83,6 +84,7 @@
             this.cargamodicategoria.Text = "MODIFICAR";
             this.cargamodicategoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cargamodicategoria.UseVisualStyleBackColor = true;
+            this.cargamodicategoria.Click += new System.EventHandler(this.cargamodicategoria_Click);
             // 
             // Cargaelimcategoria
             // 
@@ -95,6 +97,7 @@
             this.Cargaelimcategoria.Text = "ELIMINAR";
             this.Cargaelimcategoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Cargaelimcategoria.UseVisualStyleBackColor = true;
+            this.Cargaelimcategoria.Click += new System.EventHandler(this.Cargaelimcategoria_Click_1);
             // 
             // cargaagrecategoria
             // 
@@ -112,9 +115,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.gbelimcategoria);
             this.panel2.Controls.Add(this.gbmodificacategoria);
             this.panel2.Controls.Add(this.gbagrecategoria);
-            this.panel2.Controls.Add(this.gbelimcategoria);
             this.panel2.Location = new System.Drawing.Point(181, 22);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(602, 391);
@@ -122,7 +125,7 @@
             // 
             // gbelimcategoria
             // 
-            this.gbelimcategoria.Controls.Add(this.btelimciudad);
+            this.gbelimcategoria.Controls.Add(this.btelimcategoria);
             this.gbelimcategoria.Controls.Add(this.grillaelimcategoria);
             this.gbelimcategoria.Controls.Add(this.btbuscarcategoriaelim);
             this.gbelimcategoria.Controls.Add(this.txtbuscarcategoria);
@@ -137,22 +140,23 @@
             this.gbelimcategoria.Text = "Eliminar Categoria";
             this.gbelimcategoria.Visible = false;
             // 
-            // btelimciudad
+            // btelimcategoria
             // 
-            this.btelimciudad.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btelimciudad.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btelimciudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btelimciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btelimciudad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btelimciudad.Image = ((System.Drawing.Image)(resources.GetObject("btelimciudad.Image")));
-            this.btelimciudad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btelimciudad.Location = new System.Drawing.Point(305, 249);
-            this.btelimciudad.Name = "btelimciudad";
-            this.btelimciudad.Size = new System.Drawing.Size(124, 30);
-            this.btelimciudad.TabIndex = 40;
-            this.btelimciudad.Text = "Eliminar";
-            this.btelimciudad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btelimciudad.UseVisualStyleBackColor = false;
+            this.btelimcategoria.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btelimcategoria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btelimcategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btelimcategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btelimcategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btelimcategoria.Image = ((System.Drawing.Image)(resources.GetObject("btelimcategoria.Image")));
+            this.btelimcategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btelimcategoria.Location = new System.Drawing.Point(305, 249);
+            this.btelimcategoria.Name = "btelimcategoria";
+            this.btelimcategoria.Size = new System.Drawing.Size(124, 30);
+            this.btelimcategoria.TabIndex = 40;
+            this.btelimcategoria.Text = "Eliminar";
+            this.btelimcategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btelimcategoria.UseVisualStyleBackColor = false;
+            this.btelimcategoria.Click += new System.EventHandler(this.btelimcategoria_Click);
             // 
             // grillaelimcategoria
             // 
@@ -189,6 +193,7 @@
             this.btbuscarcategoriaelim.Text = "Buscar";
             this.btbuscarcategoriaelim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btbuscarcategoriaelim.UseVisualStyleBackColor = false;
+            this.btbuscarcategoriaelim.Click += new System.EventHandler(this.btbuscarcategoriaelim_Click);
             // 
             // txtbuscarcategoria
             // 
@@ -196,6 +201,7 @@
             this.txtbuscarcategoria.Name = "txtbuscarcategoria";
             this.txtbuscarcategoria.Size = new System.Drawing.Size(223, 26);
             this.txtbuscarcategoria.TabIndex = 37;
+            this.txtbuscarcategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscarcategoria_KeyPress);
             // 
             // label3
             // 
@@ -210,9 +216,10 @@
             // 
             // gbmodificacategoria
             // 
-            this.gbmodificacategoria.Controls.Add(this.button1);
-            this.gbmodificacategoria.Controls.Add(this.textBox1);
-            this.gbmodificacategoria.Controls.Add(this.textBox2);
+            this.gbmodificacategoria.Controls.Add(this.btbuscarcategoriamodifica);
+            this.gbmodificacategoria.Controls.Add(this.btmodificarcategoria);
+            this.gbmodificacategoria.Controls.Add(this.txtdescripcionmodifica);
+            this.gbmodificacategoria.Controls.Add(this.txtcategoriamodifica);
             this.gbmodificacategoria.Controls.Add(this.label1);
             this.gbmodificacategoria.Controls.Add(this.label2);
             this.gbmodificacategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,39 +231,62 @@
             this.gbmodificacategoria.TabStop = false;
             this.gbmodificacategoria.Text = "Modificar Categoria";
             // 
-            // button1
+            // btbuscarcategoriamodifica
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(339, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 36);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Modificar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btbuscarcategoriamodifica.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btbuscarcategoriamodifica.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btbuscarcategoriamodifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbuscarcategoriamodifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbuscarcategoriamodifica.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btbuscarcategoriamodifica.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarcategoriamodifica.Image")));
+            this.btbuscarcategoriamodifica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btbuscarcategoriamodifica.Location = new System.Drawing.Point(355, 45);
+            this.btbuscarcategoriamodifica.Name = "btbuscarcategoriamodifica";
+            this.btbuscarcategoriamodifica.Size = new System.Drawing.Size(107, 28);
+            this.btbuscarcategoriamodifica.TabIndex = 42;
+            this.btbuscarcategoriamodifica.Text = "Buscar";
+            this.btbuscarcategoriamodifica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btbuscarcategoriamodifica.UseVisualStyleBackColor = false;
+            this.btbuscarcategoriamodifica.Click += new System.EventHandler(this.btbuscarcategoriamodifica_Click);
             // 
-            // textBox1
+            // btmodificarcategoria
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 105);
-            this.textBox1.MaxLength = 300;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 118);
-            this.textBox1.TabIndex = 40;
+            this.btmodificarcategoria.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btmodificarcategoria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btmodificarcategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmodificarcategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmodificarcategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btmodificarcategoria.Image = ((System.Drawing.Image)(resources.GetObject("btmodificarcategoria.Image")));
+            this.btmodificarcategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btmodificarcategoria.Location = new System.Drawing.Point(350, 232);
+            this.btmodificarcategoria.Name = "btmodificarcategoria";
+            this.btmodificarcategoria.Size = new System.Drawing.Size(129, 36);
+            this.btmodificarcategoria.TabIndex = 41;
+            this.btmodificarcategoria.Text = "Modificar";
+            this.btmodificarcategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btmodificarcategoria.UseVisualStyleBackColor = false;
+            this.btmodificarcategoria.Visible = false;
+            this.btmodificarcategoria.Click += new System.EventHandler(this.btmodificarcategoria_Click);
             // 
-            // textBox2
+            // txtdescripcionmodifica
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 47);
-            this.textBox2.MaxLength = 50;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 26);
-            this.textBox2.TabIndex = 39;
+            this.txtdescripcionmodifica.Enabled = false;
+            this.txtdescripcionmodifica.Location = new System.Drawing.Point(127, 105);
+            this.txtdescripcionmodifica.MaxLength = 300;
+            this.txtdescripcionmodifica.Multiline = true;
+            this.txtdescripcionmodifica.Name = "txtdescripcionmodifica";
+            this.txtdescripcionmodifica.Size = new System.Drawing.Size(215, 118);
+            this.txtdescripcionmodifica.TabIndex = 40;
+            this.txtdescripcionmodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescripcionmodifica_KeyPress);
+            // 
+            // txtcategoriamodifica
+            // 
+            this.txtcategoriamodifica.Location = new System.Drawing.Point(127, 47);
+            this.txtcategoriamodifica.MaxLength = 50;
+            this.txtcategoriamodifica.Name = "txtcategoriamodifica";
+            this.txtcategoriamodifica.Size = new System.Drawing.Size(215, 26);
+            this.txtcategoriamodifica.TabIndex = 39;
+            this.txtcategoriamodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcategoriamodifica_KeyPress);
             // 
             // label1
             // 
@@ -312,6 +342,7 @@
             this.btagregarcategoria.Text = "Agregar";
             this.btagregarcategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btagregarcategoria.UseVisualStyleBackColor = false;
+            this.btagregarcategoria.Click += new System.EventHandler(this.btagregarcategoria_Click);
             // 
             // txtdescripacatgre
             // 
@@ -321,6 +352,7 @@
             this.txtdescripacatgre.Name = "txtdescripacatgre";
             this.txtdescripacatgre.Size = new System.Drawing.Size(215, 118);
             this.txtdescripacatgre.TabIndex = 40;
+            this.txtdescripacatgre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescripacatgre_KeyPress);
             // 
             // txtcateagre
             // 
@@ -329,6 +361,7 @@
             this.txtcateagre.Name = "txtcateagre";
             this.txtcateagre.Size = new System.Drawing.Size(215, 26);
             this.txtcateagre.TabIndex = 39;
+            this.txtcateagre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcateagre_KeyPress);
             // 
             // label5
             // 
@@ -383,16 +416,16 @@
         private System.Windows.Forms.Button cargaagrecategoria;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox gbelimcategoria;
-        private System.Windows.Forms.Button btelimciudad;
+        private System.Windows.Forms.Button btelimcategoria;
         private System.Windows.Forms.DataGridView grillaelimcategoria;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
         private System.Windows.Forms.Button btbuscarcategoriaelim;
         private System.Windows.Forms.TextBox txtbuscarcategoria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox gbmodificacategoria;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btmodificarcategoria;
+        private System.Windows.Forms.TextBox txtdescripcionmodifica;
+        private System.Windows.Forms.TextBox txtcategoriamodifica;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gbagrecategoria;
@@ -401,5 +434,6 @@
         private System.Windows.Forms.TextBox txtcateagre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btbuscarcategoriamodifica;
     }
 }

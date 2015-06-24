@@ -34,11 +34,6 @@
             this.Btcargaeliminamulta = new System.Windows.Forms.Button();
             this.Btcargaagregamulta = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gbconsultarMulta = new System.Windows.Forms.GroupBox();
-            this.grilllaconsultarmulta = new System.Windows.Forms.DataGridView();
-            this.btconsultarmulta = new System.Windows.Forms.Button();
-            this.txtrutmultaconsultar = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.gbagregarmulta = new System.Windows.Forms.GroupBox();
             this.txtrutvendedoragrega = new System.Windows.Forms.TextBox();
             this.txtmontomultaagrega = new System.Windows.Forms.TextBox();
@@ -56,14 +51,19 @@
             this.btbuscarmultaelim = new System.Windows.Forms.Button();
             this.txtbuscarruteliminar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.gbconsultarMulta = new System.Windows.Forms.GroupBox();
+            this.grilllaconsultarmulta = new System.Windows.Forms.DataGridView();
+            this.btconsultarmulta = new System.Windows.Forms.Button();
+            this.txtrutmultaconsultar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btvolvermenuprincipalmulta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.gbconsultarMulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grilllaconsultarmulta)).BeginInit();
             this.gbagregarmulta.SuspendLayout();
             this.gbeliminarmulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaeliminarmulta)).BeginInit();
+            this.gbconsultarMulta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grilllaconsultarmulta)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,74 +119,13 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.gbconsultarMulta);
             this.panel2.Controls.Add(this.gbagregarmulta);
             this.panel2.Controls.Add(this.gbeliminarmulta);
-            this.panel2.Controls.Add(this.gbconsultarMulta);
             this.panel2.Location = new System.Drawing.Point(178, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(563, 433);
             this.panel2.TabIndex = 1;
-            // 
-            // gbconsultarMulta
-            // 
-            this.gbconsultarMulta.Controls.Add(this.grilllaconsultarmulta);
-            this.gbconsultarMulta.Controls.Add(this.btconsultarmulta);
-            this.gbconsultarMulta.Controls.Add(this.txtrutmultaconsultar);
-            this.gbconsultarMulta.Controls.Add(this.label6);
-            this.gbconsultarMulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbconsultarMulta.ForeColor = System.Drawing.Color.Gold;
-            this.gbconsultarMulta.Location = new System.Drawing.Point(12, 32);
-            this.gbconsultarMulta.Name = "gbconsultarMulta";
-            this.gbconsultarMulta.Size = new System.Drawing.Size(511, 328);
-            this.gbconsultarMulta.TabIndex = 45;
-            this.gbconsultarMulta.TabStop = false;
-            this.gbconsultarMulta.Text = "Consultar Multa";
-            this.gbconsultarMulta.Visible = false;
-            // 
-            // grilllaconsultarmulta
-            // 
-            this.grilllaconsultarmulta.AllowUserToAddRows = false;
-            this.grilllaconsultarmulta.AllowUserToDeleteRows = false;
-            this.grilllaconsultarmulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grilllaconsultarmulta.Location = new System.Drawing.Point(15, 85);
-            this.grilllaconsultarmulta.Name = "grilllaconsultarmulta";
-            this.grilllaconsultarmulta.Size = new System.Drawing.Size(484, 150);
-            this.grilllaconsultarmulta.TabIndex = 45;
-            // 
-            // btconsultarmulta
-            // 
-            this.btconsultarmulta.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btconsultarmulta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btconsultarmulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btconsultarmulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btconsultarmulta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btconsultarmulta.Image = ((System.Drawing.Image)(resources.GetObject("btconsultarmulta.Image")));
-            this.btconsultarmulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btconsultarmulta.Location = new System.Drawing.Point(376, 33);
-            this.btconsultarmulta.Name = "btconsultarmulta";
-            this.btconsultarmulta.Size = new System.Drawing.Size(108, 28);
-            this.btconsultarmulta.TabIndex = 44;
-            this.btconsultarmulta.Text = "Buscar";
-            this.btconsultarmulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btconsultarmulta.UseVisualStyleBackColor = false;
-            this.btconsultarmulta.Click += new System.EventHandler(this.btconsultarmulta_Click);
-            // 
-            // txtrutmultaconsultar
-            // 
-            this.txtrutmultaconsultar.Location = new System.Drawing.Point(130, 34);
-            this.txtrutmultaconsultar.Name = "txtrutmultaconsultar";
-            this.txtrutmultaconsultar.Size = new System.Drawing.Size(234, 26);
-            this.txtrutmultaconsultar.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(13, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Rut Vendedor:";
             // 
             // gbagregarmulta
             // 
@@ -211,16 +150,22 @@
             // txtrutvendedoragrega
             // 
             this.txtrutvendedoragrega.Location = new System.Drawing.Point(114, 40);
+            this.txtrutvendedoragrega.MaxLength = 10;
             this.txtrutvendedoragrega.Name = "txtrutvendedoragrega";
+            this.txtrutvendedoragrega.ShortcutsEnabled = false;
             this.txtrutvendedoragrega.Size = new System.Drawing.Size(279, 26);
             this.txtrutvendedoragrega.TabIndex = 45;
+            this.txtrutvendedoragrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutvendedoragrega_KeyPress);
             // 
             // txtmontomultaagrega
             // 
             this.txtmontomultaagrega.Location = new System.Drawing.Point(114, 273);
+            this.txtmontomultaagrega.MaxLength = 5;
             this.txtmontomultaagrega.Name = "txtmontomultaagrega";
+            this.txtmontomultaagrega.ShortcutsEnabled = false;
             this.txtmontomultaagrega.Size = new System.Drawing.Size(250, 26);
             this.txtmontomultaagrega.TabIndex = 44;
+            this.txtmontomultaagrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmontomultaagrega_KeyPress);
             // 
             // label4
             // 
@@ -253,10 +198,13 @@
             // txtdescripcionmultaagrega
             // 
             this.txtdescripcionmultaagrega.Location = new System.Drawing.Point(114, 121);
+            this.txtdescripcionmultaagrega.MaxLength = 300;
             this.txtdescripcionmultaagrega.Multiline = true;
             this.txtdescripcionmultaagrega.Name = "txtdescripcionmultaagrega";
+            this.txtdescripcionmultaagrega.ShortcutsEnabled = false;
             this.txtdescripcionmultaagrega.Size = new System.Drawing.Size(330, 121);
             this.txtdescripcionmultaagrega.TabIndex = 5;
+            this.txtdescripcionmultaagrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescripcionmultaagrega_KeyPress);
             // 
             // label3
             // 
@@ -271,9 +219,12 @@
             // txtMotivoMultaagrega
             // 
             this.txtMotivoMultaagrega.Location = new System.Drawing.Point(114, 83);
+            this.txtMotivoMultaagrega.MaxLength = 50;
             this.txtMotivoMultaagrega.Name = "txtMotivoMultaagrega";
+            this.txtMotivoMultaagrega.ShortcutsEnabled = false;
             this.txtMotivoMultaagrega.Size = new System.Drawing.Size(279, 26);
             this.txtMotivoMultaagrega.TabIndex = 3;
+            this.txtMotivoMultaagrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMotivoMultaagrega_KeyPress);
             // 
             // label2
             // 
@@ -371,8 +322,10 @@
             // 
             this.txtbuscarruteliminar.Location = new System.Drawing.Point(130, 29);
             this.txtbuscarruteliminar.Name = "txtbuscarruteliminar";
+            this.txtbuscarruteliminar.ShortcutsEnabled = false;
             this.txtbuscarruteliminar.Size = new System.Drawing.Size(201, 26);
             this.txtbuscarruteliminar.TabIndex = 1;
+            this.txtbuscarruteliminar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscarruteliminar_KeyPress);
             // 
             // label5
             // 
@@ -383,6 +336,69 @@
             this.label5.Size = new System.Drawing.Size(113, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Rut Vendedor:";
+            // 
+            // gbconsultarMulta
+            // 
+            this.gbconsultarMulta.Controls.Add(this.grilllaconsultarmulta);
+            this.gbconsultarMulta.Controls.Add(this.btconsultarmulta);
+            this.gbconsultarMulta.Controls.Add(this.txtrutmultaconsultar);
+            this.gbconsultarMulta.Controls.Add(this.label6);
+            this.gbconsultarMulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbconsultarMulta.ForeColor = System.Drawing.Color.Gold;
+            this.gbconsultarMulta.Location = new System.Drawing.Point(12, 32);
+            this.gbconsultarMulta.Name = "gbconsultarMulta";
+            this.gbconsultarMulta.Size = new System.Drawing.Size(511, 328);
+            this.gbconsultarMulta.TabIndex = 45;
+            this.gbconsultarMulta.TabStop = false;
+            this.gbconsultarMulta.Text = "Consultar Multa";
+            this.gbconsultarMulta.Visible = false;
+            // 
+            // grilllaconsultarmulta
+            // 
+            this.grilllaconsultarmulta.AllowUserToAddRows = false;
+            this.grilllaconsultarmulta.AllowUserToDeleteRows = false;
+            this.grilllaconsultarmulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grilllaconsultarmulta.Location = new System.Drawing.Point(15, 85);
+            this.grilllaconsultarmulta.Name = "grilllaconsultarmulta";
+            this.grilllaconsultarmulta.Size = new System.Drawing.Size(484, 150);
+            this.grilllaconsultarmulta.TabIndex = 45;
+            // 
+            // btconsultarmulta
+            // 
+            this.btconsultarmulta.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btconsultarmulta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btconsultarmulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btconsultarmulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btconsultarmulta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btconsultarmulta.Image = ((System.Drawing.Image)(resources.GetObject("btconsultarmulta.Image")));
+            this.btconsultarmulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btconsultarmulta.Location = new System.Drawing.Point(376, 33);
+            this.btconsultarmulta.Name = "btconsultarmulta";
+            this.btconsultarmulta.Size = new System.Drawing.Size(108, 28);
+            this.btconsultarmulta.TabIndex = 44;
+            this.btconsultarmulta.Text = "Buscar";
+            this.btconsultarmulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btconsultarmulta.UseVisualStyleBackColor = false;
+            this.btconsultarmulta.Click += new System.EventHandler(this.btconsultarmulta_Click);
+            // 
+            // txtrutmultaconsultar
+            // 
+            this.txtrutmultaconsultar.Location = new System.Drawing.Point(130, 34);
+            this.txtrutmultaconsultar.Name = "txtrutmultaconsultar";
+            this.txtrutmultaconsultar.ShortcutsEnabled = false;
+            this.txtrutmultaconsultar.Size = new System.Drawing.Size(234, 26);
+            this.txtrutmultaconsultar.TabIndex = 1;
+            this.txtrutmultaconsultar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutmultaconsultar_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(13, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Rut Vendedor:";
             // 
             // btvolvermenuprincipalmulta
             // 
@@ -406,6 +422,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(753, 512);
             this.Controls.Add(this.btvolvermenuprincipalmulta);
@@ -415,14 +432,14 @@
             this.Text = "Mantenedor_Multa";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.gbconsultarMulta.ResumeLayout(false);
-            this.gbconsultarMulta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grilllaconsultarmulta)).EndInit();
             this.gbagregarmulta.ResumeLayout(false);
             this.gbagregarmulta.PerformLayout();
             this.gbeliminarmulta.ResumeLayout(false);
             this.gbeliminarmulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaeliminarmulta)).EndInit();
+            this.gbconsultarMulta.ResumeLayout(false);
+            this.gbconsultarMulta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grilllaconsultarmulta)).EndInit();
             this.ResumeLayout(false);
 
         }

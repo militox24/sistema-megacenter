@@ -17,8 +17,9 @@ namespace sistema_megacenter
         string urlimagen;
         string rutusuario;
         string usuariologueado;
+        string correologueado;
         Gestión_Ciudad gestion = new Gestión_Ciudad();
-        public Mantenedor_Ciudad(string nombre, string apellido,string ruta_foto,string rut,string usuario)
+        public Mantenedor_Ciudad(string nombre, string apellido,string ruta_foto,string rut,string usuario,string correo)
         {
             InitializeComponent();
             nombreusuario = nombre;
@@ -26,6 +27,7 @@ namespace sistema_megacenter
             rutusuario = rut;
             urlimagen = ruta_foto;
             usuariologueado = usuario;
+            correologueado = correo;
             if (usuariologueado == "Administrador")
             {
                 btvolvermenu.Visible = true;
@@ -162,21 +164,32 @@ namespace sistema_megacenter
 
         private void beliminarciudad_Click(object sender, EventArgs e)
         {
+            Boolean estado = false;
             for (int i = 0; i < grilla.RowCount; i++)
             {
                 if (grilla[0, i].Value.ToString() == "true")
                 {
                     gestion.Elimina_ciudad(grilla[1, i].Value.ToString());
+                    estado = true;
+                }
+                else
+                {
+                    MessageBox.Show("Debes seleccionar la ciudad a eliminar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    estado = false;
                 }
             }
-            MessageBox.Show("Ciudad Eliminada Correctamente","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            grilla.DataSource = gestion.rescatardatosciudad();
-            grilla.DataMember = "Ciudad";
-            inicializarCheckbox();
-            grilla.Columns["Nombre_Ciudad"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grilla.Columns["Descripción"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grilla.Columns["Nombre_Ciudad"].Width = 150;
-            grilla.Columns["Descripción"].Width = 200;     
+
+            if(estado==true){
+                MessageBox.Show("Ciudad Eliminada Correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                grilla.DataSource = gestion.rescatardatosciudad();
+                grilla.DataMember = "Ciudad";
+                inicializarCheckbox();
+                grilla.Columns["Nombre_Ciudad"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grilla.Columns["Descripción"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grilla.Columns["Nombre_Ciudad"].Width = 150;
+                grilla.Columns["Descripción"].Width = 200;   
+            }
+              
         }
 
         private void txtdescripcionciudadmodifica_TextChanged(object sender, EventArgs e)
@@ -250,16 +263,56 @@ namespace sistema_megacenter
 
         private void btvolvermenu_Click(object sender, EventArgs e)
         {
-            Menu_Principal menu = new Menu_Principal(nombreusuario, apellidousuario, urlimagen, rutusuario,usuariologueado);
+            Menu_Principal menu = new Menu_Principal(nombreusuario, apellidousuario, urlimagen, rutusuario,usuariologueado,correologueado);
             this.Hide();
             menu.Show();
         }
 
         private void btvolvermenuprincipalvendedor_Click(object sender, EventArgs e)
         {
-            Menu_Vendedor menu = new Menu_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario,usuariologueado);
+            Menu_Vendedor menu = new Menu_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario,usuariologueado,correologueado);
             this.Hide();
             menu.Show();
+        }
+
+        private void txtciudadeliminar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = " qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚáéíóú,." + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtciudadmodifica_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = " qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚáéíóú,." + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtnuevonombreciudad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = " qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚáéíóú,." + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtdescripcionciudadmodifica_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = " qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚáéíóú,." + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

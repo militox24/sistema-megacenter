@@ -76,5 +76,25 @@ namespace sistema_megacenter
                 }
             }
         }
+
+        private void txtnuevaclave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú1234567890 " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtrepetirclave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú1234567890 " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -11,16 +11,18 @@ namespace sistema_megacenter
 {
     public partial class Mantenedor_Categoria : Form
     {
-        string nombreusuario, apellidousuario, rutusuario, urlimagen;
+        string nombreusuario, apellidousuario, rutusuario, urlimagen,correousuario,usuariologueado;
         int id_categoria;
         Gestion_Categoria gestion = new Gestion_Categoria();
-        public Mantenedor_Categoria(string nombre, string apellido, string rut,string url)
+        public Mantenedor_Categoria(string nombre, string apellido, string rut,string url,string usuario,string correo)
         {
             InitializeComponent();
             nombreusuario = nombre;
             apellidousuario = apellido;
             rutusuario = rut;
             urlimagen = url;
+            usuariologueado=usuario;
+            correousuario = correo;
         }
 
         private void cargaagrecategoria_Click(object sender, EventArgs e)
@@ -169,6 +171,8 @@ namespace sistema_megacenter
                     txtdescripcionmodifica.Text = verifica.Tables["Categoria"].Rows[0][2].ToString();
                     btmodificarcategoria.Visible = true;
                     txtdescripcionmodifica.Enabled = true;
+                    txtnuevonombre.Enabled = true;
+                    txtcategoriamodifica.Enabled = false;
                     
                 }
                 else
@@ -182,31 +186,76 @@ namespace sistema_megacenter
 
         private void btmodificarcategoria_Click(object sender, EventArgs e)
         {
-            if(txtcategoriamodifica.Text==""|| txtdescripcionmodifica.Text==""){
+            if(txtcategoriamodifica.Text==""|| txtdescripcionmodifica.Text==""||txtnuevonombre.Text==""){
                 MessageBox.Show("Faltan campos por completar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }else{
-                
+                    gestion.modificadatoscategoria(txtcategoriamodifica.Text,txtdescripcionmodifica.Text,txtnuevonombre.Text);
+                    MessageBox.Show("Operación realizada con exito","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    txtcategoriamodifica.Enabled = true;
+                    txtnuevonombre.Enabled = false;
+                    txtdescripcionmodifica.Enabled = false;
+                    btmodificarcategoria.Visible = false;
+                    txtcategoriamodifica.Clear();
+                    txtnuevonombre.Clear();
+                    txtdescripcionmodifica.Clear();
+
             }
             }
 
         private void btelimcategoria_Click(object sender, EventArgs e)
         {
+            Boolean estado = false;
+            
             for (int i = 0; i < grillaelimcategoria.RowCount; i++)
             {
                 if (grillaelimcategoria[0, i].Value.ToString() == "true")
                 {
                     gestion.Eliminar_Categoria(grillaelimcategoria[1, i].Value.ToString());
+                    estado = true;
+                }
+                else
+                {
+                    MessageBox.Show("Debes seleccionar la categoria a eliminar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    estado = false;
                 }
             }
-            MessageBox.Show("Categoria Eliminada Correctamente");
-            grillaelimcategoria.DataSource = gestion.rescatardatoscategorias();
-            grillaelimcategoria.DataMember = "Categoria";
-            inicializarCheckbox();
-            grillaelimcategoria.Columns["Nombre_Categoria"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaelimcategoria.Columns["Descripción"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaelimcategoria.Columns["Nombre_Categoria"].Width = 150;
-            grillaelimcategoria.Columns["Descripción"].Width = 200;
+            if (estado == true)
+            {
+                MessageBox.Show("Categoria Eliminada Correctamente");
+                grillaelimcategoria.DataSource = gestion.rescatardatoscategorias();
+                grillaelimcategoria.DataMember = "Categoria";
+                inicializarCheckbox();
+                grillaelimcategoria.Columns["Nombre_Categoria"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaelimcategoria.Columns["Descripción"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaelimcategoria.Columns["Nombre_Categoria"].Width = 150;
+                grillaelimcategoria.Columns["Descripción"].Width = 200;
+            }
         }
+
+        private void btcancelarcategoria_Click(object sender, EventArgs e)
+        {
+            txtcategoriamodifica.Enabled = true;
+            txtnuevonombre.Enabled = false;
+            txtdescripcionmodifica.Enabled = false;
+            btmodificarcategoria.Visible = false;
+            txtcategoriamodifica.Clear();
+            txtnuevonombre.Clear();
+            txtdescripcionmodifica.Clear();
+        }
+
+        private void btvolvermenuprincipalcategoria_Click(object sender, EventArgs e)
+        {
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correousuario);
+            this.Hide();
+            principal.Show();
+        }
+
+        private void txtnuevonombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender,e);
+        }
+
+        
         }
 
     }

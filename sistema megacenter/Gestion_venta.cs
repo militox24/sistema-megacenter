@@ -76,28 +76,30 @@ namespace sistema_megacenter
             conn.desconectar();
             return ds;
         }
-        public void ingresar_Venta(int n_venta, string fecha, string rutusuario, string rut_cliente,int neto, int iva, int total)
+        public void ingresar_Venta(int n_venta, string fecha, string rutusuario, string rut_cliente,string tipo,int neto, int iva, int total,string estado)
         {
             conn.conectar();
             SqlDataAdapter da = new SqlDataAdapter();
-            da.InsertCommand = new SqlCommand("insert into Venta(N_Venta,Fecha,Rut_Usuario,Rut_Cliente,Total_Neto,Iva,Total_Bruto)values(@venta,@fecha,@rut_usuario,@rut_cliente,@neto,@iva,@total)", conn.conector);
+            da.InsertCommand = new SqlCommand("insert into Venta(N_Venta,Fecha,Rut_Usuario,Rut_Cliente,Tipo,Total_Neto,Iva,Total_Bruto,Estado)values(@venta,@fecha,@rut_usuario,@rut_cliente,@tipo,@neto,@iva,@total,@estado)", conn.conector);
             da.InsertCommand.Parameters.Add(new SqlParameter("@venta", n_venta));
             da.InsertCommand.Parameters.Add(new SqlParameter("@fecha", fecha));
             da.InsertCommand.Parameters.Add(new SqlParameter("@rut_usuario", rutusuario));
             da.InsertCommand.Parameters.Add(new SqlParameter("@rut_cliente", rut_cliente));
+            da.InsertCommand.Parameters.Add(new SqlParameter("@tipo", tipo));
             da.InsertCommand.Parameters.Add(new SqlParameter("@neto", neto));
             da.InsertCommand.Parameters.Add(new SqlParameter("@iva", iva));
             da.InsertCommand.Parameters.Add(new SqlParameter("@total", total));
+            da.InsertCommand.Parameters.Add(new SqlParameter("@estado", estado));
             da.InsertCommand.ExecuteNonQuery();
             conn.desconectar();
         }
-        public void ingresar_detalleventa(int cantidad, int codigo, int precio, int total, int venta)
+        public void ingresar_detalleventa(int cantidad, string producto, int precio, int total, int venta)
         {
             conn.conectar();
             SqlDataAdapter da = new SqlDataAdapter();
-            da.InsertCommand = new SqlCommand("insert into Detalle_Venta(Cantidad,Cod_Producto,Precio,Subtotal,N_Venta)values(@cantidad,@codigo,@precio,@total,@venta)", conn.conector);
+            da.InsertCommand = new SqlCommand("insert into Detalle_Venta(Cantidad,Producto,Precio,Subtotal,N_Venta)values(@cantidad,@producto,@precio,@total,@venta)", conn.conector);
             da.InsertCommand.Parameters.Add(new SqlParameter("@cantidad", cantidad));
-            da.InsertCommand.Parameters.Add(new SqlParameter("@codigo", codigo));
+            da.InsertCommand.Parameters.Add(new SqlParameter("@producto", producto));
             da.InsertCommand.Parameters.Add(new SqlParameter("@precio", precio));
             da.InsertCommand.Parameters.Add(new SqlParameter("@total", total));
             da.InsertCommand.Parameters.Add(new SqlParameter("@venta", venta));

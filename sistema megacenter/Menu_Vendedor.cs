@@ -17,7 +17,8 @@ namespace sistema_megacenter
         string urlimagen;
         string rutusuario;
         string usuariologueado;
-        public Menu_Vendedor(string nombres,string apellidos,string url,string rutcompleto,string usuario)
+        string correousuario;
+        public Menu_Vendedor(string nombres,string apellidos,string url,string rutcompleto,string usuario,string correo)
         {
             InitializeComponent();
             label6.Text = nombres + " " + apellidos;
@@ -29,19 +30,21 @@ namespace sistema_megacenter
             urlimagen = url;
             usuariologueado = usuario;
             rutusuario = rutcompleto;
+            correousuario = correo;
+          
 
         }
 
         private void btHistorial_Click(object sender, EventArgs e)
         {
-            Mantenedor_Historial_Multas historial = new Mantenedor_Historial_Multas(nombreusuario,apellidousuario,urlimagen,rutusuario);
+            Mantenedor_Historial_Multas historial = new Mantenedor_Historial_Multas(nombreusuario,apellidousuario,urlimagen,rutusuario,correousuario);
             this.Hide();
             historial.Show();
         }
 
         private void btciudad_Click(object sender, EventArgs e)
         {
-            Mantenedor_Ciudad ciudad = new Mantenedor_Ciudad(nombreusuario, apellidousuario, urlimagen, rutusuario,usuariologueado);
+            Mantenedor_Ciudad ciudad = new Mantenedor_Ciudad(nombreusuario, apellidousuario, urlimagen, rutusuario,usuariologueado,correousuario);
             this.Hide();
             ciudad.Show();
             
@@ -50,14 +53,14 @@ namespace sistema_megacenter
 
         private void btclientevendedor_Click(object sender, EventArgs e)
         {
-            Mantenedor_Cliente_Vendedor cliente = new Mantenedor_Cliente_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado);
+            Mantenedor_Cliente_Vendedor cliente = new Mantenedor_Cliente_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado,correousuario);
             this.Hide();
             cliente.Show();
         }
 
         private void btvendedor_Click(object sender, EventArgs e)
         {
-            Mantenedor_Perfil_Vendedor perfil = new Mantenedor_Perfil_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado);
+            Mantenedor_Perfil_Vendedor perfil = new Mantenedor_Perfil_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado,correousuario);
             this.Hide();
             perfil.Show();
         }
@@ -71,9 +74,16 @@ namespace sistema_megacenter
 
         private void btventa_Click(object sender, EventArgs e)
         {
-            Mantenedor_Venta venta = new Mantenedor_Venta(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado);
+            Mantenedor_Venta venta = new Mantenedor_Venta(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado,correousuario);
             this.Hide();
             venta.Show();
+        }
+
+        private void btcorreovendedor_Click(object sender, EventArgs e)
+        {
+            Mantenedor_correo correo = new Mantenedor_correo(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado,correousuario);
+            this.Hide();
+            correo.Show();
         }
 
        

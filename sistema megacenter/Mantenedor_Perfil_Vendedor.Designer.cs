@@ -117,16 +117,20 @@
             // txtpreguntavendedorperfil
             // 
             this.txtpreguntavendedorperfil.Location = new System.Drawing.Point(162, 285);
+            this.txtpreguntavendedorperfil.MaxLength = 50;
             this.txtpreguntavendedorperfil.Name = "txtpreguntavendedorperfil";
             this.txtpreguntavendedorperfil.Size = new System.Drawing.Size(286, 26);
             this.txtpreguntavendedorperfil.TabIndex = 35;
+            this.txtpreguntavendedorperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpreguntavendedorperfil_KeyPress);
             // 
             // txtemailvendedorperfil
             // 
             this.txtemailvendedorperfil.Location = new System.Drawing.Point(125, 407);
+            this.txtemailvendedorperfil.MaxLength = 50;
             this.txtemailvendedorperfil.Name = "txtemailvendedorperfil";
             this.txtemailvendedorperfil.Size = new System.Drawing.Size(322, 26);
             this.txtemailvendedorperfil.TabIndex = 34;
+            this.txtemailvendedorperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtemailvendedorperfil_KeyPress);
             // 
             // label26
             // 
@@ -214,34 +218,44 @@
             // txtapellidovendedorperfil
             // 
             this.txtapellidovendedorperfil.Location = new System.Drawing.Point(109, 114);
+            this.txtapellidovendedorperfil.MaxLength = 50;
             this.txtapellidovendedorperfil.Name = "txtapellidovendedorperfil";
             this.txtapellidovendedorperfil.Size = new System.Drawing.Size(278, 26);
             this.txtapellidovendedorperfil.TabIndex = 20;
+            this.txtapellidovendedorperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtapellidovendedorperfil_KeyPress);
             // 
             // txttelefonovendedorperfil
             // 
             this.txttelefonovendedorperfil.Location = new System.Drawing.Point(109, 149);
+            this.txttelefonovendedorperfil.MaxLength = 8;
             this.txttelefonovendedorperfil.Name = "txttelefonovendedorperfil";
             this.txttelefonovendedorperfil.Size = new System.Drawing.Size(278, 26);
             this.txttelefonovendedorperfil.TabIndex = 19;
+            this.txttelefonovendedorperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefonovendedorperfil_KeyPress);
             // 
             // txtrespuestavendedorperfil
             // 
             this.txtrespuestavendedorperfil.Location = new System.Drawing.Point(125, 328);
+            this.txtrespuestavendedorperfil.MaxLength = 50;
             this.txtrespuestavendedorperfil.Name = "txtrespuestavendedorperfil";
             this.txtrespuestavendedorperfil.Size = new System.Drawing.Size(323, 26);
             this.txtrespuestavendedorperfil.TabIndex = 18;
+            this.txtrespuestavendedorperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrespuestavendedorperfil_KeyPress);
             // 
             // txtclavevendedorperfil
             // 
             this.txtclavevendedorperfil.Location = new System.Drawing.Point(125, 365);
+            this.txtclavevendedorperfil.MaxLength = 50;
             this.txtclavevendedorperfil.Name = "txtclavevendedorperfil";
             this.txtclavevendedorperfil.Size = new System.Drawing.Size(322, 26);
             this.txtclavevendedorperfil.TabIndex = 17;
+            this.txtclavevendedorperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtclavevendedorperfil_KeyPress);
             // 
             // txtimagenvendedorperfil
             // 
+            this.txtimagenvendedorperfil.Enabled = false;
             this.txtimagenvendedorperfil.Location = new System.Drawing.Point(125, 450);
+            this.txtimagenvendedorperfil.MaxLength = 50;
             this.txtimagenvendedorperfil.Name = "txtimagenvendedorperfil";
             this.txtimagenvendedorperfil.Size = new System.Drawing.Size(278, 26);
             this.txtimagenvendedorperfil.TabIndex = 16;
@@ -249,9 +263,11 @@
             // txtdireccionvendedorperfil
             // 
             this.txtdireccionvendedorperfil.Location = new System.Drawing.Point(109, 181);
+            this.txtdireccionvendedorperfil.MaxLength = 50;
             this.txtdireccionvendedorperfil.Name = "txtdireccionvendedorperfil";
             this.txtdireccionvendedorperfil.Size = new System.Drawing.Size(278, 26);
             this.txtdireccionvendedorperfil.TabIndex = 15;
+            this.txtdireccionvendedorperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdireccionvendedorperfil_KeyPress);
             // 
             // cbciudadvendedorperfil
             // 
@@ -337,9 +353,11 @@
             // txtnombrevendedorperfil
             // 
             this.txtnombrevendedorperfil.Location = new System.Drawing.Point(109, 79);
+            this.txtnombrevendedorperfil.MaxLength = 50;
             this.txtnombrevendedorperfil.Name = "txtnombrevendedorperfil";
             this.txtnombrevendedorperfil.Size = new System.Drawing.Size(278, 26);
             this.txtnombrevendedorperfil.TabIndex = 5;
+            this.txtnombrevendedorperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombrevendedorperfil_KeyPress);
             // 
             // label20
             // 
@@ -392,6 +410,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(748, 661);
             this.Controls.Add(this.btvolvermenuprincipalvendedorp);

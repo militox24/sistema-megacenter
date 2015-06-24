@@ -12,7 +12,7 @@ namespace sistema_megacenter
     public partial class Mantenedor_Historial_Multas : Form
     {
         Gestion_Multa multa = new Gestion_Multa();
-        public Mantenedor_Historial_Multas(string nombre,string apellido,string url,string rut)
+        public Mantenedor_Historial_Multas(string nombre,string apellido,string url,string rut,string correo)
         {
             InitializeComponent();
             label2.Text = nombre + " " + apellido;

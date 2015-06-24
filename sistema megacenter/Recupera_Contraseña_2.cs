@@ -70,7 +70,7 @@ namespace sistema_megacenter
                         cliente.Port = 587;
                         cliente.EnableSsl = true;
                         cliente.Send(mail);
-                        this.Close();
+                        this.Hide();
                         correo.Show();
                     }catch{
                         MessageBox.Show("no se envio el mensaje");

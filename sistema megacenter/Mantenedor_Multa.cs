@@ -12,8 +12,8 @@ namespace sistema_megacenter
     public partial class Mantenedor_Multa : Form
     {
         Gestion_Multa multa = new Gestion_Multa();
-        string nombreusuario, apellidousuario, rutusuario, urlimagen,usuariologueado;
-        public Mantenedor_Multa(string nombre, string apellido, string rut, string url,string usuario)
+        string nombreusuario, apellidousuario, rutusuario, urlimagen,usuariologueado,correousuario;
+        public Mantenedor_Multa(string nombre, string apellido, string rut, string url,string usuario,string correo)
         {
             InitializeComponent();
             nombreusuario = nombre;
@@ -21,6 +21,7 @@ namespace sistema_megacenter
             rutusuario = rut;
             urlimagen = url;
             usuariologueado = usuario;
+            correousuario = correo;
         }
         private void Btcargaagregamulta_Click(object sender, EventArgs e)
         {
@@ -28,6 +29,25 @@ namespace sistema_megacenter
             gbeliminarmulta.Visible = false;
             gbconsultarMulta.Visible = false;
 
+        }
+
+        public void omitir_caracteres(object sender, KeyPressEventArgs e)
+        {
+            string cadena = " qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚáéíóú,." + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        public void solo_numeros(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
         private void inicializarCheckbox()
         {
@@ -197,9 +217,54 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipalmulta_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correousuario);
             this.Show();
             principal.Show();
+        }
+
+        private void txtrutvendedoragrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMotivoMultaagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtdescripcionmultaagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtmontomultaagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender,e);
+        }
+
+        private void txtbuscarruteliminar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtrutmultaconsultar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

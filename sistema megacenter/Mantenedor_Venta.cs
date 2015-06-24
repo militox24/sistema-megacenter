@@ -20,8 +20,8 @@ namespace sistema_megacenter
        // int resta = 0;
         Gestion_venta venta = new Gestion_venta();
         //gestionproducto gestion1 = new gestionproducto();
-        string nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado;
-        public Mantenedor_Venta(string nombre,string  apellido,string url,string rut,string usuario)
+        string nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado,correousuario;
+        public Mantenedor_Venta(string nombre,string  apellido,string url,string rut,string usuario,string correo)
         {
             InitializeComponent();
             txtrutadministrador.Text = rut;
@@ -29,7 +29,9 @@ namespace sistema_megacenter
             apellidousuario = apellido;
             urlimagen = url;
             rutusuario = rut;
+            cbtipoventa.Text = "Seleccione";
             usuariologueado = usuario;
+            correousuario = correo;
             if (usuariologueado == "Administrador")
             {
                 label14.Text = "Rut Administrador";
@@ -180,20 +182,35 @@ namespace sistema_megacenter
                 errores = errores + "ingresar un detalle de compra\n";
                 estado = true;
             }
+            if(cbtipoventa.Text=="Seleccione"){
+                errores = errores + "Debes seleccionar el tipo de venta\n";
+                estado = true;
+            }
             if (estado == true)
             {
                 MessageBox.Show(errores);
             }
             else
             {
+                string estado_venta="";
                 rut_administrador = txtrutadministrador.Text;
                 int.TryParse(txtventa.Text, out n_compra);
                 int.TryParse(txtnetoventa.Text, out neto);
                 int.TryParse(txtivaventa.Text, out iva);
                 int.TryParse(txttotalventa.Text, out totales);
+                if (cbtipoventa.Text == "Contado")
+                {
+                    estado_venta = "Pagada";
+                }
+                else
+                {
+                    estado_venta = "Sin Pagar";
+                }
+                venta.ingresar_Venta(int.Parse(txtventa.Text), txtfechaventa.Text, txtrutadministrador.Text, txtrutcliente.Text, cbtipoventa.Text, neto, iva, totales, estado_venta);
                 for (int i = 0; i < grilladetalleventa.Rows.Count; i++)
                 {
                     cantidad3 = int.Parse(grilladetalleventa.Rows[i].Cells[0].Value.ToString());
+
                     DataSet ds = venta.rescatarcodigoproducto(grilladetalleventa.Rows[i].Cells[1].Value.ToString());
                     int.TryParse(ds.Tables["Producto"].Rows[0][0].ToString(), out codigo3);
                     valorunitario3 = int.Parse(grilladetalleventa.Rows[i].Cells[2].Value.ToString());
@@ -201,22 +218,23 @@ namespace sistema_megacenter
                     DataSet ds7 = venta.informacion_productos(codigo3);
                     int.TryParse(ds7.Tables["Producto"].Rows[0][2].ToString(), out stockproducto);
                     suma = stockproducto - cantidad3;
-                    venta.ingresar_detalleventa(n_compra, cantidad3, codigo3, valorunitario3, subtotal3);
+                    venta.ingresar_detalleventa( cantidad3, grilladetalleventa.Rows[i].Cells[1].Value.ToString(), valorunitario3, subtotal3,n_compra);
                     venta.Modificarstockproducto(codigo3, suma);
-                    venta.ingresar_Venta(int.Parse(txtventa.Text), txtfechaventa.Text,txtrutadministrador.Text,txtrutcliente.Text, neto, iva, totales);
-                    MessageBox.Show("operacion ralizada con exito");
-                    txtventa.Text = Convert.ToString(1 + int.Parse(venta.TraerValor("select isnull(max(N_Venta),0) from Venta")));
-                    grilladetalleventa.Rows.RemoveAt(grilladetalleventa.CurrentRow.Index);
-                    txtnetoventa.Clear();
-                    txtivaventa.Clear();
-                    txttotalventa.Clear();
                 }
+                MessageBox.Show("Operacion realizada con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtventa.Text = Convert.ToString(1 + int.Parse(venta.TraerValor("select isnull(max(N_Venta),0) from Venta")));
+                grilladetalleventa.Rows.RemoveAt(grilladetalleventa.CurrentRow.Index);
+                txtnetoventa.Clear();
+                txtivaventa.Clear();
+                txttotalventa.Clear();
+                txtrutcliente.Clear();
+                cbtipoventa.Text = "Seleccione";
             }
         }
 
         private void btmenuprincipalventa_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correousuario);
             this.Hide();
             principal.Show();
 
@@ -224,9 +242,39 @@ namespace sistema_megacenter
 
         private void btvolvermenuvendedorventa_Click(object sender, EventArgs e)
         {
-            Menu_Vendedor Mvendedor = new Menu_Vendedor(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Vendedor Mvendedor = new Menu_Vendedor(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correousuario);
             this.Hide();
             Mvendedor.Show();
+        }
+
+        private void txtcodigoproductoventa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtrutcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcantidadventa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
 

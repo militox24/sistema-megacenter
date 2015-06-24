@@ -182,10 +182,10 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.gbmodificavendedor);
-            this.panel2.Controls.Add(this.gbeliminavendedor);
             this.panel2.Controls.Add(this.gbagregavendedor);
             this.panel2.Controls.Add(this.gbagregaciudadvendedor);
+            this.panel2.Controls.Add(this.gbmodificavendedor);
+            this.panel2.Controls.Add(this.gbeliminavendedor);
             this.panel2.Location = new System.Drawing.Point(235, 21);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(667, 628);

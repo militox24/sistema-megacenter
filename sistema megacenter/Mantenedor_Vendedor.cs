@@ -16,8 +16,8 @@ namespace sistema_megacenter
         VerificarRut verificar = new VerificarRut();
         Gestion_Vendedor vendedor = new Gestion_Vendedor();
         string rutcompleto;
-        string nombreusuario, apellidousuario, rutusuario, urlimagen, usuariologueado;
-        public Mantenedor_Vendedor(string nombre,string apellido,string rut,string url,string usuario)
+        string nombreusuario, apellidousuario, rutusuario, urlimagen, usuariologueado,correousuario;
+        public Mantenedor_Vendedor(string nombre,string apellido,string rut,string url,string usuario,string correo)
         {
             InitializeComponent();
             nombreusuario = nombre;
@@ -25,6 +25,7 @@ namespace sistema_megacenter
             rutusuario = rut;
             urlimagen = url;
             usuariologueado = usuario;
+            correousuario = correo;
             cbciudadagrevende.Text = "Seleccione";
             DataSet ciudades = ciudad.rescatardatosciudades();
             for (int i = 0; i < ciudades.Tables["Ciudad"].Rows.Count; i++)
@@ -117,7 +118,7 @@ namespace sistema_megacenter
         }
         private void Omitir_Caracteres(object sender, KeyPressEventArgs e)
         {
-            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú@. " + (char)8;
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú@." + (char)8;
 
             if (!cadena.Contains(e.KeyChar))
             {
@@ -226,6 +227,30 @@ namespace sistema_megacenter
                     estado = true;
                 }
 
+            }
+            DataSet verificacorreovendedor1 = vendedor.Buscar_correo_en_vendedor(txtemailvendedormodifica.Text);
+            DataSet verificacorreoadministrador1 = vendedor.Buscar_correo_en_administrador(txtemailvendedormodifica.Text);
+            DataSet verificacorreoproveedor1 = vendedor.Buscar_correo_en_proveedor(txtemailvendedormodifica.Text);
+            if (verificacorreovendedor1.Tables["Vendedor"].Rows.Count > 0)
+            {
+                errores = errores + "ya existe un usuario con esa direccion de email registrada en el sistema\n";
+                estado = true;
+            }
+            else
+            {
+                if (verificacorreoadministrador1.Tables["Administrador"].Rows.Count > 0)
+                {
+                    errores = errores + "ya existe un usuario con esa direccion de email registrada en el sistema\n";
+                    estado = true;
+                }
+                else
+                {
+                    if (verificacorreoproveedor1.Tables["Proveedor"].Rows.Count > 0)
+                    {
+                        errores = errores + "ya existe un usuario con esa direccion de email registrada en el sistema\n";
+                        estado = true;
+                    }
+                }
             }
             if (estado == true)
             {
@@ -367,7 +392,31 @@ namespace sistema_megacenter
                         errores = errores + "Debes ingresar una direccion de email valida\n";
                         estado = true;
                     }
+               
+                }
+            DataSet verificacorreovendedor=vendedor.Buscar_correo_en_vendedor(txtemailvendedormodifica.Text);
+            DataSet verificacorreoadministrador=vendedor.Buscar_correo_en_administrador(txtemailvendedormodifica.Text);
+            DataSet verificacorreoproveedor=vendedor.Buscar_correo_en_proveedor(txtemailvendedormodifica.Text);
+            if (verificacorreovendedor.Tables["Vendedor"].Rows.Count > 0)
+            {
+                errores = errores + "ya existe un usuario con esa direccion de email registrada en el sistema\n";
+                estado = true;
+            }
+            else
+            {
+                if (verificacorreoadministrador.Tables["Administrador"].Rows.Count > 0)
+                {
+                    errores = errores + "ya existe un usuario con esa direccion de email registrada en el sistema\n";
+                    estado = true;
+                }
+                else
+                {
+                    if(verificacorreoproveedor.Tables["Proveedor"].Rows.Count>0){
+                        errores = errores + "ya existe un usuario con esa direccion de email registrada en el sistema\n";
+                        estado = true;
                     }
+                }
+            }
                 if (estado == true)
                 {
                     MessageBox.Show(errores, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -512,7 +561,7 @@ namespace sistema_megacenter
 
         private void txtemailvendedormodifica_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú\\@/:1234567890#.¿? " + (char)8;
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú\\@/:1234567890#.- " + (char)8;
 
             if (!cadena.Contains(e.KeyChar))
             {
@@ -644,7 +693,7 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipalvendedor_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correousuario);
             this.Hide();
             principal.Show();
         }

@@ -65,17 +65,21 @@
             this.txtnuevaclave.Location = new System.Drawing.Point(154, 48);
             this.txtnuevaclave.Name = "txtnuevaclave";
             this.txtnuevaclave.PasswordChar = '*';
+            this.txtnuevaclave.ShortcutsEnabled = false;
             this.txtnuevaclave.Size = new System.Drawing.Size(203, 20);
             this.txtnuevaclave.TabIndex = 4;
             this.txtnuevaclave.TextChanged += new System.EventHandler(this.txtnuevaclave_TextChanged);
+            this.txtnuevaclave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnuevaclave_KeyPress);
             // 
             // txtrepetirclave
             // 
             this.txtrepetirclave.Location = new System.Drawing.Point(163, 102);
             this.txtrepetirclave.Name = "txtrepetirclave";
             this.txtrepetirclave.PasswordChar = '*';
+            this.txtrepetirclave.ShortcutsEnabled = false;
             this.txtrepetirclave.Size = new System.Drawing.Size(194, 20);
             this.txtrepetirclave.TabIndex = 5;
+            this.txtrepetirclave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrepetirclave_KeyPress);
             // 
             // label3
             // 
@@ -120,6 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(514, 262);
             this.Controls.Add(this.label4);

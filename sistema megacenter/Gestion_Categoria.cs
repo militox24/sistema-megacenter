@@ -51,6 +51,17 @@ namespace sistema_megacenter
             dd.DeleteCommand.ExecuteNonQuery();
             conn.desconectar();
         }
+        public void modificadatoscategoria(string nombre, string descripcion, string nuevonombre)
+        {
+            conn.conectar();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.UpdateCommand = new SqlCommand("UPDATE Categoria SET Nombre_Categoria=@nuevo,Descripción=@descripcion where Nombre_Categoria=@nombre", conn.conector);
+            da.UpdateCommand.Parameters.AddWithValue("@nombre", nombre);
+            da.UpdateCommand.Parameters.AddWithValue("@nuevo", nuevonombre);
+            da.UpdateCommand.Parameters.AddWithValue("@descripcion", descripcion);
+            da.UpdateCommand.ExecuteNonQuery();
+            conn.desconectar();
+        }
 
     }
 }

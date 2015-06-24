@@ -61,6 +61,8 @@
             this.txtrutcliente = new System.Windows.Forms.TextBox();
             this.btvolvermenuvendedorventa = new System.Windows.Forms.Button();
             this.btmenuprincipalventa = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbtipoventa = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilladetalleventa)).BeginInit();
             this.SuspendLayout();
@@ -101,7 +103,7 @@
             // txtfechaventa
             // 
             this.txtfechaventa.Enabled = false;
-            this.txtfechaventa.Location = new System.Drawing.Point(552, 114);
+            this.txtfechaventa.Location = new System.Drawing.Point(625, 111);
             this.txtfechaventa.Name = "txtfechaventa";
             this.txtfechaventa.Size = new System.Drawing.Size(126, 20);
             this.txtfechaventa.TabIndex = 180;
@@ -110,7 +112,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(495, 111);
+            this.label9.Location = new System.Drawing.Point(551, 111);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 21);
             this.label9.TabIndex = 179;
@@ -119,9 +121,12 @@
             // txtcantidadventa
             // 
             this.txtcantidadventa.Location = new System.Drawing.Point(411, 194);
+            this.txtcantidadventa.MaxLength = 4;
             this.txtcantidadventa.Name = "txtcantidadventa";
+            this.txtcantidadventa.ShortcutsEnabled = false;
             this.txtcantidadventa.Size = new System.Drawing.Size(100, 20);
             this.txtcantidadventa.TabIndex = 178;
+            this.txtcantidadventa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcantidadventa_KeyPress);
             // 
             // label8
             // 
@@ -150,9 +155,12 @@
             // txtcodigoproductoventa
             // 
             this.txtcodigoproductoventa.Location = new System.Drawing.Point(156, 197);
+            this.txtcodigoproductoventa.MaxLength = 13;
             this.txtcodigoproductoventa.Name = "txtcodigoproductoventa";
+            this.txtcodigoproductoventa.ShortcutsEnabled = false;
             this.txtcodigoproductoventa.Size = new System.Drawing.Size(133, 20);
             this.txtcodigoproductoventa.TabIndex = 175;
+            this.txtcodigoproductoventa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodigoproductoventa_KeyPress);
             // 
             // label7
             // 
@@ -302,7 +310,7 @@
             // 
             this.txtventa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtventa.Enabled = false;
-            this.txtventa.Location = new System.Drawing.Point(114, 153);
+            this.txtventa.Location = new System.Drawing.Point(439, 111);
             this.txtventa.Name = "txtventa";
             this.txtventa.Size = new System.Drawing.Size(100, 20);
             this.txtventa.TabIndex = 164;
@@ -311,7 +319,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 152);
+            this.label3.Location = new System.Drawing.Point(348, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 21);
             this.label3.TabIndex = 163;
@@ -321,7 +329,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(515, 148);
+            this.label2.Location = new System.Drawing.Point(309, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 21);
             this.label2.TabIndex = 162;
@@ -331,7 +339,7 @@
             // 
             this.txtrutadministrador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtrutadministrador.Enabled = false;
-            this.txtrutadministrador.Location = new System.Drawing.Point(371, 152);
+            this.txtrutadministrador.Location = new System.Drawing.Point(156, 153);
             this.txtrutadministrador.Name = "txtrutadministrador";
             this.txtrutadministrador.Size = new System.Drawing.Size(116, 20);
             this.txtrutadministrador.TabIndex = 161;
@@ -340,7 +348,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(220, 152);
+            this.label14.Location = new System.Drawing.Point(12, 152);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(145, 21);
             this.label14.TabIndex = 160;
@@ -349,10 +357,13 @@
             // txtrutcliente
             // 
             this.txtrutcliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtrutcliente.Location = new System.Drawing.Point(635, 148);
+            this.txtrutcliente.Location = new System.Drawing.Point(402, 152);
+            this.txtrutcliente.MaxLength = 10;
             this.txtrutcliente.Name = "txtrutcliente";
+            this.txtrutcliente.ShortcutsEnabled = false;
             this.txtrutcliente.Size = new System.Drawing.Size(116, 20);
             this.txtrutcliente.TabIndex = 181;
+            this.txtrutcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutcliente_KeyPress);
             // 
             // btvolvermenuvendedorventa
             // 
@@ -392,12 +403,38 @@
             this.btmenuprincipalventa.Visible = false;
             this.btmenuprincipalventa.Click += new System.EventHandler(this.btmenuprincipalventa_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(541, 148);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 21);
+            this.label10.TabIndex = 184;
+            this.label10.Text = "Tipo_Venta";
+            // 
+            // cbtipoventa
+            // 
+            this.cbtipoventa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbtipoventa.FormattingEnabled = true;
+            this.cbtipoventa.Items.AddRange(new object[] {
+            "Seleccione",
+            "Contado",
+            "Credito"});
+            this.cbtipoventa.Location = new System.Drawing.Point(630, 151);
+            this.cbtipoventa.Name = "cbtipoventa";
+            this.cbtipoventa.Size = new System.Drawing.Size(144, 21);
+            this.cbtipoventa.TabIndex = 185;
+            // 
             // Mantenedor_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(786, 636);
+            this.Controls.Add(this.cbtipoventa);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btmenuprincipalventa);
             this.Controls.Add(this.btvolvermenuvendedorventa);
             this.Controls.Add(this.txtrutcliente);
@@ -467,5 +504,7 @@
         private System.Windows.Forms.TextBox txtrutcliente;
         private System.Windows.Forms.Button btvolvermenuvendedorventa;
         private System.Windows.Forms.Button btmenuprincipalventa;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbtipoventa;
     }
 }

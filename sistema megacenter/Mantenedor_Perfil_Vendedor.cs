@@ -14,8 +14,8 @@ namespace sistema_megacenter
     {
         Gestion_Vendedor vendedor = new Gestion_Vendedor();
         Gestión_Ciudad ciudad = new Gestión_Ciudad();
-        string nombreusuario, apellidousuario, imagenusuario, rutusuario, usuariologueado;
-        public Mantenedor_Perfil_Vendedor(string nombre,string apellido,string url,string rut,string usuario)
+        string nombreusuario, apellidousuario, imagenusuario, rutusuario, usuariologueado,correologueado;
+        public Mantenedor_Perfil_Vendedor(string nombre,string apellido,string url,string rut,string usuario,string correo)
         {
             InitializeComponent();
             DataSet ciudades = ciudad.rescatardatosciudades();
@@ -91,12 +91,78 @@ namespace sistema_megacenter
                 
             }
         }
+        private void Omitir_Caracteres(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú\\@/:.¿? " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void btvolvermenuprincipalvendedorp_Click(object sender, EventArgs e)
         {
-            Menu_Vendedor principal = new Menu_Vendedor(nombreusuario,apellidousuario,imagenusuario,rutusuario,usuariologueado);
+            Menu_Vendedor principal = new Menu_Vendedor(nombreusuario,apellidousuario,imagenusuario,rutusuario,usuariologueado,txtemailvendedorperfil.Text);
             this.Hide();
             principal.Show();
+        }
+
+        private void txtnombrevendedorperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender ,e);
+        }
+
+        private void txtapellidovendedorperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtdireccionvendedorperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtpreguntavendedorperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtrespuestavendedorperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtclavevendedorperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtemailvendedorperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú\\@/:.1234567890 " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txttelefonovendedorperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
         }
     }
 }

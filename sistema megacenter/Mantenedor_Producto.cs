@@ -15,8 +15,12 @@ namespace sistema_megacenter
         Gestion_Producto producto = new Gestion_Producto();
         Gestion_Categoria categoria = new Gestion_Categoria();
         Gestion_Proveedor proveedor = new Gestion_Proveedor();
-        string nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado;
-        public Mantenedor_Producto(string nombre, string apellido, string rut,string url,string usuario)
+        Gestion_Giro giro = new Gestion_Giro();
+        Gestión_Ciudad ciudad = new Gestión_Ciudad();
+      
+        string rutcompleto;
+        string nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado,correousuario;
+        public Mantenedor_Producto(string nombre, string apellido, string rut,string url,string usuario,string correo)
         {
             InitializeComponent();
             nombreusuario = nombre;
@@ -24,6 +28,7 @@ namespace sistema_megacenter
             rutusuario = rut;
             urlimagen = url;
             usuariologueado = usuario;
+            correousuario = correo;
             cbproveedoragrega.Text = "Seleccione";
             cbcategoriaagrega.Text = "Seleccione";
             DataSet vercategoria = categoria.rescatardatoscategorias();
@@ -38,13 +43,34 @@ namespace sistema_megacenter
             }
 
         }
+        public void omitir_caracteres(object sender, KeyPressEventArgs e)
+        {
+            string cadena = " qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚáéíóú,." + (char)8;
 
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        public void solo_numeros(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         private void btcargaagregaproducto_Click(object sender, EventArgs e)
         {
             gbagregaproducto.Visible = true;
             gbeliminaproducto.Visible = false;
             gbmodificarproducto.Visible = false;
             gbconsultarproducto.Visible = false;
+
+            gbagregaproveedor.Visible = false;
+            gbagregaciudad.Visible = false;
+            gbagregagiro.Visible = false;
         }
 
         private void btcargaeliminarproducto_Click(object sender, EventArgs e)
@@ -53,6 +79,9 @@ namespace sistema_megacenter
             gbeliminaproducto.Visible = true;
             gbmodificarproducto.Visible = false;
             gbconsultarproducto.Visible = false;
+            gbagregaproveedor.Visible = false;
+            gbagregaciudad.Visible = false;
+            gbagregagiro.Visible = false;
             grillaeliminarproducto.DataSource = producto.rescata_productos();
             grillaeliminarproducto.DataMember = "Producto";
             grillaeliminarproducto.Columns["Cod_Producto"].SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -98,6 +127,9 @@ namespace sistema_megacenter
             gbeliminaproducto.Visible = false;
             gbmodificarproducto.Visible = true;
             gbconsultarproducto.Visible = false;
+            gbagregaproveedor.Visible = false;
+            gbagregaciudad.Visible = false;
+            gbagregagiro.Visible = false;
             DataSet vercategoria1 = categoria.rescatardatoscategorias();
             for (int i = 0; i < vercategoria1.Tables["Categoria"].Rows.Count; i++)
             {
@@ -118,6 +150,9 @@ namespace sistema_megacenter
             gbeliminaproducto.Visible = false;
             gbmodificarproducto.Visible = false;
             gbconsultarproducto.Visible = true;
+            gbagregaproveedor.Visible = false;
+            gbagregaciudad.Visible = false;
+            gbagregagiro.Visible = false;
         }
 
         private void btexaminarproductoagregar_Click(object sender, EventArgs e)
@@ -222,33 +257,42 @@ namespace sistema_megacenter
 
         private void btelimproducto_Click(object sender, EventArgs e)
         {
+            Boolean estado = false;
             for (int i = 0; i < grillaeliminarproducto.RowCount; i++)
             {
                 if (grillaeliminarproducto[0, i].Value.ToString() == "true")
                 {
                     producto.Elimina_Producto(int.Parse(grillaeliminarproducto[1, i].Value.ToString()));
+                    estado = true;
+                }
+                else
+                {
+                    MessageBox.Show("debes seleccionar el producto a eliminar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    estado = false;
                 }
             }
-            MessageBox.Show("Producto eliminado correctamente","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            grillaeliminarproducto.DataSource = producto.rescata_productos();
-            grillaeliminarproducto.DataMember = "Producto";
-            grillaeliminarproducto.Columns["Cod_Producto"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Nombre"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Descripcion"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Categoria"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Proveedor"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Stock"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Stock_Critico"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Precio_Venta"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Precio_Compra"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Url_Imagen"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproducto.Columns["Nombre"].Width = 150;
-            grillaeliminarproducto.Columns["Descripcion"].Width = 200;
-            grillaeliminarproducto.Columns["Proveedor"].Width = 300;
-            grillaeliminarproducto.Columns["Categoria"].Width = 100;
-            grillaeliminarproducto.Columns["Url_Imagen"].Width = 100;
-            inicializarCheckbox();
-
+            if (estado == true)
+            {
+                MessageBox.Show("Producto eliminado correctamente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                grillaeliminarproducto.DataSource = producto.rescata_productos();
+                grillaeliminarproducto.DataMember = "Producto";
+                grillaeliminarproducto.Columns["Cod_Producto"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Nombre"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Descripcion"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Categoria"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Proveedor"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Stock"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Stock_Critico"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Precio_Venta"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Precio_Compra"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Url_Imagen"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproducto.Columns["Nombre"].Width = 150;
+                grillaeliminarproducto.Columns["Descripcion"].Width = 200;
+                grillaeliminarproducto.Columns["Proveedor"].Width = 300;
+                grillaeliminarproducto.Columns["Categoria"].Width = 100;
+                grillaeliminarproducto.Columns["Url_Imagen"].Width = 100;
+                inicializarCheckbox();
+            }
         }
 
         private void btbuscarproducto_Click(object sender, EventArgs e)
@@ -391,18 +435,520 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipalproducto_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correousuario);
             this.Hide();
             principal.Show();
 
         }
 
-       
+        private void txtbuscarcodigoeliminar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender,e);
+        }
 
-       
+        private void btagregarproveedorproducto_Click(object sender, EventArgs e)
+        {
+            Boolean estado = false;
+            VerificarRut rut = new VerificarRut();
+            string errores = "Usted tiene los siguientes errores:\n";
+            if (txtrutproveedoragregapro.Text == "" || txtdigitoproveedoragregapro.Text == "" || txtnombreproveedoragregapro.Text == "" || txtdescripcionproveedoragregapro.Text == "" || txtdireccionagregapro.Text == "" || txtemailproveedorsagregapro.Text == "" || txturlproveedoragregapro.Text == "" || cbciudadproveedoragregapro.Text == "Seleccione" || cbgiroproveedoragregapro.Text == "Seleccione")
+            {
+                errores = errores + "Debes completar todos los campos\n";
+                estado = true;
+            }
+            if (txtdescripcionproveedoragregapro.TextLength > 150)
+            {
+                errores = errores + "La descripcion debe tener menos de 150 caracteres\n";
+                estado = true;
+            }
+            if (txtrutproveedoragregapro.Text != "" && txtdigitoproveedoragregapro.Text != "")
+            {
 
-      
+                string digito = rut.digitoVerificador(int.Parse(txtrutproveedoragregapro.Text));
+                if (txtdigitoproveedoragregapro.Text != digito)
+                {
+                    errores = errores + "El rut ingresado no es valido\n";
+                    estado = true;
+                }
+                else
+                {
+                    rutcompleto = txtrutproveedoragregapro.Text + "-" + txtdigitoproveedoragregapro.Text;
+                }
+            }
 
+            if (txtemailproveedorsagregapro.Text != "")
+            {
+                Boolean correo = rut.email_bien_escrito(txtemailproveedorsagregapro.Text);
+                if (correo == false)
+                {
+                    errores = errores + "La dirección de correo electrónico no es valida\n";
+                    estado = true;
+                }
+
+            }
+
+            if (estado == true)
+            {
+                MessageBox.Show(errores, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DataSet verificaproveedor = proveedor.verificarexistenciaproveedor(rutcompleto);
+                if (verificaproveedor.Tables["Proveedor"].Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe un Proveedor registrado en el sistema ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    proveedor.ingresarproveedor(rutcompleto, txtnombreproveedoragregapro.Text, txtdescripcionproveedoragregapro.Text, txtdireccionagregapro.Text, cbciudadproveedoragregapro.Text, cbgiroproveedoragregapro.Text, int.Parse(txttelefonoproveedoragregapro.Text), txtemailproveedorsagregapro.Text, txturlproveedoragregapro.Text);
+                    MessageBox.Show("Operación realizada con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtrutproveedoragregapro.Clear();
+                    txtdigitoproveedoragregapro.Clear();
+                    txtnombreproveedoragregapro.Clear();
+                    txtdescripcionproveedoragregapro.Clear();
+                    txtdireccionagregapro.Clear();
+                    cbciudadproveedoragregapro.SelectedIndex = -1;
+                    cbgiroproveedoragregapro.SelectedIndex = -1;
+                    txttelefonoproveedoragregapro.Clear();
+                    txtemailproveedorsagregapro.Clear();
+                    txturlproveedoragregapro.Clear();
+                    fotoproveedoragregapro.Image = Image.FromFile(Path.Combine(Application.StartupPath, "C:\\Users\\kmilo\\Documents\\Visual Studio 2010\\Projects\\sistema megacenter\\sistema megacenter\\imagenes\\user.png"));
+                }
+            }
+        }
+
+        private void btexaminaragregarproveedorpro_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog abririmagen = new OpenFileDialog();
+            abririmagen.Filter = "Archivos JPEG(*.jpg)|* .jpg";
+            abririmagen.InitialDirectory = "C:/Users/kmilo";
+            if (abririmagen.ShowDialog() == DialogResult.OK)
+            {
+                string directory = abririmagen.FileName;
+                txturlproveedoragregapro.Text = abririmagen.FileName;
+                Fotoproductomod.SizeMode = PictureBoxSizeMode.StretchImage;
+                Bitmap imagen = new Bitmap(directory);
+
+                fotoproveedoragregapro.Image = (Image)imagen;
+
+            }
+        }
+
+        private void txtdigitoproveedoragregapro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtrutproveedoragregapro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender,e);
+        }
+
+        private void txttelefonoproveedoragregapro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender, e);
+        }
+
+        private void btagregarciudadpro_Click(object sender, EventArgs e)
+        {
+            if (txtnombreciudadpro.Text == "" || txtdescripcionciudadpro.Text == "")
+            {
+                MessageBox.Show("Debes Ingresar los campos solicitados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DataSet ds = ciudad.verificarciudad(txtnombreciudadpro.Text);
+                if (ds.Tables["Ciudad"].Rows.Count > 0)
+                {
+                    MessageBox.Show("Actualmente se encuentra registrada esa ciudad en el sistema");
+                    txtnombreciudadpro.Clear();
+                    txtdescripcionciudadpro.Clear();
+                }
+                else
+                {
+                    ciudad.insertarCiudad(txtnombreciudadpro.Text, txtdescripcionciudadpro.Text);
+                    MessageBox.Show("Operación realizada con exito");
+                    txtnombreciudadpro.Clear();
+                    txtdescripcionciudadpro.Clear();
+                }
+            }
+        }
+
+        private void txtnombreciudadpro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtdescripcionciudadpro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void btvolvermenuprincipalpro1_Click(object sender, EventArgs e)
+        {
+             DataSet ciudadproveedormodifica = ciudad.rescatardatosciudades();
+            cbciudadproveedoragregapro.Items.Clear();
+            cbciudadproveedoragregapro.Items.Add("Seleccione");
+            for (int i = 0; i < ciudadproveedormodifica.Tables["Ciudad"].Rows.Count; i++)
+            {
+                cbciudadproveedoragregapro.Items.Add(ciudadproveedormodifica.Tables["Ciudad"].Rows[i][0].ToString());
+            }
+            gbagregaciudad.Visible = false;
+            gbagregaproveedor.Visible = true;
+            cbciudadproveedoragregapro.Text = "Seleccione";
+        }
+
+        private void btagregargiro_Click(object sender, EventArgs e)
+        {
+            string errores = "Usted tiene los siguientes errores:\n";
+            Boolean estado = false;
+            if (txtgiroagregapro.Text == "" || txtdescripciongiropro.Text == "")
+            {
+                errores = errores + "Debes completar todos los campos\n";
+                estado = true;
+            }
+            if (txtgiroagregapro.TextLength > 40)
+            {
+                errores = errores + "el giro debe contener menos de 40 carateres\n";
+                estado = true;
+            }
+            if (txtdescripciongiropro.TextLength > 150)
+            {
+                errores = errores + "La descripción debe contener menos de 150 carateres\n";
+                estado = true;
+            }
+            if (estado != false)
+            {
+                MessageBox.Show(errores, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DataSet verificaexistencia =giro.verificar_giro(txtgiroagregapro.Text);
+                if (verificaexistencia.Tables["Giro"].Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe un registro asociado con ese nombre de giro en el sistema", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtgiroagregapro.Clear();
+                    txtdescripciongiropro.Clear();
+                }
+                else
+                {
+                    giro.registrar_giro(txtgiroagregapro.Text, txtdescripciongiropro.Text);
+                    MessageBox.Show("Operación realizada con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtgiroagregapro.Clear();
+                    txtdescripciongiropro.Clear();
+
+
+
+                }
+            }
+        }
+
+        private void txtdescripciongiropro_TextChanged(object sender, EventArgs e)
+        {
+            label35.Text = txtdescripciongiropro.TextLength.ToString();
+        }
+
+        private void btvolverproveedor2_Click(object sender, EventArgs e)
+        {
+            DataSet giroproveedormodifica = giro.rescatar_giros();
+            cbgiroproveedoragregapro.Items.Clear();
+            cbgiroproveedoragregapro.Items.Add("Seleccione");
+            for (int i = 0; i < giroproveedormodifica.Tables["Giro"].Rows.Count; i++)
+            {
+                cbgiroproveedoragregapro.Items.Add(giroproveedormodifica.Tables["Giro"].Rows[i][0].ToString());
+            }
+            gbagregagiro.Visible = false;
+            gbagregaproveedor.Visible = true;
+            cbgiroproveedoragregapro.Text = "Seleccione";
+        }
+
+        private void txtgiroagregapro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtdescripciongiropro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void btagregacategoriaagre_Click(object sender, EventArgs e)
+        {
+            if (txtcateagreproducto.Text == "" || txtdescripacateproducto.Text == "")
+            {
+                MessageBox.Show("Debes completar todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DataSet verificaexistenciacategoria = categoria.verificarcategoria(txtcateagreproducto.Text);
+                if (verificaexistenciacategoria.Tables["Categoria"].Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe una categoria registrada con ese nombre en el sistema", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtcateagreproducto.Clear();
+                    txtdescripacateproducto.Clear();
+                }
+                else
+                {
+                    categoria.insertarCategoria(txtcateagreproducto.Text, txtdescripacateproducto.Text);
+                    MessageBox.Show("Categoria Agregada con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtcateagreproducto.Clear();
+                    txtdescripacateproducto.Clear();
+                }
+            }
+        }
+
+        private void txtcateagreproducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+
+        }
+
+        private void txtdescripacateproducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void btvolvermenucategoria1_Click(object sender, EventArgs e)
+        {
+            DataSet categorias= categoria.rescatardatoscategorias();
+            cbcategoriaagrega.Items.Clear();
+            cbcategoriaagrega.Items.Add("Seleccione");
+            for (int i = 0; i < categorias.Tables["Categoria"].Rows.Count; i++)
+            {
+                cbcategoriaagrega.Items.Add(categorias.Tables["Categoria"].Rows[i][0].ToString());
+            }
+            gbagrecategoria.Visible = false;
+            gbagregaproducto.Visible = true;
+            cbcategoriaagrega.Text = "Seleccione";
+        }
+
+        private void btvolvermenucategoria2_Click(object sender, EventArgs e)
+        {
+            DataSet categorias = categoria.rescatardatoscategorias();
+            cbcategoriamod.Items.Clear();
+            cbcategoriamod.Items.Add("Seleccione");
+            for (int i = 0; i < categorias.Tables["Categoria"].Rows.Count; i++)
+            {
+                cbcategoriamod.Items.Add(categorias.Tables["Categoria"].Rows[i][0].ToString());
+            }
+            gbagrecategoria.Visible = false;
+            gbmodificarproducto.Visible = true;
+            cbcategoriamod.Text = "Seleccione";
+        }
+
+        private void btagregaciudad_Click(object sender, EventArgs e)
+        {
+            btvolvermenuprincipalpro1.Visible = true;
+            gbagregaciudad.Visible = true;
+            gbagregaproveedor.Visible = false;
+        }
+
+        private void btcategoriaagrega_Click(object sender, EventArgs e)
+        {
+            btvolvermenucategoria1.Visible = true;
+            gbagregaproducto.Visible = false;
+            gbagrecategoria.Visible = true;
+        }
+
+        private void btagregacategoriamod_Click(object sender, EventArgs e)
+        {
+            btvolvermenucategoria2.Visible = true;
+            gbagrecategoria.Visible = true;
+            gbmodificarproducto.Visible = false;
+        }
+
+        private void btagregagiro_Click(object sender, EventArgs e)
+        {
+            gbagregagiro.Visible = true;
+            gbagregaproveedor.Visible = false;
+        }
+
+        private void gbagregagiro_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btvolver3_Click(object sender, EventArgs e)
+        {
+            DataSet proveedor1 = proveedor.rescatartodoslosproveedores();
+            cbproveedoragrega.Items.Clear();
+            cbproveedoragrega.Items.Add("Seleccione");
+            for (int i = 0; i < proveedor1.Tables["Proveedor"].Rows.Count; i++)
+            {
+                cbproveedoragrega.Items.Add(proveedor1.Tables["Proveedor"].Rows[i][0].ToString());
+            }
+            gbagregaproveedor.Visible = false;
+            gbagregaproducto.Visible = true;
+            cbproveedoragrega.Text = "Seleccione";
+        }
+
+        private void btvolver4_Click(object sender, EventArgs e)
+        {
+            DataSet proveedor2 = proveedor.rescatartodoslosproveedores();
+            cbproveedormod.Items.Clear();
+            cbproveedormod.Items.Add("Seleccione");
+            for (int i = 0; i < proveedor2.Tables["Proveedor"].Rows.Count; i++)
+            {
+                cbproveedoragrega.Items.Add(proveedor2.Tables["Proveedor"].Rows[i][0].ToString());
+            }
+            gbagregaproveedor.Visible = false;
+            gbmodificarproducto.Visible = true;
+            cbproveedormod.Text = "Seleccione";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            btvolver3.Visible = true;
+            gbagregaproducto.Visible = false;
+            gbagregaproveedor.Visible = true;
+            DataSet ciudades = ciudad.rescatardatosciudad();
+            cbciudadproveedoragregapro.Items.Clear();
+            cbciudadproveedoragregapro.Items.Add("Seleccione");
+            for (int i = 0; i < ciudades.Tables["Ciudad"].Rows.Count; i++)
+            {
+                cbciudadproveedoragregapro.Items.Add(ciudades.Tables["Ciudad"].Rows[i][0].ToString());
+            }
+            cbciudadproveedoragregapro.Text = "Seleccione";
+
+            DataSet giros = giro.rescatar_giros();
+            cbgiroproveedoragregapro.Items.Clear();
+            cbgiroproveedoragregapro.Items.Add("Seleccione");
+            for (int i = 0; i < giros.Tables["Giro"].Rows.Count; i++)
+            {
+                cbgiroproveedoragregapro.Items.Add(giros.Tables["Giro"].Rows[i][0].ToString());
+            }
+            cbgiroproveedoragregapro.Text = "Seleccione";
+        }
+
+        private void btproveedoragregaproducto_Click(object sender, EventArgs e)
+        {
+            btvolver4.Visible = true;
+            gbagregaproveedor.Visible = true;
+            gbmodificarproducto.Visible = false;
+            DataSet ciudades1 = ciudad.rescatardatosciudad();
+            cbciudadproveedoragregapro.Items.Clear();
+            cbciudadproveedoragregapro.Items.Add("Seleccione");
+            for (int i = 0; i < ciudades1.Tables["Ciudad"].Rows.Count; i++)
+            {
+                cbciudadproveedoragregapro.Items.Add(ciudades1.Tables["Ciudad"].Rows[i][0].ToString());
+            }
+            cbciudadproveedoragregapro.Text = "Seleccione";
+
+            DataSet giros1 = giro.rescatar_giros();
+            cbgiroproveedoragregapro.Items.Clear();
+            cbgiroproveedoragregapro.Items.Add("Seleccione");
+            for (int i = 0; i < giros1.Tables["Giro"].Rows.Count; i++)
+            {
+                cbgiroproveedoragregapro.Items.Add(giros1.Tables["Giro"].Rows[i][0].ToString());
+            }
+            cbgiroproveedoragregapro.Text = "Seleccione";
+           
+        }
+
+        private void txtcodproductomod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender,e);
+        }
+
+        private void txtnombremod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtdescripcionmod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtstockmod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender,e);
+        }
+
+        private void txtstockcriticomod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender, e);
+        }
+
+        private void txtprecioventamod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender, e);
+        }
+
+        private void txtpreciocompramod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender, e);
+        }
+
+        private void txtnombreproveedoragregapro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtdescripcionproveedoragregapro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtdireccionagregapro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtemailproveedorsagregapro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = " qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚáéíóú:@/" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcodigobarraagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender,e);
+        }
+
+        private void txtnombreagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtdescripcionagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            omitir_caracteres(sender,e);
+        }
+
+        private void txtstockagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender,e);
+        }
+
+        private void txtstockcriticoagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             solo_numeros(sender,e);
+        }
+
+        private void txtprecioventaagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             solo_numeros(sender,e);
+        }
+
+        private void txtpreciocompraagrega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             solo_numeros(sender,e);
+        }
+
+        private void txtbuscarproducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solo_numeros(sender,e);
+        }
 
     }
 }

@@ -43,11 +43,62 @@ namespace sistema_megacenter
             conn.desconectar();
             return ds;
         }
+
+        public DataSet Buscar_por_nombres(string nombre)
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select Rut,Nombres,Apellidos,Correo from Vendedor where Nombres=@nombre", conn.conector);
+            da.SelectCommand.Parameters.Add(new SqlParameter("@nombre", nombre));
+            da.Fill(ds, "Vendedor");
+            conn.desconectar();
+            return ds;
+        }
+        public DataSet Buscar_correo_en_vendedor(string correo)
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select * from Vendedor where Correo =@correo", conn.conector);
+            da.SelectCommand.Parameters.Add(new SqlParameter("@correo", correo));
+            da.Fill(ds, "Vendedor");
+            conn.desconectar();
+            return ds;
+        }
+        public DataSet Buscar_correo_en_administrador(string correo)
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select * from Administrador where Correo =@correo", conn.conector);
+            da.SelectCommand.Parameters.Add(new SqlParameter("@correo", correo));
+            da.Fill(ds, "Administrador");
+            conn.desconectar();
+            return ds;
+        }
+
+        public DataSet Buscar_correo_en_proveedor(string correo)
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select * from Proveedor where Email=@correo", conn.conector);
+            da.SelectCommand.Parameters.Add(new SqlParameter("@correo", correo));
+            da.Fill(ds, "Proveedor");
+            conn.desconectar();
+            return ds;
+        }
         public DataSet rescatardatosvendedor()
         {
             conn.conectar();
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter("select Rut,Nombres,Apellidos,Dirección,Correo from Vendedor", conn.conector);
+            da.Fill(ds, "Vendedor");
+            conn.desconectar();
+            return ds;
+        }
+        public DataSet rescatardatosvendedores2()
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select Rut,Nombres,Apellidos,Correo from Vendedor", conn.conector);
             da.Fill(ds, "Vendedor");
             conn.desconectar();
             return ds;

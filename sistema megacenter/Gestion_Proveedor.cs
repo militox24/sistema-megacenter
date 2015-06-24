@@ -20,11 +20,30 @@ namespace sistema_megacenter
             conn.desconectar();
             return ds;
         }
+        public DataSet buscar_por_nombres(string nombre)
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select Rut,Nombres,Descripcion,Email from Proveedor where Nombres=@nombre", conn.conector);
+            da.SelectCommand.Parameters.Add(new SqlParameter("@nombre", nombre));
+            da.Fill(ds, "Proveedor");
+            conn.desconectar();
+            return ds;
+        }
         public DataSet rescatartodoslosproveedores()
         {
             conn.conectar();
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter("select * from Proveedor", conn.conector);
+            da.Fill(ds, "Proveedor");
+            conn.desconectar();
+            return ds;
+        }
+        public DataSet rescatadatosdeproveedores()
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select Rut,Nombres,Descripcion,Email from Proveedor", conn.conector);
             da.Fill(ds, "Proveedor");
             conn.desconectar();
             return ds;

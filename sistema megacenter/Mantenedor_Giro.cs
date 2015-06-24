@@ -12,8 +12,8 @@ namespace sistema_megacenter
     public partial class Mantenedor_Giro : Form
     {
         Gestion_Giro gestion = new Gestion_Giro();
-        string nombreusuario, apellidousuario, rutusuario, urlimagen,usuariologueado;
-        public Mantenedor_Giro(string nombre,string apellido,string rut,string url,string usuario)
+        string nombreusuario, apellidousuario, rutusuario, urlimagen,usuariologueado,correologueado;
+        public Mantenedor_Giro(string nombre,string apellido,string rut,string url,string usuario,string correo)
         {
             InitializeComponent();
             label4.Text = "0";
@@ -22,6 +22,7 @@ namespace sistema_megacenter
             rutusuario = rut;
             usuariologueado = usuario;
             urlimagen = url;
+            correologueado = correo;
         }
         private void inicializarCheckbox()
         {
@@ -162,7 +163,7 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipal2_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correologueado);
             this.Hide();
             principal.Show();
         }

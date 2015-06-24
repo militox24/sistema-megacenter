@@ -34,6 +34,7 @@
             this.btcargaelimcliente = new System.Windows.Forms.Button();
             this.btcargaagregacliente = new System.Windows.Forms.Button();
             this.gbagrecliente = new System.Windows.Forms.GroupBox();
+            this.btcancelaragregacliente = new System.Windows.Forms.Button();
             this.btagregacliente = new System.Windows.Forms.Button();
             this.cbsexoclienteagre = new System.Windows.Forms.ComboBox();
             this.cbciudadcliente = new System.Windows.Forms.ComboBox();
@@ -63,6 +64,7 @@
             this.txtrutelimcliente = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.gbmodificacliente = new System.Windows.Forms.GroupBox();
+            this.btcancelarmodificacliente = new System.Windows.Forms.Button();
             this.btbuscaclientemodifica = new System.Windows.Forms.Button();
             this.txtrutmodicliente = new System.Windows.Forms.TextBox();
             this.btmodificarcliente = new System.Windows.Forms.Button();
@@ -145,6 +147,7 @@
             // gbagrecliente
             // 
             this.gbagrecliente.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.gbagrecliente.Controls.Add(this.btcancelaragregacliente);
             this.gbagrecliente.Controls.Add(this.btagregacliente);
             this.gbagrecliente.Controls.Add(this.cbsexoclienteagre);
             this.gbagrecliente.Controls.Add(this.cbciudadcliente);
@@ -174,6 +177,25 @@
             this.gbagrecliente.TabIndex = 3;
             this.gbagrecliente.TabStop = false;
             this.gbagrecliente.Text = "Agregar Cliente";
+            // 
+            // btcancelaragregacliente
+            // 
+            this.btcancelaragregacliente.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btcancelaragregacliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btcancelaragregacliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcancelaragregacliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcancelaragregacliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btcancelaragregacliente.Image = ((System.Drawing.Image)(resources.GetObject("btcancelaragregacliente.Image")));
+            this.btcancelaragregacliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcancelaragregacliente.Location = new System.Drawing.Point(88, 408);
+            this.btcancelaragregacliente.Name = "btcancelaragregacliente";
+            this.btcancelaragregacliente.Size = new System.Drawing.Size(134, 36);
+            this.btcancelaragregacliente.TabIndex = 52;
+            this.btcancelaragregacliente.Text = "Cancelar";
+            this.btcancelaragregacliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btcancelaragregacliente.UseVisualStyleBackColor = false;
+            this.btcancelaragregacliente.Visible = false;
+            this.btcancelaragregacliente.Click += new System.EventHandler(this.btcancelaragregacliente_Click);
             // 
             // btagregacliente
             // 
@@ -228,51 +250,72 @@
             // txtnombrecliente
             // 
             this.txtnombrecliente.Location = new System.Drawing.Point(120, 84);
+            this.txtnombrecliente.MaxLength = 50;
             this.txtnombrecliente.Name = "txtnombrecliente";
+            this.txtnombrecliente.ShortcutsEnabled = false;
             this.txtnombrecliente.Size = new System.Drawing.Size(335, 26);
             this.txtnombrecliente.TabIndex = 18;
+            this.txtnombrecliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombrecliente_KeyPress);
             // 
             // txtapellidocliente
             // 
             this.txtapellidocliente.Location = new System.Drawing.Point(120, 116);
+            this.txtapellidocliente.MaxLength = 50;
             this.txtapellidocliente.Name = "txtapellidocliente";
+            this.txtapellidocliente.ShortcutsEnabled = false;
             this.txtapellidocliente.Size = new System.Drawing.Size(335, 26);
             this.txtapellidocliente.TabIndex = 17;
+            this.txtapellidocliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtapellidocliente_KeyPress);
             // 
             // txtdireccioncliente
             // 
             this.txtdireccioncliente.Location = new System.Drawing.Point(120, 191);
+            this.txtdireccioncliente.MaxLength = 50;
             this.txtdireccioncliente.Name = "txtdireccioncliente";
+            this.txtdireccioncliente.ShortcutsEnabled = false;
             this.txtdireccioncliente.Size = new System.Drawing.Size(335, 26);
             this.txtdireccioncliente.TabIndex = 16;
+            this.txtdireccioncliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdireccioncliente_KeyPress);
             // 
             // txtcorreocliente
             // 
             this.txtcorreocliente.Location = new System.Drawing.Point(119, 343);
+            this.txtcorreocliente.MaxLength = 50;
             this.txtcorreocliente.Name = "txtcorreocliente";
+            this.txtcorreocliente.ShortcutsEnabled = false;
             this.txtcorreocliente.Size = new System.Drawing.Size(335, 26);
             this.txtcorreocliente.TabIndex = 14;
+            this.txtcorreocliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcorreocliente_KeyPress);
             // 
             // txttelefonocliente
             // 
             this.txttelefonocliente.Location = new System.Drawing.Point(119, 272);
+            this.txttelefonocliente.MaxLength = 8;
             this.txttelefonocliente.Name = "txttelefonocliente";
+            this.txttelefonocliente.ShortcutsEnabled = false;
             this.txttelefonocliente.Size = new System.Drawing.Size(335, 26);
             this.txttelefonocliente.TabIndex = 13;
+            this.txttelefonocliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefonocliente_KeyPress);
             // 
             // txtdigitocliente
             // 
             this.txtdigitocliente.Location = new System.Drawing.Point(315, 46);
+            this.txtdigitocliente.MaxLength = 1;
             this.txtdigitocliente.Name = "txtdigitocliente";
+            this.txtdigitocliente.ShortcutsEnabled = false;
             this.txtdigitocliente.Size = new System.Drawing.Size(46, 26);
             this.txtdigitocliente.TabIndex = 12;
+            this.txtdigitocliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdigitocliente_KeyPress);
             // 
             // txtrutcliente
             // 
             this.txtrutcliente.Location = new System.Drawing.Point(120, 46);
+            this.txtrutcliente.MaxLength = 8;
             this.txtrutcliente.Name = "txtrutcliente";
+            this.txtrutcliente.ShortcutsEnabled = false;
             this.txtrutcliente.Size = new System.Drawing.Size(173, 26);
             this.txtrutcliente.TabIndex = 11;
+            this.txtrutcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutcliente_KeyPress);
             // 
             // label11
             // 
@@ -460,9 +503,12 @@
             // txtrutelimcliente
             // 
             this.txtrutelimcliente.Location = new System.Drawing.Point(67, 47);
+            this.txtrutelimcliente.MaxLength = 10;
             this.txtrutelimcliente.Name = "txtrutelimcliente";
+            this.txtrutelimcliente.ShortcutsEnabled = false;
             this.txtrutelimcliente.Size = new System.Drawing.Size(274, 26);
             this.txtrutelimcliente.TabIndex = 2;
+            this.txtrutelimcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutelimcliente_KeyPress);
             // 
             // label12
             // 
@@ -478,6 +524,7 @@
             // gbmodificacliente
             // 
             this.gbmodificacliente.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.gbmodificacliente.Controls.Add(this.btcancelarmodificacliente);
             this.gbmodificacliente.Controls.Add(this.btbuscaclientemodifica);
             this.gbmodificacliente.Controls.Add(this.txtrutmodicliente);
             this.gbmodificacliente.Controls.Add(this.btmodificarcliente);
@@ -508,6 +555,25 @@
             this.gbmodificacliente.Text = "Modificar Cliente";
             this.gbmodificacliente.Visible = false;
             // 
+            // btcancelarmodificacliente
+            // 
+            this.btcancelarmodificacliente.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btcancelarmodificacliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btcancelarmodificacliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcancelarmodificacliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcancelarmodificacliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btcancelarmodificacliente.Image = ((System.Drawing.Image)(resources.GetObject("btcancelarmodificacliente.Image")));
+            this.btcancelarmodificacliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcancelarmodificacliente.Location = new System.Drawing.Point(78, 390);
+            this.btcancelarmodificacliente.Name = "btcancelarmodificacliente";
+            this.btcancelarmodificacliente.Size = new System.Drawing.Size(134, 36);
+            this.btcancelarmodificacliente.TabIndex = 51;
+            this.btcancelarmodificacliente.Text = "Cancelar";
+            this.btcancelarmodificacliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btcancelarmodificacliente.UseVisualStyleBackColor = false;
+            this.btcancelarmodificacliente.Visible = false;
+            this.btcancelarmodificacliente.Click += new System.EventHandler(this.btcancelarmodificacliente_Click);
+            // 
             // btbuscaclientemodifica
             // 
             this.btbuscaclientemodifica.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -529,9 +595,12 @@
             // txtrutmodicliente
             // 
             this.txtrutmodicliente.Location = new System.Drawing.Point(103, 50);
+            this.txtrutmodicliente.MaxLength = 10;
             this.txtrutmodicliente.Name = "txtrutmodicliente";
+            this.txtrutmodicliente.ShortcutsEnabled = false;
             this.txtrutmodicliente.Size = new System.Drawing.Size(238, 26);
             this.txtrutmodicliente.TabIndex = 49;
+            this.txtrutmodicliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutmodicliente_KeyPress);
             // 
             // btmodificarcliente
             // 
@@ -591,41 +660,56 @@
             // 
             this.txtnomcliemod.Enabled = false;
             this.txtnomcliemod.Location = new System.Drawing.Point(103, 84);
+            this.txtnomcliemod.MaxLength = 50;
             this.txtnomcliemod.Name = "txtnomcliemod";
+            this.txtnomcliemod.ShortcutsEnabled = false;
             this.txtnomcliemod.Size = new System.Drawing.Size(335, 26);
             this.txtnomcliemod.TabIndex = 40;
+            this.txtnomcliemod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnomcliemod_KeyPress);
             // 
             // txtapecliemod
             // 
             this.txtapecliemod.Enabled = false;
             this.txtapecliemod.Location = new System.Drawing.Point(103, 116);
+            this.txtapecliemod.MaxLength = 50;
             this.txtapecliemod.Name = "txtapecliemod";
+            this.txtapecliemod.ShortcutsEnabled = false;
             this.txtapecliemod.Size = new System.Drawing.Size(335, 26);
             this.txtapecliemod.TabIndex = 39;
+            this.txtapecliemod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtapecliemod_KeyPress);
             // 
             // txtdirecliemod
             // 
             this.txtdirecliemod.Enabled = false;
             this.txtdirecliemod.Location = new System.Drawing.Point(103, 182);
+            this.txtdirecliemod.MaxLength = 50;
             this.txtdirecliemod.Name = "txtdirecliemod";
+            this.txtdirecliemod.ShortcutsEnabled = false;
             this.txtdirecliemod.Size = new System.Drawing.Size(335, 26);
             this.txtdirecliemod.TabIndex = 38;
+            this.txtdirecliemod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdirecliemod_KeyPress);
             // 
             // txtcorrcliemod
             // 
             this.txtcorrcliemod.Enabled = false;
             this.txtcorrcliemod.Location = new System.Drawing.Point(103, 331);
+            this.txtcorrcliemod.MaxLength = 50;
             this.txtcorrcliemod.Name = "txtcorrcliemod";
+            this.txtcorrcliemod.ShortcutsEnabled = false;
             this.txtcorrcliemod.Size = new System.Drawing.Size(335, 26);
             this.txtcorrcliemod.TabIndex = 37;
+            this.txtcorrcliemod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcorrcliemod_KeyPress);
             // 
             // txttelclimod
             // 
             this.txttelclimod.Enabled = false;
             this.txttelclimod.Location = new System.Drawing.Point(103, 257);
+            this.txttelclimod.MaxLength = 8;
             this.txttelclimod.Name = "txttelclimod";
+            this.txttelclimod.ShortcutsEnabled = false;
             this.txttelclimod.Size = new System.Drawing.Size(335, 26);
             this.txttelclimod.TabIndex = 36;
+            this.txttelclimod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelclimod_KeyPress);
             // 
             // label13
             // 
@@ -748,13 +832,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(844, 587);
             this.Controls.Add(this.btvolvermenuprincipal3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gbeliminacliente);
             this.Controls.Add(this.gbagrecliente);
             this.Controls.Add(this.gbmodificacliente);
-            this.Controls.Add(this.gbeliminacliente);
             this.Name = "Mantenedor_Cliente";
             this.Text = "Mantenedor_Cliente";
             this.panel1.ResumeLayout(false);
@@ -826,5 +911,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btvolvermenuprincipal3;
+        private System.Windows.Forms.Button btcancelarmodificacliente;
+        private System.Windows.Forms.Button btcancelaragregacliente;
     }
 }

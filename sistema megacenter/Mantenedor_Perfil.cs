@@ -14,8 +14,8 @@ namespace sistema_megacenter
     {
         Gestion_perfil perfil = new Gestion_perfil();
         Gestión_Ciudad ciudad = new Gestión_Ciudad();
-        string nombreusuario,apellidousuario,imagenusuario,rutuusuario,usuariologueado;
-        public Mantenedor_Perfil(string nombres,string apellidos,string url,string rut,string usuario)
+        string nombreusuario,apellidousuario,imagenusuario,rutuusuario,usuariologueado,correologueado;
+        public Mantenedor_Perfil(string nombres,string apellidos,string url,string rut,string usuario,string correo)
         {
             InitializeComponent();
             DataSet rescata = perfil.Rescatar_datos(rut);
@@ -202,7 +202,7 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipal_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(txtnombresperfil.Text,txtapellidosperfil.Text,txtimagenperfil.Text,txtrutperfil.Text,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(txtnombresperfil.Text,txtapellidosperfil.Text,txtimagenperfil.Text,txtrutperfil.Text,usuariologueado,txtcorreoperfil.Text);
             this.Hide();
             principal.Show();
         }

@@ -11,11 +11,11 @@ namespace sistema_megacenter
 {
     public partial class Mantenedor_Cliente_Vendedor : Form
     {
-        string nombreusuario, apellidousuario, url_foto, rutusuario, usuariologueado;
+        string nombreusuario, apellidousuario, url_foto, rutusuario, usuariologueado,correologueado;
         string rutcompleto;
         Gestion_Cliente cliente = new Gestion_Cliente();
         Gestión_Ciudad ciudad = new Gestión_Ciudad();
-        public Mantenedor_Cliente_Vendedor(string nombre,string apellido,string url,string rut,string usuario)
+        public Mantenedor_Cliente_Vendedor(string nombre,string apellido,string url,string rut,string usuario,string correo)
         {
             InitializeComponent();
             nombreusuario = nombre;
@@ -23,6 +23,7 @@ namespace sistema_megacenter
             url_foto = url;
             rutusuario = rut;
             usuariologueado = usuario;
+            correologueado = correo;
             DataSet ds = ciudad.rescatardatosciudad();
             for (int i = 0; i < ds.Tables["Ciudad"].Rows.Count; i++)
             {
@@ -144,10 +145,93 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipalvendedor1_Click(object sender, EventArgs e)
         {
-            Menu_Vendedor principal = new Menu_Vendedor(nombreusuario,apellidousuario,url_foto,rutusuario,usuariologueado);
+            Menu_Vendedor principal = new Menu_Vendedor(nombreusuario,apellidousuario,url_foto,rutusuario,usuariologueado,correologueado);
             this.Hide();
             principal.Show();
 
+        }
+
+        private void txtrutconsultacliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtrutclientevendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtdigitoclientevendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void Omitir_Caracteres(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú\\@/:. " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtnombreclientevendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender,e);
+        }
+
+        private void txtapellidoclientevendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtdireccionclientevendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtcorreoclientevendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txttelefonoclientevendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void btcancelaragregarclientevendedor_Click(object sender, EventArgs e)
+        {
+            reiniciamantenedor();
         }
     }
 }

@@ -42,6 +42,9 @@
             this.txtbuscarcategoria = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gbmodificacategoria = new System.Windows.Forms.GroupBox();
+            this.btcancelarcategoria = new System.Windows.Forms.Button();
+            this.txtnuevonombre = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btbuscarcategoriamodifica = new System.Windows.Forms.Button();
             this.btmodificarcategoria = new System.Windows.Forms.Button();
             this.txtdescripcionmodifica = new System.Windows.Forms.TextBox();
@@ -54,6 +57,7 @@
             this.txtcateagre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btvolvermenuprincipalcategoria = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbelimcategoria.SuspendLayout();
@@ -169,6 +173,7 @@
             this.grillaelimcategoria.Name = "grillaelimcategoria";
             this.grillaelimcategoria.Size = new System.Drawing.Size(460, 150);
             this.grillaelimcategoria.TabIndex = 39;
+            
             // 
             // Column2
             // 
@@ -198,7 +203,9 @@
             // txtbuscarcategoria
             // 
             this.txtbuscarcategoria.Location = new System.Drawing.Point(110, 36);
+            this.txtbuscarcategoria.MaxLength = 50;
             this.txtbuscarcategoria.Name = "txtbuscarcategoria";
+            this.txtbuscarcategoria.ShortcutsEnabled = false;
             this.txtbuscarcategoria.Size = new System.Drawing.Size(223, 26);
             this.txtbuscarcategoria.TabIndex = 37;
             this.txtbuscarcategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscarcategoria_KeyPress);
@@ -216,6 +223,9 @@
             // 
             // gbmodificacategoria
             // 
+            this.gbmodificacategoria.Controls.Add(this.btcancelarcategoria);
+            this.gbmodificacategoria.Controls.Add(this.txtnuevonombre);
+            this.gbmodificacategoria.Controls.Add(this.label6);
             this.gbmodificacategoria.Controls.Add(this.btbuscarcategoriamodifica);
             this.gbmodificacategoria.Controls.Add(this.btmodificarcategoria);
             this.gbmodificacategoria.Controls.Add(this.txtdescripcionmodifica);
@@ -226,10 +236,51 @@
             this.gbmodificacategoria.ForeColor = System.Drawing.Color.Gold;
             this.gbmodificacategoria.Location = new System.Drawing.Point(15, 18);
             this.gbmodificacategoria.Name = "gbmodificacategoria";
-            this.gbmodificacategoria.Size = new System.Drawing.Size(497, 279);
+            this.gbmodificacategoria.Size = new System.Drawing.Size(497, 325);
             this.gbmodificacategoria.TabIndex = 43;
             this.gbmodificacategoria.TabStop = false;
             this.gbmodificacategoria.Text = "Modificar Categoria";
+            // 
+            // btcancelarcategoria
+            // 
+            this.btcancelarcategoria.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btcancelarcategoria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btcancelarcategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcancelarcategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcancelarcategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btcancelarcategoria.Image = ((System.Drawing.Image)(resources.GetObject("btcancelarcategoria.Image")));
+            this.btcancelarcategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcancelarcategoria.Location = new System.Drawing.Point(56, 268);
+            this.btcancelarcategoria.Name = "btcancelarcategoria";
+            this.btcancelarcategoria.Size = new System.Drawing.Size(129, 36);
+            this.btcancelarcategoria.TabIndex = 45;
+            this.btcancelarcategoria.Text = "Cancelar";
+            this.btcancelarcategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btcancelarcategoria.UseVisualStyleBackColor = false;
+            this.btcancelarcategoria.Visible = false;
+            this.btcancelarcategoria.Click += new System.EventHandler(this.btcancelarcategoria_Click);
+            // 
+            // txtnuevonombre
+            // 
+            this.txtnuevonombre.Enabled = false;
+            this.txtnuevonombre.Location = new System.Drawing.Point(157, 85);
+            this.txtnuevonombre.MaxLength = 50;
+            this.txtnuevonombre.Name = "txtnuevonombre";
+            this.txtnuevonombre.ShortcutsEnabled = false;
+            this.txtnuevonombre.Size = new System.Drawing.Size(215, 26);
+            this.txtnuevonombre.TabIndex = 44;
+            this.txtnuevonombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnuevonombre_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(15, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 20);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "Nuevo Nombre :";
             // 
             // btbuscarcategoriamodifica
             // 
@@ -258,7 +309,7 @@
             this.btmodificarcategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btmodificarcategoria.Image = ((System.Drawing.Image)(resources.GetObject("btmodificarcategoria.Image")));
             this.btmodificarcategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btmodificarcategoria.Location = new System.Drawing.Point(350, 232);
+            this.btmodificarcategoria.Location = new System.Drawing.Point(339, 268);
             this.btmodificarcategoria.Name = "btmodificarcategoria";
             this.btmodificarcategoria.Size = new System.Drawing.Size(129, 36);
             this.btmodificarcategoria.TabIndex = 41;
@@ -271,10 +322,11 @@
             // txtdescripcionmodifica
             // 
             this.txtdescripcionmodifica.Enabled = false;
-            this.txtdescripcionmodifica.Location = new System.Drawing.Point(127, 105);
-            this.txtdescripcionmodifica.MaxLength = 300;
+            this.txtdescripcionmodifica.Location = new System.Drawing.Point(129, 144);
+            this.txtdescripcionmodifica.MaxLength = 150;
             this.txtdescripcionmodifica.Multiline = true;
             this.txtdescripcionmodifica.Name = "txtdescripcionmodifica";
+            this.txtdescripcionmodifica.ShortcutsEnabled = false;
             this.txtdescripcionmodifica.Size = new System.Drawing.Size(215, 118);
             this.txtdescripcionmodifica.TabIndex = 40;
             this.txtdescripcionmodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescripcionmodifica_KeyPress);
@@ -284,6 +336,7 @@
             this.txtcategoriamodifica.Location = new System.Drawing.Point(127, 47);
             this.txtcategoriamodifica.MaxLength = 50;
             this.txtcategoriamodifica.Name = "txtcategoriamodifica";
+            this.txtcategoriamodifica.ShortcutsEnabled = false;
             this.txtcategoriamodifica.Size = new System.Drawing.Size(215, 26);
             this.txtcategoriamodifica.TabIndex = 39;
             this.txtcategoriamodifica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcategoriamodifica_KeyPress);
@@ -293,7 +346,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(15, 105);
+            this.label1.Location = new System.Drawing.Point(6, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 38;
@@ -347,9 +400,10 @@
             // txtdescripacatgre
             // 
             this.txtdescripacatgre.Location = new System.Drawing.Point(127, 105);
-            this.txtdescripacatgre.MaxLength = 300;
+            this.txtdescripacatgre.MaxLength = 150;
             this.txtdescripacatgre.Multiline = true;
             this.txtdescripacatgre.Name = "txtdescripacatgre";
+            this.txtdescripacatgre.ShortcutsEnabled = false;
             this.txtdescripacatgre.Size = new System.Drawing.Size(215, 118);
             this.txtdescripacatgre.TabIndex = 40;
             this.txtdescripacatgre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescripacatgre_KeyPress);
@@ -359,6 +413,7 @@
             this.txtcateagre.Location = new System.Drawing.Point(127, 47);
             this.txtcateagre.MaxLength = 50;
             this.txtcateagre.Name = "txtcateagre";
+            this.txtcateagre.ShortcutsEnabled = false;
             this.txtcateagre.Size = new System.Drawing.Size(215, 26);
             this.txtcateagre.TabIndex = 39;
             this.txtcateagre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcateagre_KeyPress);
@@ -385,12 +440,33 @@
             this.label4.TabIndex = 37;
             this.label4.Text = "Categoria:";
             // 
+            // btvolvermenuprincipalcategoria
+            // 
+            this.btvolvermenuprincipalcategoria.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolvermenuprincipalcategoria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolvermenuprincipalcategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolvermenuprincipalcategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolvermenuprincipalcategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolvermenuprincipalcategoria.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipalcategoria.Image")));
+            this.btvolvermenuprincipalcategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolvermenuprincipalcategoria.Location = new System.Drawing.Point(355, 422);
+            this.btvolvermenuprincipalcategoria.Name = "btvolvermenuprincipalcategoria";
+            this.btvolvermenuprincipalcategoria.Size = new System.Drawing.Size(215, 36);
+            this.btvolvermenuprincipalcategoria.TabIndex = 31;
+            this.btvolvermenuprincipalcategoria.Text = "Volver Menú Principal";
+            this.btvolvermenuprincipalcategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolvermenuprincipalcategoria.UseVisualStyleBackColor = false;
+            this.btvolvermenuprincipalcategoria.Visible = false;
+            this.btvolvermenuprincipalcategoria.Click += new System.EventHandler(this.btvolvermenuprincipalcategoria_Click);
+            // 
             // Mantenedor_Categoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(807, 455);
+            this.ClientSize = new System.Drawing.Size(807, 470);
+            this.Controls.Add(this.btvolvermenuprincipalcategoria);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "Mantenedor_Categoria";
@@ -418,7 +494,6 @@
         private System.Windows.Forms.GroupBox gbelimcategoria;
         private System.Windows.Forms.Button btelimcategoria;
         private System.Windows.Forms.DataGridView grillaelimcategoria;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
         private System.Windows.Forms.Button btbuscarcategoriaelim;
         private System.Windows.Forms.TextBox txtbuscarcategoria;
         private System.Windows.Forms.Label label3;
@@ -435,5 +510,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btbuscarcategoriamodifica;
+        private System.Windows.Forms.TextBox txtnuevonombre;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btcancelarcategoria;
+        private System.Windows.Forms.Button btvolvermenuprincipalcategoria;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
     }
 }

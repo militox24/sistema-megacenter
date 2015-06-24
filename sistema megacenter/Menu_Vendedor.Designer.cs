@@ -39,6 +39,7 @@
             this.btvendedor = new System.Windows.Forms.Button();
             this.btcerrarsesionvendedor = new System.Windows.Forms.Button();
             this.btventa = new System.Windows.Forms.Button();
+            this.btcorreovendedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoiniciovendedor)).BeginInit();
             this.SuspendLayout();
@@ -157,7 +158,7 @@
             this.btvendedor.Name = "btvendedor";
             this.btvendedor.Size = new System.Drawing.Size(126, 142);
             this.btvendedor.TabIndex = 20;
-            this.btvendedor.Text = "VENDEDOR";
+            this.btvendedor.Text = "PERFIL";
             this.btvendedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btvendedor.UseVisualStyleBackColor = false;
             this.btvendedor.Click += new System.EventHandler(this.btvendedor_Click);
@@ -200,12 +201,34 @@
             this.btventa.UseVisualStyleBackColor = false;
             this.btventa.Click += new System.EventHandler(this.btventa_Click);
             // 
+            // btcorreovendedor
+            // 
+            this.btcorreovendedor.BackColor = System.Drawing.Color.Transparent;
+            this.btcorreovendedor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btcorreovendedor.FlatAppearance.BorderSize = 0;
+            this.btcorreovendedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btcorreovendedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btcorreovendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcorreovendedor.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btcorreovendedor.ForeColor = System.Drawing.Color.White;
+            this.btcorreovendedor.Image = ((System.Drawing.Image)(resources.GetObject("btcorreovendedor.Image")));
+            this.btcorreovendedor.Location = new System.Drawing.Point(491, 347);
+            this.btcorreovendedor.Name = "btcorreovendedor";
+            this.btcorreovendedor.Size = new System.Drawing.Size(126, 142);
+            this.btcorreovendedor.TabIndex = 25;
+            this.btcorreovendedor.Text = "CORREO";
+            this.btcorreovendedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btcorreovendedor.UseVisualStyleBackColor = false;
+            this.btcorreovendedor.Click += new System.EventHandler(this.btcorreovendedor_Click);
+            // 
             // Menu_Vendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(878, 561);
+            this.Controls.Add(this.btcorreovendedor);
             this.Controls.Add(this.btventa);
             this.Controls.Add(this.btcerrarsesionvendedor);
             this.Controls.Add(this.btvendedor);
@@ -237,5 +260,6 @@
         private System.Windows.Forms.Button btvendedor;
         private System.Windows.Forms.Button btcerrarsesionvendedor;
         private System.Windows.Forms.Button btventa;
+        private System.Windows.Forms.Button btcorreovendedor;
     }
 }

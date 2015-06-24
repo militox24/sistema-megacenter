@@ -20,8 +20,8 @@ namespace sistema_megacenter
         //int resta = 0;
         Gestion_Compra Compra = new Gestion_Compra();
         Gestion_Proveedor proveedor = new Gestion_Proveedor();
-        string nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado;
-        public Mantenedor_Compra(string nombre,string apellido,string rut,string url,string usuario)
+        string nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado,correologueado;
+        public Mantenedor_Compra(string nombre,string apellido,string rut,string url,string usuario,string correo)
         {
             InitializeComponent();
             txtrutadmin.Text = rut;
@@ -30,6 +30,7 @@ namespace sistema_megacenter
             urlimagen = url;
             rutusuario = rut;
             usuariologueado = usuario;
+            correologueado = correo;
             DataSet ds = proveedor.rescatartodoslosproveedores();
             if (ds.Tables["Proveedor"].Rows.Count > 0)
             {
@@ -211,7 +212,7 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipalcompra_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correologueado);
             this.Hide();
             principal.Show();
         }

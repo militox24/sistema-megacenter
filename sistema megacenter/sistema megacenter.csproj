@@ -48,13 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gestion_Correo.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Gestion_Categoria.cs" />
     <Compile Include="Gestion_Cliente.cs" />
     <Compile Include="Gestion_Compra.cs" />
+    <Compile Include="Gestion_devolucion.cs" />
     <Compile Include="Gestion_Giro.cs" />
     <Compile Include="Gestion_Ingreso.cs" />
     <Compile Include="Gestion_Multa.cs" />
+    <Compile Include="Gestion_Pagos.cs" />
     <Compile Include="Gestion_perfil.cs" />
     <Compile Include="Gestion_Producto.cs" />
     <Compile Include="Gestion_Proveedor.cs" />
@@ -72,6 +75,12 @@
     </Compile>
     <Compile Include="Ingreso_Sistema.Designer.cs">
       <DependentUpon>Ingreso_Sistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Buscar_Correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Buscar_Correo.Designer.cs">
+      <DependentUpon>Mantenedor_Buscar_Correo.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenedor_Cambio_Clave.cs">
       <SubType>Form</SubType>
@@ -115,6 +124,12 @@
     <Compile Include="Mantenedor_correo.Designer.cs">
       <DependentUpon>Mantenedor_correo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenedor_Devolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Devolucion.Designer.cs">
+      <DependentUpon>Mantenedor_Devolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenedor_Envio_Correo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +153,12 @@
     </Compile>
     <Compile Include="Mantenedor_Multa.Designer.cs">
       <DependentUpon>Mantenedor_Multa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedor_Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedor_Pago.Designer.cs">
+      <DependentUpon>Mantenedor_Pago.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenedor_Perfil.cs">
       <SubType>Form</SubType>
@@ -214,6 +235,9 @@
     <EmbeddedResource Include="Ingreso_Sistema.resx">
       <DependentUpon>Ingreso_Sistema.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Buscar_Correo.resx">
+      <DependentUpon>Mantenedor_Buscar_Correo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Cambio_Clave.resx">
       <DependentUpon>Mantenedor_Cambio_Clave.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +259,9 @@
     <EmbeddedResource Include="Mantenedor_correo.resx">
       <DependentUpon>Mantenedor_correo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Devolucion.resx">
+      <DependentUpon>Mantenedor_Devolucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Envio_Correo.resx">
       <DependentUpon>Mantenedor_Envio_Correo.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Multa.resx">
       <DependentUpon>Mantenedor_Multa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedor_Pago.resx">
+      <DependentUpon>Mantenedor_Pago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedor_Perfil.resx">
       <DependentUpon>Mantenedor_Perfil.cs</DependentUpon>

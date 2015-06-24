@@ -44,6 +44,9 @@
             this.btvendedor = new System.Windows.Forms.Button();
             this.btventa = new System.Windows.Forms.Button();
             this.btcompra = new System.Windows.Forms.Button();
+            this.btpagos = new System.Windows.Forms.Button();
+            this.btcorreoadministrador = new System.Windows.Forms.Button();
+            this.btcerrarsesionadministrador = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoinicioadministrador)).BeginInit();
             this.SuspendLayout();
@@ -307,12 +310,73 @@
             this.btcompra.UseVisualStyleBackColor = false;
             this.btcompra.Click += new System.EventHandler(this.btcompra_Click);
             // 
+            // btpagos
+            // 
+            this.btpagos.BackColor = System.Drawing.Color.Transparent;
+            this.btpagos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btpagos.FlatAppearance.BorderSize = 0;
+            this.btpagos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btpagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btpagos.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btpagos.ForeColor = System.Drawing.Color.White;
+            this.btpagos.Image = ((System.Drawing.Image)(resources.GetObject("btpagos.Image")));
+            this.btpagos.Location = new System.Drawing.Point(843, 317);
+            this.btpagos.Name = "btpagos";
+            this.btpagos.Size = new System.Drawing.Size(126, 131);
+            this.btpagos.TabIndex = 22;
+            this.btpagos.Text = "PAGOS";
+            this.btpagos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btpagos.UseVisualStyleBackColor = false;
+            this.btpagos.Click += new System.EventHandler(this.btpagos_Click);
+            // 
+            // btcorreoadministrador
+            // 
+            this.btcorreoadministrador.BackColor = System.Drawing.Color.Transparent;
+            this.btcorreoadministrador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btcorreoadministrador.FlatAppearance.BorderSize = 0;
+            this.btcorreoadministrador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btcorreoadministrador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btcorreoadministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcorreoadministrador.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btcorreoadministrador.ForeColor = System.Drawing.Color.White;
+            this.btcorreoadministrador.Image = ((System.Drawing.Image)(resources.GetObject("btcorreoadministrador.Image")));
+            this.btcorreoadministrador.Location = new System.Drawing.Point(989, 147);
+            this.btcorreoadministrador.Name = "btcorreoadministrador";
+            this.btcorreoadministrador.Size = new System.Drawing.Size(126, 142);
+            this.btcorreoadministrador.TabIndex = 26;
+            this.btcorreoadministrador.Text = "CORREO";
+            this.btcorreoadministrador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btcorreoadministrador.UseVisualStyleBackColor = false;
+            this.btcorreoadministrador.Click += new System.EventHandler(this.btcorreoadministrador_Click);
+            // 
+            // btcerrarsesionadministrador
+            // 
+            this.btcerrarsesionadministrador.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btcerrarsesionadministrador.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btcerrarsesionadministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcerrarsesionadministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcerrarsesionadministrador.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btcerrarsesionadministrador.Image = ((System.Drawing.Image)(resources.GetObject("btcerrarsesionadministrador.Image")));
+            this.btcerrarsesionadministrador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcerrarsesionadministrador.Location = new System.Drawing.Point(1034, 506);
+            this.btcerrarsesionadministrador.Name = "btcerrarsesionadministrador";
+            this.btcerrarsesionadministrador.Size = new System.Drawing.Size(164, 28);
+            this.btcerrarsesionadministrador.TabIndex = 27;
+            this.btcerrarsesionadministrador.Text = "Cerrar Sesion";
+            this.btcerrarsesionadministrador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btcerrarsesionadministrador.UseVisualStyleBackColor = false;
+            this.btcerrarsesionadministrador.Click += new System.EventHandler(this.btcerrarsesionadministrador_Click);
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(1230, 559);
+            this.Controls.Add(this.btcerrarsesionadministrador);
+            this.Controls.Add(this.btcorreoadministrador);
+            this.Controls.Add(this.btpagos);
             this.Controls.Add(this.btcompra);
             this.Controls.Add(this.btventa);
             this.Controls.Add(this.btvendedor);
@@ -354,5 +418,8 @@
         private System.Windows.Forms.Button btvendedor;
         private System.Windows.Forms.Button btventa;
         private System.Windows.Forms.Button btcompra;
+        private System.Windows.Forms.Button btpagos;
+        private System.Windows.Forms.Button btcorreoadministrador;
+        private System.Windows.Forms.Button btcerrarsesionadministrador;
     }
 }

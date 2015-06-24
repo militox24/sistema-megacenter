@@ -87,6 +87,7 @@
             this.txtrutrecupera.Location = new System.Drawing.Point(64, 48);
             this.txtrutrecupera.MaxLength = 10;
             this.txtrutrecupera.Name = "txtrutrecupera";
+            this.txtrutrecupera.ShortcutsEnabled = false;
             this.txtrutrecupera.Size = new System.Drawing.Size(241, 24);
             this.txtrutrecupera.TabIndex = 1;
             this.txtrutrecupera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutrecupera_KeyPress);
@@ -105,6 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(614, 282);
             this.Controls.Add(this.groupBox1);

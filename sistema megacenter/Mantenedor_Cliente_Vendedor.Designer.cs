@@ -30,10 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mantenedor_Cliente_Vendedor));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btvolvermenuprincipalvendedor1 = new System.Windows.Forms.Button();
-            this.btcargaagregaclientevendedor = new System.Windows.Forms.Button();
             this.btcargaconsultaclientevendedor = new System.Windows.Forms.Button();
+            this.btcargaagregaclientevendedor = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gbconsultaclientevendedor = new System.Windows.Forms.GroupBox();
+            this.grillaconsultacliente = new System.Windows.Forms.DataGridView();
+            this.btbuscarclienteeliminar = new System.Windows.Forms.Button();
+            this.txtrutconsultacliente = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.gbagreclientevendedor = new System.Windows.Forms.GroupBox();
             this.btagregaclientevendedor = new System.Windows.Forms.Button();
             this.cbsexoclienteagrevendedor = new System.Windows.Forms.ComboBox();
@@ -56,16 +60,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.gbconsultaclientevendedor = new System.Windows.Forms.GroupBox();
-            this.grillaconsultacliente = new System.Windows.Forms.DataGridView();
-            this.btbuscarclienteeliminar = new System.Windows.Forms.Button();
-            this.txtrutconsultacliente = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.btvolvermenuprincipalvendedor1 = new System.Windows.Forms.Button();
+            this.btcancelaragregarclientevendedor = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.gbagreclientevendedor.SuspendLayout();
             this.gbconsultaclientevendedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaconsultacliente)).BeginInit();
+            this.gbagreclientevendedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,47 +78,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(162, 457);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.gbconsultaclientevendedor);
-            this.panel2.Controls.Add(this.gbagreclientevendedor);
-            this.panel2.Location = new System.Drawing.Point(180, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(653, 478);
-            this.panel2.TabIndex = 1;
-            // 
-            // btvolvermenuprincipalvendedor1
-            // 
-            this.btvolvermenuprincipalvendedor1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btvolvermenuprincipalvendedor1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btvolvermenuprincipalvendedor1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btvolvermenuprincipalvendedor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btvolvermenuprincipalvendedor1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btvolvermenuprincipalvendedor1.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipalvendedor1.Image")));
-            this.btvolvermenuprincipalvendedor1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btvolvermenuprincipalvendedor1.Location = new System.Drawing.Point(388, 508);
-            this.btvolvermenuprincipalvendedor1.Name = "btvolvermenuprincipalvendedor1";
-            this.btvolvermenuprincipalvendedor1.Size = new System.Drawing.Size(223, 36);
-            this.btvolvermenuprincipalvendedor1.TabIndex = 90;
-            this.btvolvermenuprincipalvendedor1.Text = "Volver Menu Principal";
-            this.btvolvermenuprincipalvendedor1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btvolvermenuprincipalvendedor1.UseVisualStyleBackColor = false;
-            this.btvolvermenuprincipalvendedor1.Click += new System.EventHandler(this.btvolvermenuprincipalvendedor1_Click);
-            // 
-            // btcargaagregaclientevendedor
-            // 
-            this.btcargaagregaclientevendedor.ForeColor = System.Drawing.SystemColors.Control;
-            this.btcargaagregaclientevendedor.Image = ((System.Drawing.Image)(resources.GetObject("btcargaagregaclientevendedor.Image")));
-            this.btcargaagregaclientevendedor.Location = new System.Drawing.Point(26, 74);
-            this.btcargaagregaclientevendedor.Name = "btcargaagregaclientevendedor";
-            this.btcargaagregaclientevendedor.Size = new System.Drawing.Size(97, 93);
-            this.btcargaagregaclientevendedor.TabIndex = 1;
-            this.btcargaagregaclientevendedor.Text = "AGREGAR";
-            this.btcargaagregaclientevendedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btcargaagregaclientevendedor.UseVisualStyleBackColor = true;
-            this.btcargaagregaclientevendedor.Click += new System.EventHandler(this.btcargaagregaclientevendedor_Click);
             // 
             // btcargaconsultaclientevendedor
             // 
@@ -132,9 +92,97 @@
             this.btcargaconsultaclientevendedor.UseVisualStyleBackColor = true;
             this.btcargaconsultaclientevendedor.Click += new System.EventHandler(this.btcargaconsultaclientevendedor_Click);
             // 
+            // btcargaagregaclientevendedor
+            // 
+            this.btcargaagregaclientevendedor.ForeColor = System.Drawing.SystemColors.Control;
+            this.btcargaagregaclientevendedor.Image = ((System.Drawing.Image)(resources.GetObject("btcargaagregaclientevendedor.Image")));
+            this.btcargaagregaclientevendedor.Location = new System.Drawing.Point(26, 74);
+            this.btcargaagregaclientevendedor.Name = "btcargaagregaclientevendedor";
+            this.btcargaagregaclientevendedor.Size = new System.Drawing.Size(97, 93);
+            this.btcargaagregaclientevendedor.TabIndex = 1;
+            this.btcargaagregaclientevendedor.Text = "AGREGAR";
+            this.btcargaagregaclientevendedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btcargaagregaclientevendedor.UseVisualStyleBackColor = true;
+            this.btcargaagregaclientevendedor.Click += new System.EventHandler(this.btcargaagregaclientevendedor_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.gbagreclientevendedor);
+            this.panel2.Controls.Add(this.gbconsultaclientevendedor);
+            this.panel2.Location = new System.Drawing.Point(180, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(653, 478);
+            this.panel2.TabIndex = 1;
+            // 
+            // gbconsultaclientevendedor
+            // 
+            this.gbconsultaclientevendedor.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.gbconsultaclientevendedor.Controls.Add(this.grillaconsultacliente);
+            this.gbconsultaclientevendedor.Controls.Add(this.btbuscarclienteeliminar);
+            this.gbconsultaclientevendedor.Controls.Add(this.txtrutconsultacliente);
+            this.gbconsultaclientevendedor.Controls.Add(this.label12);
+            this.gbconsultaclientevendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbconsultaclientevendedor.ForeColor = System.Drawing.Color.Gold;
+            this.gbconsultaclientevendedor.Location = new System.Drawing.Point(23, 28);
+            this.gbconsultaclientevendedor.Name = "gbconsultaclientevendedor";
+            this.gbconsultaclientevendedor.Size = new System.Drawing.Size(618, 447);
+            this.gbconsultaclientevendedor.TabIndex = 30;
+            this.gbconsultaclientevendedor.TabStop = false;
+            this.gbconsultaclientevendedor.Text = "Consultar Cliente";
+            this.gbconsultaclientevendedor.Visible = false;
+            // 
+            // grillaconsultacliente
+            // 
+            this.grillaconsultacliente.AllowUserToAddRows = false;
+            this.grillaconsultacliente.AllowUserToDeleteRows = false;
+            this.grillaconsultacliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaconsultacliente.Location = new System.Drawing.Point(22, 87);
+            this.grillaconsultacliente.Name = "grillaconsultacliente";
+            this.grillaconsultacliente.Size = new System.Drawing.Size(567, 211);
+            this.grillaconsultacliente.TabIndex = 25;
+            // 
+            // btbuscarclienteeliminar
+            // 
+            this.btbuscarclienteeliminar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btbuscarclienteeliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btbuscarclienteeliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btbuscarclienteeliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbuscarclienteeliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btbuscarclienteeliminar.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarclienteeliminar.Image")));
+            this.btbuscarclienteeliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btbuscarclienteeliminar.Location = new System.Drawing.Point(348, 46);
+            this.btbuscarclienteeliminar.Name = "btbuscarclienteeliminar";
+            this.btbuscarclienteeliminar.Size = new System.Drawing.Size(107, 28);
+            this.btbuscarclienteeliminar.TabIndex = 24;
+            this.btbuscarclienteeliminar.Text = "Buscar";
+            this.btbuscarclienteeliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btbuscarclienteeliminar.UseVisualStyleBackColor = false;
+            this.btbuscarclienteeliminar.Click += new System.EventHandler(this.btbuscarclienteeliminar_Click);
+            // 
+            // txtrutconsultacliente
+            // 
+            this.txtrutconsultacliente.Location = new System.Drawing.Point(67, 47);
+            this.txtrutconsultacliente.Name = "txtrutconsultacliente";
+            this.txtrutconsultacliente.Size = new System.Drawing.Size(274, 26);
+            this.txtrutconsultacliente.TabIndex = 2;
+            this.txtrutconsultacliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutconsultacliente_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(18, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(43, 20);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Rut:";
+            // 
             // gbagreclientevendedor
             // 
             this.gbagreclientevendedor.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.gbagreclientevendedor.Controls.Add(this.btcancelaragregarclientevendedor);
             this.gbagreclientevendedor.Controls.Add(this.btagregaclientevendedor);
             this.gbagreclientevendedor.Controls.Add(this.cbsexoclienteagrevendedor);
             this.gbagreclientevendedor.Controls.Add(this.cbciudadclientevendedor);
@@ -218,51 +266,71 @@
             // txtnombreclientevendedor
             // 
             this.txtnombreclientevendedor.Location = new System.Drawing.Point(120, 84);
+            this.txtnombreclientevendedor.MaxLength = 50;
             this.txtnombreclientevendedor.Name = "txtnombreclientevendedor";
+            this.txtnombreclientevendedor.ShortcutsEnabled = false;
             this.txtnombreclientevendedor.Size = new System.Drawing.Size(335, 26);
             this.txtnombreclientevendedor.TabIndex = 18;
+            this.txtnombreclientevendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreclientevendedor_KeyPress);
             // 
             // txtapellidoclientevendedor
             // 
             this.txtapellidoclientevendedor.Location = new System.Drawing.Point(120, 116);
+            this.txtapellidoclientevendedor.MaxLength = 50;
             this.txtapellidoclientevendedor.Name = "txtapellidoclientevendedor";
+            this.txtapellidoclientevendedor.ShortcutsEnabled = false;
             this.txtapellidoclientevendedor.Size = new System.Drawing.Size(335, 26);
             this.txtapellidoclientevendedor.TabIndex = 17;
+            this.txtapellidoclientevendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtapellidoclientevendedor_KeyPress);
             // 
             // txtdireccionclientevendedor
             // 
             this.txtdireccionclientevendedor.Location = new System.Drawing.Point(120, 191);
+            this.txtdireccionclientevendedor.MaxLength = 50;
             this.txtdireccionclientevendedor.Name = "txtdireccionclientevendedor";
+            this.txtdireccionclientevendedor.ShortcutsEnabled = false;
             this.txtdireccionclientevendedor.Size = new System.Drawing.Size(335, 26);
             this.txtdireccionclientevendedor.TabIndex = 16;
+            this.txtdireccionclientevendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdireccionclientevendedor_KeyPress);
             // 
             // txtcorreoclientevendedor
             // 
             this.txtcorreoclientevendedor.Location = new System.Drawing.Point(119, 343);
+            this.txtcorreoclientevendedor.MaxLength = 50;
             this.txtcorreoclientevendedor.Name = "txtcorreoclientevendedor";
+            this.txtcorreoclientevendedor.ShortcutsEnabled = false;
             this.txtcorreoclientevendedor.Size = new System.Drawing.Size(335, 26);
             this.txtcorreoclientevendedor.TabIndex = 14;
+            this.txtcorreoclientevendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcorreoclientevendedor_KeyPress);
             // 
             // txttelefonoclientevendedor
             // 
             this.txttelefonoclientevendedor.Location = new System.Drawing.Point(119, 272);
+            this.txttelefonoclientevendedor.MaxLength = 8;
             this.txttelefonoclientevendedor.Name = "txttelefonoclientevendedor";
+            this.txttelefonoclientevendedor.ShortcutsEnabled = false;
             this.txttelefonoclientevendedor.Size = new System.Drawing.Size(335, 26);
             this.txttelefonoclientevendedor.TabIndex = 13;
+            this.txttelefonoclientevendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefonoclientevendedor_KeyPress);
             // 
             // txtdigitoclientevendedor
             // 
             this.txtdigitoclientevendedor.Location = new System.Drawing.Point(315, 46);
+            this.txtdigitoclientevendedor.MaxLength = 1;
             this.txtdigitoclientevendedor.Name = "txtdigitoclientevendedor";
+            this.txtdigitoclientevendedor.ShortcutsEnabled = false;
             this.txtdigitoclientevendedor.Size = new System.Drawing.Size(46, 26);
             this.txtdigitoclientevendedor.TabIndex = 12;
+            this.txtdigitoclientevendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdigitoclientevendedor_KeyPress);
             // 
             // txtrutclientevendedor
             // 
             this.txtrutclientevendedor.Location = new System.Drawing.Point(120, 46);
             this.txtrutclientevendedor.Name = "txtrutclientevendedor";
+            this.txtrutclientevendedor.ShortcutsEnabled = false;
             this.txtrutclientevendedor.Size = new System.Drawing.Size(173, 26);
             this.txtrutclientevendedor.TabIndex = 11;
+            this.txtrutclientevendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutclientevendedor_KeyPress);
             // 
             // label11
             // 
@@ -374,73 +442,47 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Rut:";
             // 
-            // gbconsultaclientevendedor
+            // btvolvermenuprincipalvendedor1
             // 
-            this.gbconsultaclientevendedor.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.gbconsultaclientevendedor.Controls.Add(this.grillaconsultacliente);
-            this.gbconsultaclientevendedor.Controls.Add(this.btbuscarclienteeliminar);
-            this.gbconsultaclientevendedor.Controls.Add(this.txtrutconsultacliente);
-            this.gbconsultaclientevendedor.Controls.Add(this.label12);
-            this.gbconsultaclientevendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbconsultaclientevendedor.ForeColor = System.Drawing.Color.Gold;
-            this.gbconsultaclientevendedor.Location = new System.Drawing.Point(23, 28);
-            this.gbconsultaclientevendedor.Name = "gbconsultaclientevendedor";
-            this.gbconsultaclientevendedor.Size = new System.Drawing.Size(618, 447);
-            this.gbconsultaclientevendedor.TabIndex = 30;
-            this.gbconsultaclientevendedor.TabStop = false;
-            this.gbconsultaclientevendedor.Text = "Consultar Cliente";
-            this.gbconsultaclientevendedor.Visible = false;
+            this.btvolvermenuprincipalvendedor1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolvermenuprincipalvendedor1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolvermenuprincipalvendedor1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolvermenuprincipalvendedor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolvermenuprincipalvendedor1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolvermenuprincipalvendedor1.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipalvendedor1.Image")));
+            this.btvolvermenuprincipalvendedor1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolvermenuprincipalvendedor1.Location = new System.Drawing.Point(388, 508);
+            this.btvolvermenuprincipalvendedor1.Name = "btvolvermenuprincipalvendedor1";
+            this.btvolvermenuprincipalvendedor1.Size = new System.Drawing.Size(223, 36);
+            this.btvolvermenuprincipalvendedor1.TabIndex = 90;
+            this.btvolvermenuprincipalvendedor1.Text = "Volver Menu Principal";
+            this.btvolvermenuprincipalvendedor1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolvermenuprincipalvendedor1.UseVisualStyleBackColor = false;
+            this.btvolvermenuprincipalvendedor1.Click += new System.EventHandler(this.btvolvermenuprincipalvendedor1_Click);
             // 
-            // grillaconsultacliente
+            // btcancelaragregarclientevendedor
             // 
-            this.grillaconsultacliente.AllowUserToAddRows = false;
-            this.grillaconsultacliente.AllowUserToDeleteRows = false;
-            this.grillaconsultacliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaconsultacliente.Location = new System.Drawing.Point(22, 87);
-            this.grillaconsultacliente.Name = "grillaconsultacliente";
-            this.grillaconsultacliente.Size = new System.Drawing.Size(567, 211);
-            this.grillaconsultacliente.TabIndex = 25;
-            // 
-            // btbuscarclienteeliminar
-            // 
-            this.btbuscarclienteeliminar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btbuscarclienteeliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btbuscarclienteeliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btbuscarclienteeliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbuscarclienteeliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btbuscarclienteeliminar.Image = ((System.Drawing.Image)(resources.GetObject("btbuscarclienteeliminar.Image")));
-            this.btbuscarclienteeliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btbuscarclienteeliminar.Location = new System.Drawing.Point(348, 46);
-            this.btbuscarclienteeliminar.Name = "btbuscarclienteeliminar";
-            this.btbuscarclienteeliminar.Size = new System.Drawing.Size(107, 28);
-            this.btbuscarclienteeliminar.TabIndex = 24;
-            this.btbuscarclienteeliminar.Text = "Buscar";
-            this.btbuscarclienteeliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btbuscarclienteeliminar.UseVisualStyleBackColor = false;
-            this.btbuscarclienteeliminar.Click += new System.EventHandler(this.btbuscarclienteeliminar_Click);
-            // 
-            // txtrutconsultacliente
-            // 
-            this.txtrutconsultacliente.Location = new System.Drawing.Point(67, 47);
-            this.txtrutconsultacliente.Name = "txtrutconsultacliente";
-            this.txtrutconsultacliente.Size = new System.Drawing.Size(274, 26);
-            this.txtrutconsultacliente.TabIndex = 2;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(18, 49);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 20);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Rut:";
+            this.btcancelaragregarclientevendedor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btcancelaragregarclientevendedor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btcancelaragregarclientevendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btcancelaragregarclientevendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcancelaragregarclientevendedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btcancelaragregarclientevendedor.Image = ((System.Drawing.Image)(resources.GetObject("btcancelaragregarclientevendedor.Image")));
+            this.btcancelaragregarclientevendedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcancelaragregarclientevendedor.Location = new System.Drawing.Point(66, 386);
+            this.btcancelaragregarclientevendedor.Name = "btcancelaragregarclientevendedor";
+            this.btcancelaragregarclientevendedor.Size = new System.Drawing.Size(129, 36);
+            this.btcancelaragregarclientevendedor.TabIndex = 29;
+            this.btcancelaragregarclientevendedor.Text = "Cancelar";
+            this.btcancelaragregarclientevendedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btcancelaragregarclientevendedor.UseVisualStyleBackColor = false;
+            this.btcancelaragregarclientevendedor.Click += new System.EventHandler(this.btcancelaragregarclientevendedor_Click);
             // 
             // Mantenedor_Cliente_Vendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(844, 587);
             this.Controls.Add(this.btvolvermenuprincipalvendedor1);
@@ -450,11 +492,11 @@
             this.Text = "Mantenedor_Cliente_Vendedor";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.gbagreclientevendedor.ResumeLayout(false);
-            this.gbagreclientevendedor.PerformLayout();
             this.gbconsultaclientevendedor.ResumeLayout(false);
             this.gbconsultaclientevendedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaconsultacliente)).EndInit();
+            this.gbagreclientevendedor.ResumeLayout(false);
+            this.gbagreclientevendedor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -493,5 +535,6 @@
         private System.Windows.Forms.Button btbuscarclienteeliminar;
         private System.Windows.Forms.TextBox txtrutconsultacliente;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btcancelaragregarclientevendedor;
     }
 }

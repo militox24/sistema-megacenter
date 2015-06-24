@@ -15,8 +15,8 @@ namespace sistema_megacenter
         Gestión_Ciudad ciudad = new Gestión_Ciudad();
         Gestion_Cliente cliente = new Gestion_Cliente();
         VerificarRut verifica = new VerificarRut();
-        string nombreusuario, apellidousuario, rutusuario, urlimagen,usuariologueado;
-        public Mantenedor_Cliente(string nombre,string apellido,string rut,string url,string usuario)
+        string nombreusuario, apellidousuario, rutusuario, urlimagen,usuariologueado,correologueado;
+        public Mantenedor_Cliente(string nombre,string apellido,string rut,string url,string usuario,string correo)
         {
             InitializeComponent();
             DataSet ds = ciudad.rescatardatosciudad();
@@ -29,6 +29,7 @@ namespace sistema_megacenter
             rutusuario = rut;
             urlimagen = url;
             usuariologueado = usuario;
+            correologueado = correo;
         }
         private void inicializarCheckbox()
         {
@@ -155,7 +156,49 @@ namespace sistema_megacenter
             }
             else
             {
-                grillaelimcliente.DataSource = cliente.rescatardatosclientes(txtrutelimcliente.Text);
+                DataSet ds = cliente.verificarexistencia(txtrutelimcliente.Text);
+                if (ds.Tables["Cliente"].Rows.Count > 0)
+                {
+                    grillaelimcliente.DataSource = cliente.rescatardatosclientes(txtrutelimcliente.Text);
+                    grillaelimcliente.DataMember = "Cliente";
+                    grillaelimcliente.Columns["Rut_Cliente"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    grillaelimcliente.Columns["Nombres"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    grillaelimcliente.Columns["Apellidos"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    grillaelimcliente.Columns["Direccion"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    grillaelimcliente.Columns["Correo_Electronico"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                    grillaelimcliente.Columns["Nombres"].Width = 150;
+                    grillaelimcliente.Columns["Apellidos"].Width = 200;
+                    grillaelimcliente.Columns["Correo_Electronico"].Width = 200;
+                    inicializarCheckbox();
+                    txtrutelimcliente.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("No existe un un cliente registrado con ese rut","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    txtrutelimcliente.Clear();
+                }
+            }
+        }
+
+        private void btelimcliente_Click(object sender, EventArgs e)
+        {
+            Boolean estado = false;
+            for (int i = 0; i < grillaelimcliente.RowCount; i++)
+            {
+                if (grillaelimcliente[0, i].Value.ToString() == "true")
+                {
+                    cliente.Elimina_cliente(grillaelimcliente[1, i].Value.ToString());
+                    estado = true;
+                }
+                else
+                {
+                    MessageBox.Show("Debes seleccionar la cliente a eliminar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    estado = false;
+                }
+            }
+            if(estado==true){
+                MessageBox.Show("Cliente Eliminado Correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                grillaelimcliente.DataSource = cliente.rescatardatoscliente();
                 grillaelimcliente.DataMember = "Cliente";
                 grillaelimcliente.Columns["Rut_Cliente"].SortMode = DataGridViewColumnSortMode.NotSortable;
                 grillaelimcliente.Columns["Nombres"].SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -166,31 +209,8 @@ namespace sistema_megacenter
                 grillaelimcliente.Columns["Apellidos"].Width = 200;
                 grillaelimcliente.Columns["Correo_Electronico"].Width = 200;
                 inicializarCheckbox();
-                txtrutelimcliente.Clear();
             }
-        }
-
-        private void btelimcliente_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < grillaelimcliente.RowCount; i++)
-            {
-                if (grillaelimcliente[0, i].Value.ToString() == "true")
-                {
-                    cliente.Elimina_cliente(grillaelimcliente[1, i].Value.ToString());
-                }
-            }
-            MessageBox.Show("Cliente Eliminado Correctamente","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            grillaelimcliente.DataSource = cliente.rescatardatoscliente();
-            grillaelimcliente.DataMember = "Cliente";
-            grillaelimcliente.Columns["Rut_Cliente"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaelimcliente.Columns["Nombres"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaelimcliente.Columns["Apellidos"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaelimcliente.Columns["Direccion"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaelimcliente.Columns["Correo_Electronico"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaelimcliente.Columns["Nombres"].Width = 150;
-            grillaelimcliente.Columns["Apellidos"].Width = 200;
-            grillaelimcliente.Columns["Correo_Electronico"].Width = 200;
-            inicializarCheckbox();
+          
         }
 
         private void btbuscaclientemodifica_Click(object sender, EventArgs e)
@@ -265,10 +285,148 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipal3_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correologueado);
             this.Hide();
             principal.Show();
 
+        }
+
+        private void txtrutcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtdigitocliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+        private void Omitir_Caracteres(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú\\@/:. " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void solonumeros(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtnombrecliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender,e);
+        }
+
+        private void txtapellidocliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtdireccioncliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtcorreocliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtnomcliemod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtapecliemod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtdirecliemod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtcorrcliemod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender, e);
+        }
+
+        private void txtrutmodicliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtrutelimcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void txttelefonocliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solonumeros(sender,e);
+        }
+
+        private void txttelclimod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            solonumeros(sender, e);
+        }
+
+        private void btcancelarmodificacliente_Click(object sender, EventArgs e)
+        {
+            txtrutmodicliente.Enabled = true;
+            txtnomcliemod.Enabled = false;
+            txtapecliemod.Enabled = false;
+            dateTimePicker2.Enabled = false;
+            txtdirecliemod.Enabled = false;
+            cbciuclimod.Enabled = false;
+            txttelclimod.Enabled = false;
+            cbsexclienmod.Enabled = false;
+            txtcorrcliemod.Enabled = false;
+            btmodificarcliente.Visible = false;
+            reiniciarmantenedormodificar();
+        }
+
+        private void btcancelaragregacliente_Click(object sender, EventArgs e)
+        {
+            reiniciamantenedor();
         }
     }
 }

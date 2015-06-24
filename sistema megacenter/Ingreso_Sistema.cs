@@ -15,6 +15,7 @@ namespace sistema_megacenter
         public string nombres;
         public string apellidos;
         public string url;
+        public string correousuario;
         public Ingreso_Sistema(string usuario)
         {
             InitializeComponent();
@@ -61,9 +62,11 @@ namespace sistema_megacenter
                     {
                         nombres = ds.Tables["" + usuariologueado + ""].Rows[0][1].ToString();
                         apellidos = ds.Tables["" + usuariologueado + ""].Rows[0][2].ToString();
+                        correousuario = ds.Tables["" + usuariologueado + ""].Rows[0][6].ToString();
                         url = ds.Tables["" + usuariologueado + ""].Rows[0][11].ToString();
+
                         this.Hide();
-                        Menu_Principal menu = new Menu_Principal(nombres, apellidos, url, txtrutingreso.Text,usuariologueado);
+                        Menu_Principal menu = new Menu_Principal(nombres, apellidos, url, txtrutingreso.Text,usuariologueado,correousuario);
                         menu.Show();
                     }
                     else
@@ -78,9 +81,10 @@ namespace sistema_megacenter
                     {
                         nombres = ds1.Tables["" + usuariologueado + ""].Rows[0][1].ToString();
                         apellidos = ds1.Tables["" + usuariologueado + ""].Rows[0][2].ToString();
+                        correousuario = ds1.Tables["" + usuariologueado + ""].Rows[0][6].ToString();
                         url = ds1.Tables["" + usuariologueado + ""].Rows[0][13].ToString();
                         this.Hide();
-                        Menu_Vendedor menu2 = new Menu_Vendedor(nombres, apellidos, url,txtrutingreso.Text,usuariologueado);
+                        Menu_Vendedor menu2 = new Menu_Vendedor(nombres, apellidos, url,txtrutingreso.Text,usuariologueado,correousuario);
                         menu2.Show();
                     }
                     else
@@ -109,5 +113,17 @@ namespace sistema_megacenter
             this.Hide();
             contraseña.Show();
         }
+
+        private void txtclaveingreso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚáéíóú1234567890 " + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        
     }
 }

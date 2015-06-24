@@ -20,6 +20,46 @@ namespace sistema_megacenter
             conn.desconectar();
             return ds;
         }
+        public DataSet rescatartodoslosadministradores()
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select Rut,Nombres,Apellidos,Correo from Administrador", conn.conector);
+            da.Fill(ds, "Administrador");
+            conn.desconectar();
+            return ds;
+        }
+        public DataSet buscar_por_nombres(string nombre)
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select Rut,Nombres,Descripcion,Correo from Administrador where Nombres=@nombre", conn.conector);
+            da.SelectCommand.Parameters.Add(new SqlParameter("@nombre", nombre));
+            da.Fill(ds, "Proveedor");
+            conn.desconectar();
+            return ds;
+        }
+        public DataSet buscar_correo_vendedor(string correo)
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select * from Vendedor where Correo=@email", conn.conector);
+            da.SelectCommand.Parameters.Add(new SqlParameter("@email", correo));
+            da.Fill(ds, "Vendedor");
+            conn.desconectar();
+            return ds;
+        }
+        public DataSet buscar_correo_Administrador(string correo)
+        {
+            conn.conectar();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select * from Administrador where Correo=@email", conn.conector);
+            da.SelectCommand.Parameters.Add(new SqlParameter("@email", correo));
+            da.Fill(ds, "Administrador");
+            conn.desconectar();
+            return ds;
+        }
+       
         public void modificadatosperfil(string rut, string nombre,string apellido,string sexo,string direccion,string ciudad,string correo,string clave,string pregunta,string respuesta,int telefono,string url)
         {
             conn.conectar();

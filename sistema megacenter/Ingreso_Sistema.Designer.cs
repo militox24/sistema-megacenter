@@ -105,19 +105,23 @@
             // txtclaveingreso
             // 
             this.txtclaveingreso.Location = new System.Drawing.Point(187, 185);
-            this.txtclaveingreso.MaxLength = 10;
+            this.txtclaveingreso.MaxLength = 20;
             this.txtclaveingreso.Name = "txtclaveingreso";
             this.txtclaveingreso.PasswordChar = '*';
+            this.txtclaveingreso.ShortcutsEnabled = false;
             this.txtclaveingreso.Size = new System.Drawing.Size(247, 33);
             this.txtclaveingreso.TabIndex = 5;
+            this.txtclaveingreso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtclaveingreso_KeyPress);
             // 
             // txtrutingreso
             // 
             this.txtrutingreso.Location = new System.Drawing.Point(187, 104);
             this.txtrutingreso.MaxLength = 10;
             this.txtrutingreso.Name = "txtrutingreso";
+            this.txtrutingreso.ShortcutsEnabled = false;
             this.txtrutingreso.Size = new System.Drawing.Size(247, 33);
             this.txtrutingreso.TabIndex = 3;
+           // this.txtrutingreso.TextChanged += new System.EventHandler(this.txtrutingreso_TextChanged);
             this.txtrutingreso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrutingreso_KeyPress);
             // 
             // label2

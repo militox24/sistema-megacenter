@@ -19,8 +19,8 @@ namespace sistema_megacenter
         Gestión_Ciudad ciudad = new Gestión_Ciudad();
         Gestion_Proveedor proveedor = new Gestion_Proveedor();
         Gestion_Giro giro = new Gestion_Giro();
-        string nonbreusuario, apellidosusuario, rutusuario, urlimagen,usuariologueado;
-        public Mantenedor_Proveedor(string nombres,string apellidos,string rut,string url,string usuario)
+        string nonbreusuario, apellidosusuario, rutusuario, urlimagen,usuariologueado,correousuario;
+        public Mantenedor_Proveedor(string nombres,string apellidos,string rut,string url,string usuario,string correo)
         {
             InitializeComponent();
             nonbreusuario = nombres;
@@ -28,6 +28,7 @@ namespace sistema_megacenter
             rutusuario = rut;
             urlimagen = url;
             usuariologueado = usuario;
+            correousuario = correo;
             cbciudadproveedoragrega.Text ="Seleccione";
             cbgiroproveedoragrega.Text = "Seleccione";
             DataSet ciudades = ciudad.rescatardatosciudades();
@@ -435,36 +436,52 @@ namespace sistema_megacenter
 
         private void beliminarproveedor_Click(object sender, EventArgs e)
         {
+            Boolean estado = false;
             for (int i = 0; i < grillaeliminarproveedor.RowCount; i++)
             {
                 if (grillaeliminarproveedor[0, i].Value.ToString() == "true")
                 {
                     gestion.Eliminar_Proveedor(grillaeliminarproveedor[1, i].Value.ToString());
+                    estado = true;
+                }
+                else
+                {
+                    MessageBox.Show("Debes seleccionar el proveedor a eliminar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    estado = false;
                 }
             }
-            MessageBox.Show("Proveedor Eliminado Correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            grillaeliminarproveedor.DataSource = proveedor.rescatartodoslosproveedores();
-            grillaeliminarproveedor.DataMember = "Proveedor";
-            grillaeliminarproveedor.Columns["Rut"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Nombres"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Descripcion"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Dirección"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Ciudad"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Giro"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Telefono"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Email"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Url"].SortMode = DataGridViewColumnSortMode.NotSortable;
-            grillaeliminarproveedor.Columns["Nombres"].Width = 150;
-            grillaeliminarproveedor.Columns["Descripcion"].Width = 200;
-            grillaeliminarproveedor.Columns["Giro"].Width = 200;
-            grillaeliminarproveedor.Columns["Email"].Width = 250;
-            grillaeliminarproveedor.Columns["Url"].Width = 300;
-            inicializarCheckbox();
+            if (estado == true)
+            {
+                MessageBox.Show("Proveedor Eliminado Correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                grillaeliminarproveedor.DataSource = proveedor.rescatartodoslosproveedores();
+                grillaeliminarproveedor.DataMember = "Proveedor";
+                grillaeliminarproveedor.Columns["Rut"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Nombres"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Descripcion"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Dirección"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Ciudad"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Giro"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Telefono"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Email"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Url"].SortMode = DataGridViewColumnSortMode.NotSortable;
+                grillaeliminarproveedor.Columns["Nombres"].Width = 150;
+                grillaeliminarproveedor.Columns["Descripcion"].Width = 200;
+                grillaeliminarproveedor.Columns["Giro"].Width = 200;
+                grillaeliminarproveedor.Columns["Email"].Width = 250;
+                grillaeliminarproveedor.Columns["Url"].Width = 300;
+                inicializarCheckbox();
+            }
         }
-
         private void btcancelarmodificarproveedor_Click(object sender, EventArgs e)
         {
             txtrutmodificaproveedor.Enabled = true;
+            txtnombreproveedormodifica.Enabled = false;
+            txtdescripcionproveedormodifica.Enabled = false;
+            txtdireccionproveedormodifica.Enabled = false;
+            cbciudadproveedormodifica.Enabled = false;
+            cbgiroproveedormodifica.Enabled = false;
+            txttelefonoproveedormodifica.Enabled = false;
+
             txtrutmodificaproveedor.Clear();
             txtnombreproveedormodifica.Clear();
             txtdescripcionproveedormodifica.Clear();
@@ -663,9 +680,56 @@ namespace sistema_megacenter
 
         private void btvolvermenuprincipal1_Click(object sender, EventArgs e)
         {
-            Menu_Principal principal = new Menu_Principal(nonbreusuario,apellidosusuario,urlimagen,rutusuario,usuariologueado);
+            Menu_Principal principal = new Menu_Principal(nonbreusuario,apellidosusuario,urlimagen,rutusuario,usuariologueado,correousuario);
             this.Hide();
             principal.Show();
+        }
+
+        private void txtrutproveedoreliminar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string cadena = "1234567890-k" + (char)8;
+
+            if (!cadena.Contains(e.KeyChar))
+            {
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void btcancelaagregaproveedor_Click(object sender, EventArgs e)
+        {
+            txtrutproveedoragrega.Clear();
+            txtdigitoproveedoragrega.Clear();
+            txtnombreproveedoragrega.Clear();
+            txtdescripcionproveedoragrega.Clear();
+            txtdireccionagrega.Clear();
+            cbciudadproveedoragrega.SelectedIndex = -1;
+            cbgiroproveedoragrega.SelectedIndex = -1;
+            txttelefonoproveedoragrega.Clear();
+            txtemailproveedorsagrega.Clear();
+            txturlproveedoragrega.Clear();
+            fotoproveedoragrega.Image = Image.FromFile(Path.Combine(Application.StartupPath, "C:\\Users\\kmilo\\Documents\\Visual Studio 2010\\Projects\\sistema megacenter\\sistema megacenter\\imagenes\\user.png"));
+        }
+
+        private void txtnombreciudadproveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender,e);
+        }
+
+        private void txtdescripcionciudadproveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender,e);
+        }
+
+        private void txtgiroagregaproveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender,e);
+        }
+
+        private void txtdescripciongiroproveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Omitir_Caracteres(sender,e);
         }
     }
 }

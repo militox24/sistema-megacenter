@@ -12,7 +12,9 @@ namespace sistema_megacenter
     public partial class Mantenedor_Historial_Multas : Form
     {
         Gestion_Multa multa = new Gestion_Multa();
-        public Mantenedor_Historial_Multas(string nombre,string apellido,string url,string rut,string correo)
+        string nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado, correologueado;
+        
+        public Mantenedor_Historial_Multas(string nombre,string apellido,string url,string rut,string usuario,string correo)
         {
             InitializeComponent();
             label2.Text = nombre + " " + apellido;
@@ -28,6 +30,12 @@ namespace sistema_megacenter
             GrillaHistorial.Columns["Detalle_Multa"].Width = 300;
             GrillaHistorial.Columns["Monto"].Width = 100;
             GrillaHistorial.Columns["Fecha"].Width = 100;
+            nombreusuario=nombre;
+            apellidousuario=apellido;
+            urlimagen=url;
+            usuario = usuariologueado;
+            correologueado = correo;
+
             for (int i = 0; i < GrillaHistorial.RowCount; i++)
             {
                 GrillaHistorial[0, i].ReadOnly = true;
@@ -37,6 +45,13 @@ namespace sistema_megacenter
                 GrillaHistorial[4, i].ReadOnly = true;
             }
             
+        }
+
+        private void btvolvermenuprincipal3_Click(object sender, EventArgs e)
+        {
+            Menu_Vendedor principal = new Menu_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado, correologueado);
+            this.Hide();
+            principal.Show();
         }
     }
 }

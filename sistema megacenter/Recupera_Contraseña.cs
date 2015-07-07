@@ -40,10 +40,12 @@ namespace sistema_megacenter
             {
                 Gestion_Ingreso ingreso = new Gestion_Ingreso();
                 DataSet ds1 = ingreso.Datos_recupera(txtrutrecupera.Text, usuariologueado);
+               // MessageBox.Show(usuariologueado);
                 if (ds1.Tables["" + usuariologueado + ""].Rows.Count > 0)
                 {
-                    string pregunta = ds1.Tables["" + usuariologueado + ""].Rows[0][10].ToString();
-                    string respuesta = ds1.Tables["" + usuariologueado + ""].Rows[0][11].ToString();
+                    string pregunta = ds1.Tables["" + usuariologueado + ""].Rows[0][8].ToString();
+                    string respuesta = ds1.Tables["" + usuariologueado + ""].Rows[0][9].ToString();
+                   // MessageBox.Show(respuesta);
                     string correo = ds1.Tables["" + usuariologueado + ""].Rows[0][6].ToString();
                     string nombres = ds1.Tables["" + usuariologueado + ""].Rows[0][1].ToString() + " " + ds1.Tables["" + usuariologueado + ""].Rows[0][2].ToString(); ;
                     Recupera_Contraseña_2 recuperaclave = new Recupera_Contraseña_2(pregunta, respuesta, correo,txtrutrecupera.Text.ToString(),usuariologueado,nombres);

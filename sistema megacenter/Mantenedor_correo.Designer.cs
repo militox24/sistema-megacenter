@@ -33,8 +33,6 @@
             this.btcargaenviarcorreo = new System.Windows.Forms.Button();
             this.cargaenviarcorreo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gbmismensajes = new System.Windows.Forms.GroupBox();
-            this.grillacorreos = new System.Windows.Forms.DataGridView();
             this.gbredactarcorreo = new System.Windows.Forms.GroupBox();
             this.btbuscarcorreo = new System.Windows.Forms.Button();
             this.btenviarcorreo = new System.Windows.Forms.Button();
@@ -58,20 +56,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtemisorverdetalle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.gbmismensajes = new System.Windows.Forms.GroupBox();
+            this.grillacorreos = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btvolvermenuprincipaladministrador = new System.Windows.Forms.Button();
+            this.btmenuprincipalvendedor = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.gbmismensajes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grillacorreos)).BeginInit();
             this.gbredactarcorreo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gbdetallemensaje.SuspendLayout();
+            this.gbmismensajes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillacorreos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -115,44 +117,13 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.gbmismensajes);
             this.panel2.Controls.Add(this.gbredactarcorreo);
             this.panel2.Controls.Add(this.gbdetallemensaje);
+            this.panel2.Controls.Add(this.gbmismensajes);
             this.panel2.Location = new System.Drawing.Point(186, 10);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(655, 445);
             this.panel2.TabIndex = 30;
-            // 
-            // gbmismensajes
-            // 
-            this.gbmismensajes.Controls.Add(this.grillacorreos);
-            this.gbmismensajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbmismensajes.ForeColor = System.Drawing.Color.Gold;
-            this.gbmismensajes.Location = new System.Drawing.Point(17, 39);
-            this.gbmismensajes.Name = "gbmismensajes";
-            this.gbmismensajes.Size = new System.Drawing.Size(615, 388);
-            this.gbmismensajes.TabIndex = 28;
-            this.gbmismensajes.TabStop = false;
-            this.gbmismensajes.Text = "Mis mensajes";
-            this.gbmismensajes.Visible = false;
-            // 
-            // grillacorreos
-            // 
-            this.grillacorreos.AllowUserToAddRows = false;
-            this.grillacorreos.AllowUserToDeleteRows = false;
-            this.grillacorreos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillacorreos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column1,
-            this.Column6});
-            this.grillacorreos.Location = new System.Drawing.Point(23, 58);
-            this.grillacorreos.Name = "grillacorreos";
-            this.grillacorreos.Size = new System.Drawing.Size(574, 176);
-            this.grillacorreos.TabIndex = 42;
-            this.grillacorreos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillacorreos_CellClick_1);
             // 
             // gbredactarcorreo
             // 
@@ -433,13 +404,36 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Emisor:";
             // 
-            // panel3
+            // gbmismensajes
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.Location = new System.Drawing.Point(186, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(567, 399);
-            this.panel3.TabIndex = 31;
+            this.gbmismensajes.Controls.Add(this.grillacorreos);
+            this.gbmismensajes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbmismensajes.ForeColor = System.Drawing.Color.Gold;
+            this.gbmismensajes.Location = new System.Drawing.Point(17, 39);
+            this.gbmismensajes.Name = "gbmismensajes";
+            this.gbmismensajes.Size = new System.Drawing.Size(615, 388);
+            this.gbmismensajes.TabIndex = 28;
+            this.gbmismensajes.TabStop = false;
+            this.gbmismensajes.Text = "Mis mensajes";
+            this.gbmismensajes.Visible = false;
+            // 
+            // grillacorreos
+            // 
+            this.grillacorreos.AllowUserToAddRows = false;
+            this.grillacorreos.AllowUserToDeleteRows = false;
+            this.grillacorreos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillacorreos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column1,
+            this.Column6});
+            this.grillacorreos.Location = new System.Drawing.Point(23, 58);
+            this.grillacorreos.Name = "grillacorreos";
+            this.grillacorreos.Size = new System.Drawing.Size(574, 176);
+            this.grillacorreos.TabIndex = 42;
+            this.grillacorreos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillacorreos_CellClick_1);
             // 
             // Column2
             // 
@@ -491,12 +485,60 @@
             this.Column6.Text = "ver detalle";
             this.Column6.UseColumnTextForLinkValue = true;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel3.Location = new System.Drawing.Point(186, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(567, 399);
+            this.panel3.TabIndex = 31;
+            // 
+            // btvolvermenuprincipaladministrador
+            // 
+            this.btvolvermenuprincipaladministrador.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolvermenuprincipaladministrador.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolvermenuprincipaladministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolvermenuprincipaladministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolvermenuprincipaladministrador.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolvermenuprincipaladministrador.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipaladministrador.Image")));
+            this.btvolvermenuprincipaladministrador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolvermenuprincipaladministrador.Location = new System.Drawing.Point(381, 470);
+            this.btvolvermenuprincipaladministrador.Name = "btvolvermenuprincipaladministrador";
+            this.btvolvermenuprincipaladministrador.Size = new System.Drawing.Size(223, 36);
+            this.btvolvermenuprincipaladministrador.TabIndex = 90;
+            this.btvolvermenuprincipaladministrador.Text = "Volver Menu Principal";
+            this.btvolvermenuprincipaladministrador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolvermenuprincipaladministrador.UseVisualStyleBackColor = false;
+            this.btvolvermenuprincipaladministrador.Visible = false;
+            this.btvolvermenuprincipaladministrador.Click += new System.EventHandler(this.btvolvermenuprincipaladministrador_Click);
+            // 
+            // btmenuprincipalvendedor
+            // 
+            this.btmenuprincipalvendedor.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btmenuprincipalvendedor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btmenuprincipalvendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmenuprincipalvendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmenuprincipalvendedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btmenuprincipalvendedor.Image = ((System.Drawing.Image)(resources.GetObject("btmenuprincipalvendedor.Image")));
+            this.btmenuprincipalvendedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btmenuprincipalvendedor.Location = new System.Drawing.Point(381, 470);
+            this.btmenuprincipalvendedor.Name = "btmenuprincipalvendedor";
+            this.btmenuprincipalvendedor.Size = new System.Drawing.Size(223, 36);
+            this.btmenuprincipalvendedor.TabIndex = 91;
+            this.btmenuprincipalvendedor.Text = "Volver Menu Principal";
+            this.btmenuprincipalvendedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btmenuprincipalvendedor.UseVisualStyleBackColor = false;
+            this.btmenuprincipalvendedor.Visible = false;
+            this.btmenuprincipalvendedor.Click += new System.EventHandler(this.btmenuprincipalvendedor_Click);
+            // 
             // Mantenedor_correo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(870, 488);
+            this.ClientSize = new System.Drawing.Size(870, 518);
+            this.Controls.Add(this.btmenuprincipalvendedor);
+            this.Controls.Add(this.btvolvermenuprincipaladministrador);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -504,14 +546,14 @@
             this.Text = "Mantenedor_correo";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.gbmismensajes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grillacorreos)).EndInit();
             this.gbredactarcorreo.ResumeLayout(false);
             this.gbredactarcorreo.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.gbdetallemensaje.ResumeLayout(false);
             this.gbdetallemensaje.PerformLayout();
+            this.gbmismensajes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grillacorreos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,5 +596,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewLinkColumn Column1;
         private System.Windows.Forms.DataGridViewLinkColumn Column6;
+        private System.Windows.Forms.Button btvolvermenuprincipaladministrador;
+        private System.Windows.Forms.Button btmenuprincipalvendedor;
     }
 }

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mantenedor_Historial_Multas));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GrillaHistorial = new System.Windows.Forms.DataGridView();
+            this.btvolvermenuprincipal3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaHistorial)).BeginInit();
             this.SuspendLayout();
@@ -78,13 +80,32 @@
             this.GrillaHistorial.Size = new System.Drawing.Size(494, 251);
             this.GrillaHistorial.TabIndex = 0;
             // 
+            // btvolvermenuprincipal3
+            // 
+            this.btvolvermenuprincipal3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btvolvermenuprincipal3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btvolvermenuprincipal3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btvolvermenuprincipal3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvolvermenuprincipal3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btvolvermenuprincipal3.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipal3.Image")));
+            this.btvolvermenuprincipal3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvolvermenuprincipal3.Location = new System.Drawing.Point(241, 398);
+            this.btvolvermenuprincipal3.Name = "btvolvermenuprincipal3";
+            this.btvolvermenuprincipal3.Size = new System.Drawing.Size(223, 36);
+            this.btvolvermenuprincipal3.TabIndex = 90;
+            this.btvolvermenuprincipal3.Text = "Volver Menu Principal";
+            this.btvolvermenuprincipal3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btvolvermenuprincipal3.UseVisualStyleBackColor = false;
+            this.btvolvermenuprincipal3.Click += new System.EventHandler(this.btvolvermenuprincipal3_Click);
+            // 
             // Mantenedor_Historial_Multas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(727, 418);
+            this.ClientSize = new System.Drawing.Size(727, 446);
+            this.Controls.Add(this.btvolvermenuprincipal3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -103,5 +124,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView GrillaHistorial;
+        private System.Windows.Forms.Button btvolvermenuprincipal3;
     }
 }

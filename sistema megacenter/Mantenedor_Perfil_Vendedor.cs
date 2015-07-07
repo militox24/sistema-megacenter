@@ -14,7 +14,7 @@ namespace sistema_megacenter
     {
         Gestion_Vendedor vendedor = new Gestion_Vendedor();
         Gestión_Ciudad ciudad = new Gestión_Ciudad();
-        string nombreusuario, apellidousuario, imagenusuario, rutusuario, usuariologueado,correologueado;
+        string nombreusuario, apellidousuario, imagenusuario, rutusuario, usuariologueado;
         public Mantenedor_Perfil_Vendedor(string nombre,string apellido,string url,string rut,string usuario,string correo)
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace sistema_megacenter
             txttelefonovendedorperfil.Text = rescata.Tables["Vendedor"].Rows[0][3].ToString();
             txtdireccionvendedorperfil.Text = rescata.Tables["Vendedor"].Rows[0][4].ToString();
             cbciudadvendedorperfil.Text = rescata.Tables["Vendedor"].Rows[0][5].ToString();
-            fechanacimientovendedorperfil.Text = rescata.Tables["Vendedor"].Rows[0][9].ToString();
+            fechanacimientovendedorperfil.Text = rescata.Tables["Vendedor"].Rows[0][11].ToString();
             txtpreguntavendedorperfil.Text = rescata.Tables["Vendedor"].Rows[0][10].ToString();
             txtrespuestavendedorperfil.Text = rescata.Tables["Vendedor"].Rows[0][11].ToString();
             txtclavevendedorperfil.Text = rescata.Tables["Vendedor"].Rows[0][7].ToString();

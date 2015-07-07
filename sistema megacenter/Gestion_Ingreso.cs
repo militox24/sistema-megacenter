@@ -26,7 +26,7 @@ namespace sistema_megacenter
         {
             conn.conectar();
             DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter("select * from " + usuario + " where Rut=@rut and Estado='Activo'", conn.conector);
+            SqlDataAdapter da = new SqlDataAdapter("select * from " + usuario + " where Rut=@rut", conn.conector);
             da.SelectCommand.Parameters.Add(new SqlParameter("@rut", rut));
             da.Fill(ds, "" + usuario + "");
             conn.desconectar();

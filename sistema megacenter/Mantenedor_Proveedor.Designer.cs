@@ -180,11 +180,11 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.gbagregaproveedor);
             this.panel2.Controls.Add(this.gbmodificaproveedor);
             this.panel2.Controls.Add(this.gbeliminaproveedor);
             this.panel2.Controls.Add(this.gbagregaciudadproveedor);
             this.panel2.Controls.Add(this.gbagregagiroproveedor);
+            this.panel2.Controls.Add(this.gbagregaproveedor);
             this.panel2.Location = new System.Drawing.Point(218, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(591, 512);
@@ -873,7 +873,7 @@
             this.gbeliminaproveedor.ForeColor = System.Drawing.Color.Gold;
             this.gbeliminaproveedor.Location = new System.Drawing.Point(3, 21);
             this.gbeliminaproveedor.Name = "gbeliminaproveedor";
-            this.gbeliminaproveedor.Size = new System.Drawing.Size(564, 351);
+            this.gbeliminaproveedor.Size = new System.Drawing.Size(564, 328);
             this.gbeliminaproveedor.TabIndex = 85;
             this.gbeliminaproveedor.TabStop = false;
             this.gbeliminaproveedor.Text = "Eliminar Proveedor";

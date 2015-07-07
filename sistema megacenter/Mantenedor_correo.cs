@@ -27,7 +27,7 @@ namespace sistema_megacenter
         Gestion_perfil perfil = new Gestion_perfil();
         Gestion_Correo correo = new Gestion_Correo();
         string nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado, correologueado;
-        public Mantenedor_correo(string nombre, string apellido,string  url,string  rut,string usuario,string correo)
+        public Mantenedor_correo(string nombre, string apellido, string url, string rut, string usuario, string correo)
         {
             InitializeComponent();
             nombreusuario = nombre;
@@ -36,9 +36,16 @@ namespace sistema_megacenter
             rutusuario = rut;
             usuariologueado = usuario;
             correologueado = correo;
-        }
-       
+            if (usuariologueado == "Administrador")
+            {
+                btvolvermenuprincipaladministrador.Visible = true;
+            }
+            else
+            {
+                btmenuprincipalvendedor.Visible = true;
+            }
 
+        }
         private void btbuscararchivocorreo_Click(object sender, EventArgs e)
         {
             OpenFileDialog abririmagen = new OpenFileDialog();
@@ -188,6 +195,10 @@ namespace sistema_megacenter
                 txtmensajeverdetalle.Text = grillacorreos[5, e.RowIndex].Value.ToString();
                 if (txtarchivoverdetalle.Text == "")
                 {
+                    btverarchivo.Visible = false;
+                }
+                else
+                {
                     btverarchivo.Visible = true;
                 }
             }
@@ -200,6 +211,20 @@ namespace sistema_megacenter
             }
           
             
+        }
+
+        private void btmenuprincipalvendedor_Click(object sender, EventArgs e)
+        {
+            Menu_Vendedor principal = new Menu_Vendedor(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado, correologueado);
+            this.Hide();
+            principal.Show();
+        }
+
+        private void btvolvermenuprincipaladministrador_Click(object sender, EventArgs e)
+        {
+            Menu_Principal principal = new Menu_Principal(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado, correologueado);
+            this.Hide();
+            principal.Show();
         }
     }
 }

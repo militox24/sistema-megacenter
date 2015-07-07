@@ -47,6 +47,7 @@
             this.btpagos = new System.Windows.Forms.Button();
             this.btcorreoadministrador = new System.Windows.Forms.Button();
             this.btcerrarsesionadministrador = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoinicioadministrador)).BeginInit();
             this.SuspendLayout();
@@ -368,12 +369,33 @@
             this.btcerrarsesionadministrador.UseVisualStyleBackColor = false;
             this.btcerrarsesionadministrador.Click += new System.EventHandler(this.btcerrarsesionadministrador_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(989, 317);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 131);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "DEVOLUCION";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(1230, 559);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btcerrarsesionadministrador);
             this.Controls.Add(this.btcorreoadministrador);
             this.Controls.Add(this.btpagos);
@@ -421,5 +443,6 @@
         private System.Windows.Forms.Button btpagos;
         private System.Windows.Forms.Button btcorreoadministrador;
         private System.Windows.Forms.Button btcerrarsesionadministrador;
+        private System.Windows.Forms.Button button1;
     }
 }

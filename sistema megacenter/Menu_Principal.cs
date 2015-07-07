@@ -132,5 +132,12 @@ namespace sistema_megacenter
             this.Hide();
             inicio.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Mantenedor_Devolucion devolucion = new Mantenedor_Devolucion(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado, correousuario);
+            this.Hide();
+            devolucion.Show();
+        }
     }
 }

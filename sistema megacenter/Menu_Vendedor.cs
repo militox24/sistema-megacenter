@@ -37,7 +37,7 @@ namespace sistema_megacenter
 
         private void btHistorial_Click(object sender, EventArgs e)
         {
-            Mantenedor_Historial_Multas historial = new Mantenedor_Historial_Multas(nombreusuario,apellidousuario,urlimagen,rutusuario,correousuario);
+            Mantenedor_Historial_Multas historial = new Mantenedor_Historial_Multas(nombreusuario,apellidousuario,urlimagen,rutusuario,usuariologueado,correousuario);
             this.Hide();
             historial.Show();
         }
@@ -84,6 +84,7 @@ namespace sistema_megacenter
             Mantenedor_correo correo = new Mantenedor_correo(nombreusuario, apellidousuario, urlimagen, rutusuario, usuariologueado,correousuario);
             this.Hide();
             correo.Show();
+            
         }
 
        

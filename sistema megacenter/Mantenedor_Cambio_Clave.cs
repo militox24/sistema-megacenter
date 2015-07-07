@@ -71,6 +71,7 @@ namespace sistema_megacenter
                     txtnuevaclave.Clear();
                     txtrepetirclave.Clear();
                     Ingreso_Sistema inicio = new Ingreso_Sistema(usuariologueo);
+                    this.Hide();
                     inicio.Show();
                     
                 }

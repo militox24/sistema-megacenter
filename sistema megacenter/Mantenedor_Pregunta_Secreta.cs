@@ -21,6 +21,7 @@ namespace sistema_megacenter
             respuestasecreta = respuesta;
             rutlogueo = rut;
             usuariologueado = usuario;
+           
         }
 
         private void BtAceptar_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace sistema_megacenter
             }
             else
             {
+                
                 if (txtrespuestarecupera.Text != respuestasecreta)
                 {
                     MessageBox.Show("La respuesta ingresada no es correcta", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -38,7 +40,6 @@ namespace sistema_megacenter
                 else
                 {
                     this.Hide();
-                    
                     Mantenedor_Cambio_Clave clave = new Mantenedor_Cambio_Clave(rutlogueo,usuariologueado);
                     clave.Show();
 

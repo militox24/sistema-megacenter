@@ -240,14 +240,14 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.gbagregaproducto);
-            this.panel2.Controls.Add(this.gbeliminaproducto);
-            this.panel2.Controls.Add(this.gbconsultarproducto);
             this.panel2.Controls.Add(this.gbmodificarproducto);
             this.panel2.Controls.Add(this.gbagrecategoria);
             this.panel2.Controls.Add(this.gbagregaciudad);
             this.panel2.Controls.Add(this.gbagregagiro);
             this.panel2.Controls.Add(this.gbagregaproveedor);
+            this.panel2.Controls.Add(this.gbagregaproducto);
+            this.panel2.Controls.Add(this.gbeliminaproducto);
+            this.panel2.Controls.Add(this.gbconsultarproducto);
             this.panel2.Location = new System.Drawing.Point(218, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 607);
@@ -1628,7 +1628,7 @@
             this.gbeliminaproducto.ForeColor = System.Drawing.Color.Gold;
             this.gbeliminaproducto.Location = new System.Drawing.Point(12, 33);
             this.gbeliminaproducto.Name = "gbeliminaproducto";
-            this.gbeliminaproducto.Size = new System.Drawing.Size(597, 306);
+            this.gbeliminaproducto.Size = new System.Drawing.Size(597, 280);
             this.gbeliminaproducto.TabIndex = 44;
             this.gbeliminaproducto.TabStop = false;
             this.gbeliminaproducto.Text = "Eliminar Producto";
@@ -1719,7 +1719,7 @@
             this.gbconsultarproducto.ForeColor = System.Drawing.Color.Gold;
             this.gbconsultarproducto.Location = new System.Drawing.Point(12, 36);
             this.gbconsultarproducto.Name = "gbconsultarproducto";
-            this.gbconsultarproducto.Size = new System.Drawing.Size(597, 366);
+            this.gbconsultarproducto.Size = new System.Drawing.Size(597, 287);
             this.gbconsultarproducto.TabIndex = 67;
             this.gbconsultarproducto.TabStop = false;
             this.gbconsultarproducto.Text = "Consultar Producto";
@@ -1790,13 +1790,14 @@
             this.btvolvermenuprincipalproducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btvolvermenuprincipalproducto.Image = ((System.Drawing.Image)(resources.GetObject("btvolvermenuprincipalproducto.Image")));
             this.btvolvermenuprincipalproducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btvolvermenuprincipalproducto.Location = new System.Drawing.Point(359, 625);
+            this.btvolvermenuprincipalproducto.Location = new System.Drawing.Point(389, 625);
             this.btvolvermenuprincipalproducto.Name = "btvolvermenuprincipalproducto";
             this.btvolvermenuprincipalproducto.Size = new System.Drawing.Size(223, 36);
             this.btvolvermenuprincipalproducto.TabIndex = 88;
             this.btvolvermenuprincipalproducto.Text = "Volver Menu Principal";
             this.btvolvermenuprincipalproducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btvolvermenuprincipalproducto.UseVisualStyleBackColor = false;
+            this.btvolvermenuprincipalproducto.Visible = false;
             this.btvolvermenuprincipalproducto.Click += new System.EventHandler(this.btvolvermenuprincipalproducto_Click);
             // 
             // Mantenedor_Producto
